@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Bé Học Tiếng Anh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--nen:#FFF8EC;--chu:#3B2F4A;--phu:#8A7F96;--the:#fff;--bong:0 8px 0 rgba(59,47,74,.12);--dung:#4CAF50;--sai:#FF7043}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none}
+html,body{margin:0;height:100%}
+body{background:var(--nen);color:var(--chu);font-family:"Baloo 2",system-ui,sans-serif;overflow:hidden}
+button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
+.man{position:fixed;inset:0;display:none;flex-direction:column;padding:16px;padding-top:max(16px,env(safe-area-inset-top))}
+.man.hien{display:flex}
+.dau{display:flex;align-items:center;gap:12px;min-height:56px}
+.dau h1{margin:0;font-size:clamp(24px,6vw,36px);font-weight:800;flex:1;line-height:1.1}
+.nut-tron{width:56px;height:56px;border-radius:50%;background:var(--the);box-shadow:var(--bong);font-size:26px;display:grid;place-items:center;flex:none}
+.nut-tron:active,.o:active,.lua-chon:active,.nut-to:active{transform:translateY(4px);box-shadow:0 4px 0 rgba(59,47,74,.12)}
+/* Trang chủ */
+.luoi{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;padding:8px 2px 24px;align-content:start}
+.o{background:var(--mau);border-radius:28px;box-shadow:var(--bong);aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;position:relative}
+.o .bieu{font-size:clamp(56px,14vw,80px);line-height:1}
+.o .ten{font-size:24px;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0,.15)}
+.o .vi{font-size:15px;opacity:.95;margin-top:-4px}
+.o .sao{position:absolute;top:10px;right:12px;font-size:16px;letter-spacing:-2px}
+/* Học thẻ */
+.khung-the{flex:1;display:grid;place-items:center;min-height:0;touch-action:pan-y}
+.the{width:min(92vw,460px,62vh);aspect-ratio:3/4;background:var(--the);border-radius:36px;box-shadow:0 10px 0 var(--mau),0 14px 30px rgba(0,0,0,.08);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6%;gap:2%;transition:transform .25s}
+.the.vao{animation:vao .35s ease-out}
+@keyframes vao{from{transform:scale(.85) rotate(-3deg);opacity:0}}
+.the.nay{animation:nay .4s}
+@keyframes nay{40%{transform:scale(1.05)}}
+.hinh{flex:1;width:100%;display:grid;place-items:center;min-height:0}
+.hinh img{max-width:100%;max-height:100%;object-fit:contain;border-radius:20px}
+.hinh .em{font-size:min(38vw,190px,25vh);line-height:1}
+.chu-en{font-size:clamp(44px,12vw,72px);font-weight:800;line-height:1;color:var(--mau)}
+.chu-vi{font-size:18px;color:var(--phu)}
+.loa{font-size:20px;color:var(--phu)}
+.dieu-khien{display:flex;align-items:center;justify-content:center;gap:20px;padding:12px 0 max(12px,env(safe-area-inset-bottom))}
+.dieu-khien .nut-tron{width:72px;height:72px;font-size:34px}
+.cham{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;max-width:200px}
+.cham i{width:10px;height:10px;border-radius:50%;background:#e5dccd}
+.cham i.da{background:var(--mau)}
+.nut-to{background:var(--mau);color:#fff;border-radius:999px;padding:12px 28px;font-size:24px;font-weight:800;box-shadow:var(--bong)}
+/* Kiểm tra */
+.tien-do{height:16px;background:#eee3d2;border-radius:99px;overflow:hidden;flex:1}
+.tien-do b{display:block;height:100%;width:0;background:var(--mau);border-radius:99px;transition:width .4s}
+.cau-hoi{text-align:center;padding:12px 0 4px}
+.cau-hoi .nut-tron{width:110px;height:110px;font-size:54px;margin:0 auto;background:var(--mau);color:#fff}
+.cau-hoi p{margin:8px 0 0;color:var(--phu);font-size:18px}
+.dap-an{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-content:center;min-height:0}
+@media (max-aspect-ratio:3/4){.dap-an{grid-template-columns:1fr 1fr}.dap-an .lua-chon:nth-child(3){grid-column:1/3;width:50%;justify-self:center}}
+.lua-chon{background:var(--the);border-radius:28px;box-shadow:var(--bong);aspect-ratio:1;display:grid;place-items:center;padding:10%;border:5px solid transparent;transition:opacity .3s}
+.lua-chon img{max-width:100%;max-height:100%;object-fit:contain}
+.lua-chon .em{font-size:min(20vw,110px,16vh)}
+.lua-chon.dung{border-color:var(--dung);animation:nay .4s}
+.lua-chon.sai{animation:lac .4s;opacity:.35}
+@keyframes lac{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
+/* Kết quả */
+.ket-qua{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center}
+.ket-qua .sao-to{font-size:clamp(56px,16vw,96px);letter-spacing:4px}
+.ket-qua .sao-to span{display:inline-block;animation:vao .5s backwards}
+.ket-qua h2{margin:0;font-size:40px}
+.ket-qua p{margin:0;color:var(--phu);font-size:20px}
+.phao{position:fixed;font-size:32px;pointer-events:none;animation:roi 1.4s ease-in forwards;z-index:9}
+@keyframes roi{to{transform:translateY(110vh) rotate(540deg)}}
+.thuong-hieu{text-align:center;color:var(--phu);font-size:13px;padding-bottom:env(safe-area-inset-bottom)}
+</style>
+</head>
+<body>
+
+<section class="man hien" id="trang-chu">
+  <div class="dau"><h1>Bé Học Tiếng Anh 🌈</h1></div>
+  <div class="luoi" id="luoi"></div>
+  <div class="thuong-hieu">Chạm vào một chủ đề để học nhé!</div>
+</section>
+
+<section class="man" id="hoc">
+  <div class="dau">
+    <button class="nut-tron" data-ve aria-label="Về trang chủ">🏠</button>
+    <h1 id="hoc-ten"></h1>
+    <button class="nut-tron" id="vao-kt" aria-label="Kiểm tra">⭐</button>
+  </div>
+  <div class="khung-the" id="khung-the">
+    <button class="the" id="the" aria-label="Nghe đọc">
+      <div class="hinh" id="the-hinh"></div>
+      <div class="chu-en" id="the-en"></div>
+      <div class="chu-vi" id="the-vi"></div>
+      <div class="loa">🔊 chạm để nghe</div>
+    </button>
+  </div>
+  <div class="dieu-khien">
+    <button class="nut-tron" id="truoc" aria-label="Thẻ trước">⬅️</button>
+    <div class="cham" id="cham"></div>
+    <button class="nut-tron" id="sau" aria-label="Thẻ sau">➡️</button>
+  </div>
+</section>
+
+<section class="man" id="kiem-tra">
+  <div class="dau">
+    <button class="nut-tron" data-ve aria-label="Về trang chủ">🏠</button>
+    <div class="tien-do"><b id="tien-do"></b></div>
+  </div>
+  <div class="cau-hoi">
+    <button class="nut-tron" id="nghe-lai" aria-label="Nghe lại">🔊</button>
+    <p>Nghe và chạm vào hình đúng</p>
+  </div>
+  <div class="dap-an" id="dap-an"></div>
+</section>
+
+<section class="man" id="xong">
+  <div class="ket-qua">
+    <div class="sao-to" id="sao-to"></div>
+    <h2 id="xong-loi"></h2>
+    <p id="xong-phu"></p>
+    <button class="nut-to" id="hoc-lai">Học lại 📖</button>
+    <button class="nut-to" id="choi-lai" style="background:#4FC3F7">Kiểm tra lại ⭐</button>
+    <button class="nut-tron" data-ve aria-label="Về trang chủ">🏠</button>
+  </div>
+</section>
+
+<script src="tu-vung.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const SO_CAU = 8;
+let chuDe, viTri = 0, cau = [], soCau = 0, dungLanDau = 0, saiCauNay = false, khoa = false;
+
+// ---- lưu sao ----
+const docSao = () => { try { return JSON.parse(localStorage.getItem("sao") || "{}"); } catch { return {}; } };
+const ghiSao = (id, n) => { try { const s = docSao(); s[id] = Math.max(s[id] || 0, n); localStorage.setItem("sao", JSON.stringify(s)); } catch {} };
+
+// ---- âm thanh ----
+let dangPhat;
+function phat(id, chu) {
+  if (dangPhat) dangPhat.pause();
+  const a = new Audio("am-thanh/" + id + ".mp3");
+  dangPhat = a;
+  a.play().catch(() => noi(chu));
+  a.onerror = () => noi(chu);
+  return a;
+}
+function noi(chu) {
+  if (!chu || !window.speechSynthesis) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(chu); u.lang = "en-US"; u.rate = .8;
+  speechSynthesis.speak(u);
+}
+function hinhTu(tu, lop) {
+  // Ảnh thật hinh/<id>.png, chưa có thì dùng emoji
+  return `<img src="hinh/${tu.id}.jpg" alt="${tu.en}" onerror="this.outerHTML='<span class=&quot;em ${lop||""}&quot;>${tu.emoji}</span>'">`;
+}
+
+// ---- màn hình ----
+function sang(id) { document.querySelectorAll(".man").forEach(m => m.classList.toggle("hien", m.id === id)); }
+function veTrangChu() {
+  const sao = docSao();
+  $("#luoi").innerHTML = TU_VUNG.map(c => `
+    <button class="o" style="--mau:${c.mau}" data-cd="${c.id}">
+      <span class="sao">${"⭐".repeat(sao[c.id] || 0)}</span>
+      <span class="bieu">${c.emoji}</span><span class="ten">${c.ten}</span><span class="vi">${c.vi}</span>
+    </button>`).join("");
+  sang("trang-chu");
+}
+$("#luoi").onclick = e => { const o = e.target.closest(".o"); if (o) moChuDe(o.dataset.cd); };
+document.querySelectorAll("[data-ve]").forEach(b => b.onclick = veTrangChu);
+
+function moChuDe(id) {
+  chuDe = TU_VUNG.find(c => c.id === id);
+  document.body.style.setProperty("--mau", chuDe.mau);
+  $("#hoc-ten").textContent = chuDe.emoji + " " + chuDe.ten;
+  viTri = 0; sang("hoc"); veThe();
+}
+
+// ---- học thẻ ----
+function veThe() {
+  const tu = chuDe.tu[viTri], the = $("#the");
+  $("#the-hinh").innerHTML = hinhTu(tu);
+  $("#the-en").textContent = tu.en;
+  $("#the-vi").textContent = tu.vi;
+  $("#cham").innerHTML = chuDe.tu.map((_, i) => `<i class="${i <= viTri ? "da" : ""}"></i>`).join("");
+  $("#truoc").style.visibility = viTri ? "visible" : "hidden";
+  $("#sau").textContent = viTri === chuDe.tu.length - 1 ? "⭐" : "➡️";
+  the.classList.remove("vao"); void the.offsetWidth; the.classList.add("vao");
+  setTimeout(() => phat(tu.id, tu.en), 300);
+}
+$("#the").onclick = () => {
+  const tu = chuDe.tu[viTri], the = $("#the");
+  the.classList.remove("nay"); void the.offsetWidth; the.classList.add("nay");
+  phat(tu.id, tu.en);
+};
+const sau = () => { if (viTri < chuDe.tu.length - 1) { viTri++; veThe(); } else batDauKT(); };
+const truoc = () => { if (viTri > 0) { viTri--; veThe(); } };
+$("#sau").onclick = sau; $("#truoc").onclick = truoc;
+let x0 = null;
+$("#khung-the").addEventListener("touchstart", e => x0 = e.touches[0].clientX, { passive: true });
+$("#khung-the").addEventListener("touchend", e => {
+  if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null;
+  if (dx < -50) sau(); else if (dx > 50) truoc();
+});
+document.addEventListener("keydown", e => { if ($("#hoc").classList.contains("hien")) { if (e.key === "ArrowRight") sau(); if (e.key === "ArrowLeft") truoc(); } });
+$("#vao-kt").onclick = () => batDauKT();
+
+// ---- kiểm tra ----
+const tron = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
+function batDauKT() {
+  cau = tron(chuDe.tu).slice(0, SO_CAU); soCau = 0; dungLanDau = 0;
+  sang("kiem-tra"); veCau();
+}
+function veCau() {
+  khoa = false; saiCauNay = false;
+  const tu = cau[soCau];
+  const nhieu = tron(chuDe.tu.filter(t => t.id !== tu.id)).slice(0, 2);
+  const lua = tron([tu, ...nhieu]);
+  $("#tien-do").style.width = (soCau / cau.length * 100) + "%";
+  $("#dap-an").innerHTML = lua.map(t => `<button class="lua-chon" data-id="${t.id}">${hinhTu(t)}</button>`).join("");
+  setTimeout(() => phat(tu.id, tu.en), 400);
+}
+$("#nghe-lai").onclick = () => { const tu = cau[soCau]; phat(tu.id, tu.en); };
+$("#dap-an").onclick = e => {
+  const b = e.target.closest(".lua-chon"); if (!b || khoa || b.classList.contains("sai")) return;
+  const tu = cau[soCau];
+  if (b.dataset.id === tu.id) {
+    khoa = true; b.classList.add("dung"); if (!saiCauNay) dungLanDau++;
+    phao(6); const a = phat("_great", "Great job!");
+    setTimeout(() => { phat(tu.id, tu.en); }, 900);
+    setTimeout(() => { soCau++; soCau < cau.length ? veCau() : ketThuc(); }, 2000);
+  } else {
+    saiCauNay = true; b.classList.add("sai");
+    phat("_try-again", "Try again!");
+    setTimeout(() => phat(tu.id, tu.en), 1000);
+  }
+};
+function ketThuc() {
+  $("#tien-do").style.width = "100%";
+  const n = dungLanDau >= cau.length - 1 ? 3 : dungLanDau >= cau.length / 2 ? 2 : 1;
+  ghiSao(chuDe.id, n);
+  $("#sao-to").innerHTML = [0, 1, 2].map(i => `<span style="animation-delay:${i * .25}s;${i < n ? "" : "filter:grayscale(1);opacity:.3"}">⭐</span>`).join("");
+  $("#xong-loi").textContent = ["", "Cố lên nào!", "Giỏi lắm!", "Xuất sắc!"][n];
+  $("#xong-phu").textContent = `Bé đúng ngay ${dungLanDau}/${cau.length} câu`;
+  sang("xong"); phao(24); phat("_well-done", "Well done! You did it!");
+}
+$("#hoc-lai").onclick = () => moChuDe(chuDe.id);
+$("#choi-lai").onclick = batDauKT;
+function phao(n) {
+  const d = ["⭐", "🎉", "✨", "🌟", "🎈"];
+  for (let i = 0; i < n; i++) {
+    const s = document.createElement("div"); s.className = "phao";
+    s.textContent = d[i % d.length]; s.style.left = Math.random() * 100 + "vw"; s.style.top = "-40px";
+    s.style.animationDelay = Math.random() * .4 + "s"; document.body.appendChild(s);
+    setTimeout(() => s.remove(), 2000);
+  }
+}
+veTrangChu();
+</script>
+</body>
+</html>
