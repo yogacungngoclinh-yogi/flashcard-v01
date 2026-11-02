@@ -35,3 +35,4 @@ App web học từ vựng tiếng Anh theo chủ đề cho bé 5 tuổi: thẻ h
 - 2026-11-02: Thêm mục Nói chuyện: 10 bài / 50 lượt / 100 giọng; thêm prompt 60 ảnh nhân vật + tình huống vào prompt-hinh.md.
 - 2026-11-02: Có đủ 60 ảnh nhân vật + tình huống Nói chuyện (đã đổi JPG 640px). Từ vựng còn thiếu 1 ảnh: sick.
 - 2026-11-02: Rà soát nghĩa tiếng Việt (33 chỗ hội thoại, 8 từ vựng) cho sát nghĩa; chữ Việt to hơn, màu xanh ngọc.
+- 2026-11-02: Bài kiểm tra: chọn đúng → đáp án nháy + mũi tên 👇, hình khác mờ, đọc lại từ/câu; đọc xong mới sang câu tiếp.

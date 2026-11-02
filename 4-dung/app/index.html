@@ -56,7 +56,12 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .lua-chon{background:var(--the);border-radius:28px;box-shadow:var(--bong);aspect-ratio:1;display:grid;place-items:center;padding:10%;border:5px solid transparent;transition:opacity .3s}
 .lua-chon img{max-width:100%;max-height:100%;object-fit:contain}
 .lua-chon .em{font-size:min(20vw,110px,16vh)}
-.lua-chon.dung{border-color:var(--dung);animation:nay .4s}
+.lua-chon{position:relative}
+.lua-chon.dung{border-color:var(--dung);animation:chop .7s ease-in-out infinite}
+.lua-chon.dung::after{content:"👇";position:absolute;top:-34px;left:50%;margin-left:-20px;font-size:38px;line-height:1;animation:nhun .6s ease-in-out infinite}
+.dap-an.xong .lua-chon:not(.dung){opacity:.2;transition:opacity .3s}
+@keyframes chop{0%,100%{box-shadow:var(--bong);background:#fff}50%{box-shadow:0 0 0 12px rgba(76,175,80,.45),var(--bong);background:#E8F5E9}}
+@keyframes nhun{50%{transform:translateY(8px)}}
 .lua-chon.sai{animation:lac .4s;opacity:.35}
 @keyframes lac{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
 /* Kết quả */
@@ -197,6 +202,19 @@ function moKhoaAm() {
   am.src = IM; am.play().catch(() => {});
 }
 ["pointerdown", "touchstart", "click", "keydown"].forEach(ev => document.addEventListener(ev, moKhoaAm, { once: false, passive: true }));
+// Phát lần lượt nhiều tiếng; xong hết (hoặc quá 8s) mới gọi xong() đúng 1 lần
+let tokChuoi = 0;
+function phatLanLuot(ds, xong) {
+  const k = ++tokChuoi; let i = 0, daXong = false;
+  const fin = () => { if (daXong || k !== tokChuoi) return; daXong = true; xong(); };
+  const buoc = () => {
+    if (k !== tokChuoi) return;
+    if (i >= ds.length) return void setTimeout(fin, 700);
+    const [id, chu] = ds[i++];
+    phat(id, chu).onended = () => setTimeout(buoc, 250);
+  };
+  buoc(); setTimeout(fin, 8000);
+}
 function phat(id, chu) {
   am.pause(); am.onended = null;
   am.onerror = () => noi(chu);
@@ -282,7 +300,7 @@ function batDauKT() {
   sang("kiem-tra"); veCau();
 }
 function veCau() {
-  khoa = false; saiCauNay = false;
+  khoa = false; saiCauNay = false; $("#dap-an").classList.remove("xong");
   const tu = cau[soCau];
   const nhieu = tron(chuDe.tu.filter(t => t.id !== tu.id)).slice(0, 2);
   const lua = tron([tu, ...nhieu]);
@@ -297,10 +315,12 @@ $("#dap-an").onclick = e => {
   const b = e.target.closest(".lua-chon"); if (!b || khoa || b.classList.contains("sai")) return;
   const tu = cau[soCau];
   if (b.dataset.id === tu.id) {
-    khoa = true; b.classList.add("dung"); if (!saiCauNay) dungLanDau++;
-    phao(6); const a = phat("_great", "Great job!");
-    setTimeout(() => { phat(tu.id, tu.en); }, 1300);
-    setTimeout(() => { soCau++; soCau < cau.length ? veCau() : ketThuc(); }, 2600);
+    khoa = true; b.classList.add("dung"); $("#dap-an").classList.add("xong"); if (!saiCauNay) dungLanDau++;
+    phao(6);
+    phatLanLuot([["_great", "Great job!"], [tu.id, tu.en]], () => {
+      if (!$("#kiem-tra").classList.contains("hien")) return;
+      soCau++; soCau < cau.length ? veCau() : ketThuc();
+    });
   } else {
     saiCauNay = true; b.classList.add("sai");
     phat("_try-again", "Try again!");
@@ -364,7 +384,7 @@ function ktBai() {
   sang("gt-kt"); veCauGt();
 }
 function veCauGt() {
-  khoaGt = false; saiGt = false;
+  khoaGt = false; saiGt = false; $("#gt-dap-an").classList.remove("xong");
   const l = cauGt[soGt];
   const lua = tron([l, ...tron(bai.luot.filter(x => x.id !== l.id)).slice(0, 2)]);
   $("#gt-tien-do").style.width = (soGt / cauGt.length * 100) + "%";
@@ -379,10 +399,12 @@ $("#gt-dap-an").onclick = e => {
   const b = e.target.closest(".lua-chon"); if (!b || khoaGt || b.classList.contains("sai")) return;
   const l = cauGt[soGt];
   if (b.dataset.id === l.id) {
-    khoaGt = true; b.classList.add("dung"); if (!saiGt) dungGt++;
-    phao(6); phat("_great", "Great job!");
-    setTimeout(() => phat(l.id + "-a", l.a), 1300);
-    setTimeout(() => { soGt++; soGt < cauGt.length ? veCauGt() : ketThucGt(); }, 3200);
+    khoaGt = true; b.classList.add("dung"); $("#gt-dap-an").classList.add("xong"); if (!saiGt) dungGt++;
+    phao(6);
+    phatLanLuot([["_great", "Great job!"], [l.id + "-a", l.a]], () => {
+      if (!$("#gt-kt").classList.contains("hien")) return;
+      soGt++; soGt < cauGt.length ? veCauGt() : ketThucGt();
+    });
   } else {
     saiGt = true; b.classList.add("sai"); phat("_try-again", "Try again!");
     setTimeout(() => phat(l.id + "-q", l.q), 1000);
