@@ -133,14 +133,22 @@ const docSao = () => { try { return JSON.parse(localStorage.getItem("sao") || "{
 const ghiSao = (id, n) => { try { const s = docSao(); s[id] = Math.max(s[id] || 0, n); localStorage.setItem("sao", JSON.stringify(s)); } catch {} };
 
 // ---- âm thanh ----
-let dangPhat;
+// Một bộ phát tiếng duy nhất, mở khóa ở lần chạm đầu → điện thoại cho phát tự động ở các câu sau
+const am = new Audio();
+const IM = "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=";
+let moKhoa = false;
+function moKhoaAm() {
+  if (moKhoa || am.getAttribute("src")) return; moKhoa = true;
+  am.src = IM; am.play().catch(() => {});
+}
+["pointerdown", "touchstart", "click", "keydown"].forEach(ev => document.addEventListener(ev, moKhoaAm, { once: false, passive: true }));
 function phat(id, chu) {
-  if (dangPhat) dangPhat.pause();
-  const a = new Audio("am-thanh/" + id + ".mp3");
-  dangPhat = a;
-  a.play().catch(() => noi(chu));
-  a.onerror = () => noi(chu);
-  return a;
+  am.pause();
+  am.onerror = () => noi(chu);
+  am.src = "am-thanh/" + id + ".mp3";
+  am.currentTime = 0;
+  am.play().catch(() => {});
+  return am;
 }
 function noi(chu) {
   if (!chu || !window.speechSynthesis) return;
@@ -216,7 +224,9 @@ function veCau() {
   const lua = tron([tu, ...nhieu]);
   $("#tien-do").style.width = (soCau / cau.length * 100) + "%";
   $("#dap-an").innerHTML = lua.map(t => `<button class="lua-chon" data-id="${t.id}">${hinhTu(t)}</button>`).join("");
-  setTimeout(() => phat(tu.id, tu.en), 400);
+  const anh = [...document.querySelectorAll("#dap-an img")];
+  Promise.all(anh.map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; })))
+    .then(() => setTimeout(() => { if (cau[soCau] === tu && !khoa) phat(tu.id, tu.en); }, 500));
 }
 $("#nghe-lai").onclick = () => { const tu = cau[soCau]; phat(tu.id, tu.en); };
 $("#dap-an").onclick = e => {
@@ -225,8 +235,8 @@ $("#dap-an").onclick = e => {
   if (b.dataset.id === tu.id) {
     khoa = true; b.classList.add("dung"); if (!saiCauNay) dungLanDau++;
     phao(6); const a = phat("_great", "Great job!");
-    setTimeout(() => { phat(tu.id, tu.en); }, 900);
-    setTimeout(() => { soCau++; soCau < cau.length ? veCau() : ketThuc(); }, 2000);
+    setTimeout(() => { phat(tu.id, tu.en); }, 1300);
+    setTimeout(() => { soCau++; soCau < cau.length ? veCau() : ketThuc(); }, 2600);
   } else {
     saiCauNay = true; b.classList.add("sai");
     phat("_try-again", "Try again!");
