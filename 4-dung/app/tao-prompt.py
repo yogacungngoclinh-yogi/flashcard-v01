@@ -43,3 +43,23 @@ dau = [
 ]
 RA.write_text("\n".join(dau + phan), encoding="utf-8")
 print(f"{tong} từ, thiếu {thieu} ảnh → {RA}")
+
+# ---- Bài giao tiếp: ảnh nhân vật (1/bài) + ảnh tình huống (1/lượt) ----
+import json
+TEN_VAT = {"🐻": "gấu nâu", "🐰": "thỏ trắng", "🦆": "vịt", "🐥": "gà con vàng", "🐵": "khỉ", "🐷": "heo hồng", "🦉": "cú mèo"}
+gt = json.loads((GOC / "giao-tiep.js").read_text(encoding="utf-8").split("window.GIAO_TIEP =", 1)[1].rstrip().rstrip(";"))
+GT_STYLE = """Vẽ hình cho app dạy tiếng Anh cho bé 5 tuổi. Mỗi mục = 1 ảnh riêng, cùng phong cách:
+- Ảnh vuông 1:1, nền trắng trơn, KHÔNG có chữ, số hay ký hiệu trong ảnh.
+- Hoạt hình 3D mềm mại kiểu đồ chơi, dễ thương, màu tươi sáng, bóng nhẹ dưới chân.
+- Người là người Việt Nam/châu Á, thân thiện, đang cười."""
+gt_thieu = 0; gt_tong = 0; gt_phan = ["## 💬 Bài giao tiếp (Nói chuyện)", ""]
+for b in gt:
+    muc = [(f"gt-{b['id']}-nv", f"nhân vật dẫn chuyện: {TEN_VAT.get(b['nv']['emoji'], 'con vật')} tên {b['nv']['ten']}, đứng toàn thân, vẫy tay chào, dễ thương", None)]
+    muc += [(l["id"], f"minh hoạ cho câu trả lời \"{l['a']}\" ({l['avi']}): 1 bé Việt Nam hoặc 1 vật thể thể hiện đúng ý câu đó, đơn giản, dễ nhận ra", l) for l in b["luot"]]
+    gt_tong += len(muc); can = [m for m in muc if m[0] not in co_san]; gt_thieu += len(can)
+    gt_phan += [f"### {b['ten']} — {b['vi']} ({len(muc) - len(can)}/{len(muc)} ảnh)", ""]
+    if not can: gt_phan += ["Đủ ảnh ✅", ""]; continue
+    dong = "\n".join(f"{j}. {mo} → đặt tên file: {id_}.png" for j, (id_, mo, _) in enumerate(can, 1))
+    gt_phan += ["```", GT_STYLE, "", "Vẽ các ảnh sau:", dong, "```", ""]
+RA.write_text(RA.read_text(encoding="utf-8") + "\n" + "\n".join(gt_phan), encoding="utf-8")
+print(f"Giao tiếp: {gt_tong} ảnh, thiếu {gt_thieu}")

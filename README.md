@@ -15,6 +15,12 @@ App web học từ vựng tiếng Anh theo chủ đề cho bé 5 tuổi: thẻ h
 3. Chạy `python 4-dung/app/tao-prompt.py` → cập nhật `2-kich-ban/prompt-hinh.md` (chỉ liệt kê ảnh còn thiếu).
 4. Thêm ảnh `4-dung/app/hinh/<id>.png` (chưa có thì app dùng emoji).
 
+## Nói Chuyện (giao tiếp vỡ lòng)
+
+- Trang chủ có 2 tab: Học từ vựng / Nói chuyện. 10 bài × 5 lượt hỏi–đáp, con vật dẫn chuyện.
+- Mỗi bài: nghe nhân vật hỏi → nghe mẫu trả lời → bé nói theo, tự bấm xong → làm bài chọn đáp án đúng → sao.
+- Dữ liệu: `4-dung/app/giao-tiep.js`. Thu giọng: `python 4-dung/app/thu-giong-giao-tiep.py` (nhân vật giọng Jenny/Guy, bé giọng Ana). Ảnh: `hinh/gt-<bai>-nv.jpg`, `hinh/gt-<bai>-<n>.jpg`.
+
 ## Cấu Trúc
 
 - `2-kich-ban/prompt-hinh.md` — prompt ChatGPT copy theo lượt 5 ảnh, tự sinh từ `tu-vung.js`.
@@ -26,3 +32,4 @@ App web học từ vựng tiếng Anh theo chủ đề cho bé 5 tuổi: thẻ h
 - 2026-11-02: Mở rộng lên 306 từ / 20 chủ đề (thêm Sea Animals, Bugs, Shapes, Vegetables, Feelings, Actions, Clothes, Toys, Vehicles, My Home, School, Jobs, Nature & Weather; chủ đề cũ thêm từ). Thêm `tao-prompt.py`.
 - 2026-11-02: Dời toàn bộ dự án ra `J:\_Apps\flashcards` (ngoài ai-video-producer). Các script chạy từ đường dẫn tương đối nên không cần sửa.
 - 2026-11-02: Sửa bài kiểm tra: tiếng đọc tự phát sau khi 3 hình hiện (1 bộ phát tiếng dùng chung, mở khóa ở lần chạm đầu để điện thoại không chặn). Ảnh web đổi sang JPG 640px (17MB); ảnh gốc PNG ở 3-tai-san/hinh-goc (không đẩy lên git). Repo: github.com/yogacungngoclinh-yogi/flashcard-v01.
+- 2026-11-02: Thêm mục Nói chuyện: 10 bài / 50 lượt / 100 giọng; thêm prompt 60 ảnh nhân vật + tình huống vào prompt-hinh.md.
