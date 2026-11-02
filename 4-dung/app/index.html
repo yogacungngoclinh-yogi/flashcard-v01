@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
 <style>
-:root{--nen:#FFF8EC;--chu:#3B2F4A;--phu:#8A7F96;--the:#fff;--bong:0 8px 0 rgba(59,47,74,.12);--dung:#4CAF50;--sai:#FF7043}
+:root{--nen:#FFF8EC;--chu:#3B2F4A;--phu:#8A7F96;--the:#fff;--bong:0 8px 0 rgba(59,47,74,.12);--vi:#00796B;--dung:#4CAF50;--sai:#FF7043}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none}
 html,body{margin:0;height:100%}
 body{background:var(--nen);color:var(--chu);font-family:"Baloo 2",system-ui,sans-serif;overflow:hidden}
@@ -24,7 +24,7 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .o{background:var(--mau);border-radius:28px;box-shadow:var(--bong);aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;position:relative}
 .o .bieu{font-size:clamp(56px,14vw,80px);line-height:1}
 .o .ten{font-size:24px;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0,.15)}
-.o .vi{font-size:15px;opacity:.95;margin-top:-4px}
+.o .vi{font-size:19px;font-weight:800;margin-top:-2px;background:rgba(255,255,255,.88);color:var(--vi);border-radius:99px;padding:1px 12px}
 .o .sao{position:absolute;top:10px;right:12px;font-size:16px;letter-spacing:-2px}
 /* Học thẻ */
 .khung-the{flex:1;display:grid;place-items:center;min-height:0;touch-action:pan-y}
@@ -37,7 +37,7 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .hinh img{max-width:100%;max-height:100%;object-fit:contain;border-radius:20px}
 .hinh .em{font-size:min(38vw,190px,25vh);line-height:1}
 .chu-en{font-size:clamp(44px,12vw,72px);font-weight:800;line-height:1;color:var(--mau)}
-.chu-vi{font-size:18px;color:var(--phu)}
+.chu-vi{font-size:clamp(26px,7.5vw,40px);font-weight:800;color:var(--vi);line-height:1.1;text-align:center}
 .loa{font-size:20px;color:var(--phu)}
 .dieu-khien{display:flex;align-items:center;justify-content:center;gap:20px;padding:12px 0 max(12px,env(safe-area-inset-bottom))}
 .dieu-khien .nut-tron{width:72px;height:72px;font-size:34px}
@@ -73,7 +73,7 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .tab{display:flex;gap:10px;padding:4px 0 8px}
 .tab button{flex:1;background:var(--the);border-radius:22px;box-shadow:var(--bong);padding:12px 6px;font-size:20px;font-weight:800;color:var(--phu);border:4px solid transparent;line-height:1.1}
 .tab button.chon{color:var(--chu);border-color:#FFB74D;background:#FFF1D6}
-.tab button small{display:block;font-size:13px;font-weight:600}
+.tab button small{display:block;font-size:15px;font-weight:700;color:var(--vi)}
 .o.bai .nv{position:absolute;top:8px;left:12px;font-size:30px}
 .o.bai .ten{font-size:20px;text-align:center;padding:0 8px;line-height:1.05}
 .canh{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:0;padding:0 2px}
@@ -81,7 +81,7 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .nv-to img{height:min(34vw,150px,20vh);width:auto;border-radius:24px}
 .bong{max-width:520px;width:100%;background:var(--the);border-radius:28px;box-shadow:var(--bong);padding:16px 20px;text-align:center;border:5px solid var(--mau)}
 .bong .en{font-size:clamp(26px,7vw,40px);font-weight:800;line-height:1.1}
-.bong .vi{color:var(--phu);font-size:17px;margin-top:4px}
+.bong .vi{color:var(--vi);font-size:clamp(20px,5.5vw,28px);font-weight:800;margin-top:6px;line-height:1.15}
 .bong.be{border-color:#4FC3F7;background:#F3FBFF}
 .bong .loa{font-size:20px;color:var(--phu)}
 .bong .e{font-size:44px;line-height:1.1}
