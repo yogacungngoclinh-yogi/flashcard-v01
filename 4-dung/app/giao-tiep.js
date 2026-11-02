@@ -450,7 +450,8 @@ window.GIAO_TIEP = [
     "qvi": "Có mấy quả táo?",
     "a": "Three apples.",
     "avi": "Ba quả táo.",
-    "emoji": "🍎"
+    "emoji": "🍎🍎🍎",
+    "ve": "đúng 3 quả táo đỏ xếp gọn trên nền trắng"
    },
    {
     "id": "gt-so-mau-2",
@@ -458,7 +459,8 @@ window.GIAO_TIEP = [
     "qvi": "Có mấy ngôi sao?",
     "a": "Five stars.",
     "avi": "Năm ngôi sao.",
-    "emoji": "⭐"
+    "emoji": "⭐⭐⭐⭐⭐",
+    "ve": "đúng 5 ngôi sao vàng xếp gọn thành 1 hàng"
    },
    {
     "id": "gt-so-mau-3",

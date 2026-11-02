@@ -146,7 +146,7 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
   <div class="canh">
     <div class="nv-to" id="gt-nv"></div>
     <button class="bong" id="gt-q"><div class="en" id="gt-q-en"></div><div class="vi" id="gt-q-vi"></div><div class="loa">🔊 chạm để nghe</div></button>
-    <button class="bong be" id="gt-a"><div class="e" id="gt-a-e"></div><div class="en" id="gt-a-en"></div><div class="vi" id="gt-a-vi"></div><div class="loa">🔊 Bé nói theo nhé!</div></button>
+    <button class="bong be" id="gt-a"><div class="e" id="gt-a-e" style="white-space:nowrap"></div><div class="en" id="gt-a-en"></div><div class="vi" id="gt-a-vi"></div><div class="loa">🔊 Bé nói theo nhé!</div></button>
   </div>
   <div class="hanh"><button class="nut-to xanh" id="gt-xong-noi">🎤 Con nói xong rồi!</button></div>
 </section>
@@ -369,7 +369,7 @@ function veCauGt() {
   const lua = tron([l, ...tron(bai.luot.filter(x => x.id !== l.id)).slice(0, 2)]);
   $("#gt-tien-do").style.width = (soGt / cauGt.length * 100) + "%";
   $("#gt-kt-nv").innerHTML = anhGt("gt-" + bai.id + "-nv", bai.nv.emoji);
-  $("#gt-dap-an").innerHTML = lua.map(x => `<button class="lua-chon" data-id="${x.id}"><span class="em">${anhGt(x.id, x.emoji)}</span><b>${x.a}</b></button>`).join("");
+  $("#gt-dap-an").innerHTML = lua.map(x => `<button class="lua-chon" data-id="${x.id}"><span class="em" style="${[...x.emoji].length > 3 ? "font-size:min(7vw,30px);white-space:nowrap" : ""}">${anhGt(x.id, x.emoji)}</span><b>${x.a}</b></button>`).join("");
   const anh = [...document.querySelectorAll("#gt-dap-an img")];
   Promise.all(anh.map(i => i.complete ? 0 : new Promise(r => { i.addEventListener("load", r); i.addEventListener("error", r); })))
     .then(() => setTimeout(() => { if (cauGt[soGt] === l && !khoaGt) phat(l.id + "-q", l.q); }, 500));

@@ -248,8 +248,8 @@ Vẽ hình cho app dạy tiếng Anh cho bé 5 tuổi. Mỗi mục = 1 ảnh ri�
 
 Vẽ các ảnh sau:
 1. nhân vật dẫn chuyện: khỉ tên Koko, đứng toàn thân, vẫy tay chào, dễ thương → đặt tên file: gt-so-mau-nv.png
-2. minh hoạ cho câu trả lời "Three apples." (Ba quả táo.): 1 bé Việt Nam hoặc 1 vật thể thể hiện đúng ý câu đó, đơn giản, dễ nhận ra → đặt tên file: gt-so-mau-1.png
-3. minh hoạ cho câu trả lời "Five stars." (Năm ngôi sao.): 1 bé Việt Nam hoặc 1 vật thể thể hiện đúng ý câu đó, đơn giản, dễ nhận ra → đặt tên file: gt-so-mau-2.png
+2. minh hoạ cho câu trả lời "Three apples." (Ba quả táo.): đúng 3 quả táo đỏ xếp gọn trên nền trắng → đặt tên file: gt-so-mau-1.png
+3. minh hoạ cho câu trả lời "Five stars." (Năm ngôi sao.): đúng 5 ngôi sao vàng xếp gọn thành 1 hàng → đặt tên file: gt-so-mau-2.png
 4. minh hoạ cho câu trả lời "It's red." (Nó màu đỏ.): 1 bé Việt Nam hoặc 1 vật thể thể hiện đúng ý câu đó, đơn giản, dễ nhận ra → đặt tên file: gt-so-mau-3.png
 5. minh hoạ cho câu trả lời "It's blue." (Màu xanh dương.): 1 bé Việt Nam hoặc 1 vật thể thể hiện đúng ý câu đó, đơn giản, dễ nhận ra → đặt tên file: gt-so-mau-4.png
 6. minh hoạ cho câu trả lời "Yes, I like pink." (Có, mình thích màu hồng.): 1 bé Việt Nam hoặc 1 vật thể thể hiện đúng ý câu đó, đơn giản, dễ nhận ra → đặt tên file: gt-so-mau-5.png

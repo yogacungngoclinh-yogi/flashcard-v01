@@ -55,7 +55,7 @@ GT_STYLE = """Vẽ hình cho app dạy tiếng Anh cho bé 5 tuổi. Mỗi mục
 gt_thieu = 0; gt_tong = 0; gt_phan = ["## 💬 Bài giao tiếp (Nói chuyện)", ""]
 for b in gt:
     muc = [(f"gt-{b['id']}-nv", f"nhân vật dẫn chuyện: {TEN_VAT.get(b['nv']['emoji'], 'con vật')} tên {b['nv']['ten']}, đứng toàn thân, vẫy tay chào, dễ thương", None)]
-    muc += [(l["id"], f"minh hoạ cho câu trả lời \"{l['a']}\" ({l['avi']}): 1 bé Việt Nam hoặc 1 vật thể thể hiện đúng ý câu đó, đơn giản, dễ nhận ra", l) for l in b["luot"]]
+    muc += [(l["id"], f"minh hoạ cho câu trả lời \"{l['a']}\" ({l['avi']}): {l.get('ve') or '1 bé Việt Nam hoặc 1 vật thể thể hiện đúng ý câu đó, đơn giản, dễ nhận ra'}", l) for l in b["luot"]]
     gt_tong += len(muc); can = [m for m in muc if m[0] not in co_san]; gt_thieu += len(can)
     gt_phan += [f"### {b['ten']} — {b['vi']} ({len(muc) - len(can)}/{len(muc)} ảnh)", ""]
     if not can: gt_phan += ["Đủ ảnh ✅", ""]; continue
