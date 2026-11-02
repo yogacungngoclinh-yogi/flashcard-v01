@@ -34,3 +34,4 @@ App web học từ vựng tiếng Anh theo chủ đề cho bé 5 tuổi: thẻ h
 - 2026-11-02: Sửa bài kiểm tra: tiếng đọc tự phát sau khi 3 hình hiện (1 bộ phát tiếng dùng chung, mở khóa ở lần chạm đầu để điện thoại không chặn). Ảnh web đổi sang JPG 640px (17MB); ảnh gốc PNG ở 3-tai-san/hinh-goc (không đẩy lên git). Repo: github.com/yogacungngoclinh-yogi/flashcard-v01.
 - 2026-11-02: Thêm mục Nói chuyện: 10 bài / 50 lượt / 100 giọng; thêm prompt 60 ảnh nhân vật + tình huống vào prompt-hinh.md.
 - 2026-11-02: Có đủ 60 ảnh nhân vật + tình huống Nói chuyện (đã đổi JPG 640px). Từ vựng còn thiếu 1 ảnh: sick.
+- 2026-11-02: Rà soát nghĩa tiếng Việt (33 chỗ hội thoại, 8 từ vựng) cho sát nghĩa; chữ Việt to hơn, màu xanh ngọc.

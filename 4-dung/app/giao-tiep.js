@@ -31,9 +31,9 @@ window.GIAO_TIEP = [
    {
     "id": "gt-chao-hoi-3",
     "q": "Good night!",
-    "qvi": "Chúc ngủ ngon!",
+    "qvi": "Chúc bạn ngủ ngon!",
     "a": "Sweet dreams!",
-    "avi": "Chúc ngủ ngon!",
+    "avi": "Chúc bạn mơ đẹp!",
     "emoji": "🌙"
    },
    {
@@ -47,9 +47,9 @@ window.GIAO_TIEP = [
    {
     "id": "gt-chao-hoi-5",
     "q": "See you!",
-    "qvi": "Hẹn gặp lại!",
+    "qvi": "Hẹn gặp lại bạn!",
     "a": "See you later!",
-    "avi": "Hẹn gặp lại!",
+    "avi": "Hẹn gặp lại bạn sau nhé!",
     "emoji": "🤗"
    }
   ]
@@ -71,7 +71,7 @@ window.GIAO_TIEP = [
     "q": "Nice to meet you!",
     "qvi": "Rất vui được gặp bạn!",
     "a": "Nice to meet you, too!",
-    "avi": "Mình cũng rất vui!",
+    "avi": "Mình cũng rất vui được gặp bạn!",
     "emoji": "🤝"
    },
    {
@@ -123,9 +123,9 @@ window.GIAO_TIEP = [
    {
     "id": "gt-cam-xuc-1",
     "q": "How are you?",
-    "qvi": "Bạn khỏe không?",
+    "qvi": "Bạn có khỏe không?",
     "a": "I'm fine, thank you.",
-    "avi": "Mình khỏe, cảm ơn.",
+    "avi": "Mình khỏe, cảm ơn bạn.",
     "emoji": "😊"
    },
    {
@@ -201,17 +201,17 @@ window.GIAO_TIEP = [
    {
     "id": "gt-lich-su-4",
     "q": "Would you like some juice?",
-    "qvi": "Bạn uống nước ép nhé?",
+    "qvi": "Bạn có muốn uống nước ép không?",
     "a": "Yes, please.",
-    "avi": "Vâng, cảm ơn.",
+    "avi": "Vâng, cho mình nhé.",
     "emoji": "🧃"
    },
    {
     "id": "gt-lich-su-5",
     "q": "Would you like some candy?",
-    "qvi": "Bạn ăn kẹo nhé?",
+    "qvi": "Bạn có muốn ăn kẹo không?",
     "a": "No, thank you.",
-    "avi": "Không, cảm ơn.",
+    "avi": "Không, cảm ơn bạn.",
     "emoji": "🙅"
    }
   ]
@@ -239,7 +239,7 @@ window.GIAO_TIEP = [
    {
     "id": "gt-do-vat-2",
     "q": "What's that?",
-    "qvi": "Kia là con gì?",
+    "qvi": "Kia là cái gì?",
     "a": "It's a cat.",
     "avi": "Đó là con mèo.",
     "emoji": "🐱"
@@ -263,7 +263,7 @@ window.GIAO_TIEP = [
    {
     "id": "gt-do-vat-5",
     "q": "Is this your bag?",
-    "qvi": "Đây là cặp của bạn à?",
+    "qvi": "Đây có phải cặp của bạn không?",
     "a": "Yes, it's my bag.",
     "avi": "Đúng, cặp của mình.",
     "emoji": "🎒"
@@ -285,7 +285,7 @@ window.GIAO_TIEP = [
    {
     "id": "gt-do-an-1",
     "q": "Are you hungry?",
-    "qvi": "Bạn đói chưa?",
+    "qvi": "Bạn có đói không?",
     "a": "Yes, I'm hungry.",
     "avi": "Dạ, mình đói.",
     "emoji": "🤤"
@@ -293,15 +293,15 @@ window.GIAO_TIEP = [
    {
     "id": "gt-do-an-2",
     "q": "What do you want?",
-    "qvi": "Bạn muốn ăn gì?",
+    "qvi": "Bạn muốn gì?",
     "a": "I want rice, please.",
-    "avi": "Mình muốn ăn cơm.",
+    "avi": "Mình muốn ăn cơm ạ.",
     "emoji": "🍚"
    },
    {
     "id": "gt-do-an-3",
     "q": "Do you want milk?",
-    "qvi": "Bạn uống sữa không?",
+    "qvi": "Bạn có muốn uống sữa không?",
     "a": "Yes, milk please.",
     "avi": "Có, cho mình sữa.",
     "emoji": "🥛"
@@ -311,7 +311,7 @@ window.GIAO_TIEP = [
     "q": "Is it yummy?",
     "qvi": "Có ngon không?",
     "a": "Yes, it's yummy!",
-    "avi": "Ngon lắm!",
+    "avi": "Có, ngon lắm!",
     "emoji": "😋"
    },
    {
@@ -347,17 +347,17 @@ window.GIAO_TIEP = [
    {
     "id": "gt-gia-dinh-2",
     "q": "Who is he?",
-    "qvi": "Ông ấy là ai?",
+    "qvi": "Anh ấy là ai?",
     "a": "He is my dad.",
-    "avi": "Đó là bố mình.",
+    "avi": "Anh ấy là bố của mình.",
     "emoji": "👨"
    },
    {
     "id": "gt-gia-dinh-3",
     "q": "Who is she?",
-    "qvi": "Bạn ấy là ai?",
+    "qvi": "Cô ấy là ai?",
     "a": "She is my sister.",
-    "avi": "Đó là chị mình.",
+    "avi": "Cô ấy là chị của mình.",
     "emoji": "👧"
    },
    {
@@ -365,7 +365,7 @@ window.GIAO_TIEP = [
     "q": "Do you have a brother?",
     "qvi": "Bạn có anh/em trai không?",
     "a": "Yes, I have a brother.",
-    "avi": "Có, mình có em trai.",
+    "avi": "Có, mình có anh/em trai.",
     "emoji": "👦"
    },
    {
@@ -393,7 +393,7 @@ window.GIAO_TIEP = [
    {
     "id": "gt-lop-hoc-1",
     "q": "Stand up, please.",
-    "qvi": "Mời đứng lên.",
+    "qvi": "Các con làm ơn đứng lên.",
     "a": "OK, I stand up.",
     "avi": "Dạ, con đứng lên.",
     "emoji": "🧍"
@@ -401,7 +401,7 @@ window.GIAO_TIEP = [
    {
     "id": "gt-lop-hoc-2",
     "q": "Sit down, please.",
-    "qvi": "Mời ngồi xuống.",
+    "qvi": "Các con làm ơn ngồi xuống.",
     "a": "OK, I sit down.",
     "avi": "Dạ, con ngồi xuống.",
     "emoji": "🪑"
@@ -409,7 +409,7 @@ window.GIAO_TIEP = [
    {
     "id": "gt-lop-hoc-3",
     "q": "Open your book.",
-    "qvi": "Mở sách ra.",
+    "qvi": "Các con hãy mở sách ra.",
     "a": "OK, I open my book.",
     "avi": "Dạ, con mở sách.",
     "emoji": "📖"
@@ -417,15 +417,15 @@ window.GIAO_TIEP = [
    {
     "id": "gt-lop-hoc-4",
     "q": "Listen carefully.",
-    "qvi": "Lắng nghe nhé.",
+    "qvi": "Các con hãy lắng nghe cẩn thận.",
     "a": "I listen.",
-    "avi": "Con đang nghe.",
+    "avi": "Con đang lắng nghe.",
     "emoji": "👂"
    },
    {
     "id": "gt-lop-hoc-5",
     "q": "Raise your hand.",
-    "qvi": "Giơ tay lên.",
+    "qvi": "Các con hãy giơ tay lên.",
     "a": "Hand up!",
     "avi": "Con giơ tay!",
     "emoji": "✋"
@@ -475,7 +475,7 @@ window.GIAO_TIEP = [
     "q": "What color is the sky?",
     "qvi": "Bầu trời màu gì?",
     "a": "It's blue.",
-    "avi": "Màu xanh dương.",
+    "avi": "Nó màu xanh dương.",
     "emoji": "🌤️"
    },
    {
@@ -529,15 +529,15 @@ window.GIAO_TIEP = [
     "q": "Can you jump?",
     "qvi": "Bạn nhảy được không?",
     "a": "Yes, I can jump.",
-    "avi": "Được, mình nhảy được.",
+    "avi": "Có, mình nhảy được.",
     "emoji": "🤸"
    },
    {
     "id": "gt-cung-choi-5",
     "q": "Do you want to play ball?",
-    "qvi": "Chơi bóng nhé?",
+    "qvi": "Bạn có muốn chơi bóng không?",
     "a": "Yes, let's play ball.",
-    "avi": "Chơi bóng đi!",
+    "avi": "Có, cùng chơi bóng nào!",
     "emoji": "⚽"
    }
   ]
