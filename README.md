@@ -38,3 +38,4 @@ App web học từ vựng tiếng Anh theo chủ đề cho bé 5 tuổi: thẻ h
 - 2026-11-02: Bài kiểm tra: chọn đúng → đáp án nháy + mũi tên 👇, hình khác mờ, đọc lại từ/câu; đọc xong mới sang câu tiếp.
 - 2026-11-06: Kiểm tra nhanh hơn: hiện hình là đọc ngay; đúng → đọc từ 1 lần + pháo hoa + chuông nhỏ, đọc xong sang câu; sai → ✖ đỏ + tiếng ten ten nhỏ. Tải sẵn tiếng của bài.
 - 2026-11-06: Kiểm tra: thêm chữ câu hỏi trên nút loa (từ vựng: What do you hear?; Nói chuyện: câu hỏi của nhân vật), nút loa to hơn, chọn đúng hiện chữ tiếng Anh trên thẻ.
+- 2026-11-06: Kiểm tra từ vựng: câu hỏi theo chủ đề (vd Colors: What color is it?; Fruits: What fruit is it?) — trường hoi/hoivi trong tu-vung.js. Gắn ?v= vào file dữ liệu để điện thoại tải bản mới.

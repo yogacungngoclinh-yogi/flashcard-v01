@@ -2,7 +2,7 @@
 // Thêm chủ đề: thêm 1 khối mới cùng dạng. id phải KHÁC NHAU trên toàn bộ file.
 // Ảnh: hinh/<id>.png (chưa có thì dùng emoji). "ve" = gợi ý vẽ cho ChatGPT.
 window.TU_VUNG = [
-  { id: "animals", ten: "Animals", vi: "Con vật", emoji: "🐶", mau: "#FFB74D", ve: "con vật dễ thương, toàn thân", tu: [
+  { id: "animals", ten: "Animals", vi: "Con vật", hoi: "What animal is it?", hoivi: "Đây là con vật gì?", emoji: "🐶", mau: "#FFB74D", ve: "con vật dễ thương, toàn thân", tu: [
     { id: "dog", en: "dog", vi: "con chó", emoji: "🐶" },
     { id: "cat", en: "cat", vi: "con mèo", emoji: "🐱" },
     { id: "bird", en: "bird", vi: "con chim", emoji: "🐦" },
@@ -28,7 +28,7 @@ window.TU_VUNG = [
     { id: "snake", en: "snake", vi: "con rắn", emoji: "🐍" },
     { id: "turtle", en: "turtle", vi: "con rùa", emoji: "🐢" },
   ]},
-  { id: "sea", ten: "Sea Animals", vi: "Sinh vật biển", emoji: "🐳", mau: "#26C6DA", ve: "sinh vật biển dễ thương, toàn thân", tu: [
+  { id: "sea", ten: "Sea Animals", vi: "Sinh vật biển", hoi: "What sea animal is it?", hoivi: "Đây là con vật biển gì?", emoji: "🐳", mau: "#26C6DA", ve: "sinh vật biển dễ thương, toàn thân", tu: [
     { id: "whale", en: "whale", vi: "cá voi", emoji: "🐳" },
     { id: "shark", en: "shark", vi: "cá mập", emoji: "🦈" },
     { id: "dolphin", en: "dolphin", vi: "cá heo", emoji: "🐬" },
@@ -42,7 +42,7 @@ window.TU_VUNG = [
     { id: "squid", en: "squid", vi: "con mực", emoji: "🦑" },
     { id: "seahorse", en: "seahorse", vi: "cá ngựa", emoji: "🐠" },
   ]},
-  { id: "bugs", ten: "Bugs", vi: "Côn trùng", emoji: "🐞", mau: "#9CCC65", ve: "côn trùng hoạt hình thân thiện, không đáng sợ", tu: [
+  { id: "bugs", ten: "Bugs", vi: "Côn trùng", hoi: "What bug is it?", hoivi: "Đây là côn trùng gì?", emoji: "🐞", mau: "#9CCC65", ve: "côn trùng hoạt hình thân thiện, không đáng sợ", tu: [
     { id: "butterfly", en: "butterfly", vi: "con bướm", emoji: "🦋" },
     { id: "bee", en: "bee", vi: "con ong", emoji: "🐝" },
     { id: "ant", en: "ant", vi: "con kiến", emoji: "🐜" },
@@ -56,7 +56,7 @@ window.TU_VUNG = [
     { id: "cricket", en: "cricket", vi: "con dế", emoji: "🦗" },
     { id: "caterpillar", en: "caterpillar", vi: "sâu bướm", emoji: "🐛" },
   ]},
-  { id: "colors", ten: "Colors", vi: "Màu sắc", emoji: "🎨", mau: "#BA68C8", ve: "1 quả bóng bay đúng màu đó (riêng rainbow: vẽ cầu vồng)", tu: [
+  { id: "colors", ten: "Colors", vi: "Màu sắc", hoi: "What color is it?", hoivi: "Đây là màu gì?", emoji: "🎨", mau: "#BA68C8", ve: "1 quả bóng bay đúng màu đó (riêng rainbow: vẽ cầu vồng)", tu: [
     { id: "red", en: "red", vi: "màu đỏ", emoji: "🔴" },
     { id: "blue", en: "blue", vi: "màu xanh dương", emoji: "🔵" },
     { id: "yellow", en: "yellow", vi: "màu vàng", emoji: "🟡" },
@@ -72,7 +72,7 @@ window.TU_VUNG = [
     { id: "silver", en: "silver", vi: "màu bạc", emoji: "🥈" },
     { id: "rainbow", en: "rainbow", vi: "cầu vồng", emoji: "🌈" },
   ]},
-  { id: "shapes", ten: "Shapes", vi: "Hình khối", emoji: "🔷", mau: "#7986CB", ve: "1 hình phẳng tô màu tươi, có mặt cười nhỏ", tu: [
+  { id: "shapes", ten: "Shapes", vi: "Hình khối", hoi: "What shape is it?", hoivi: "Đây là hình gì?", emoji: "🔷", mau: "#7986CB", ve: "1 hình phẳng tô màu tươi, có mặt cười nhỏ", tu: [
     { id: "circle", en: "circle", vi: "hình tròn", emoji: "⚪" },
     { id: "square", en: "square", vi: "hình vuông", emoji: "🟥" },
     { id: "triangle", en: "triangle", vi: "hình tam giác", emoji: "🔺" },
@@ -84,7 +84,7 @@ window.TU_VUNG = [
     { id: "moon-shape", en: "crescent", vi: "hình trăng khuyết", emoji: "🌙" },
     { id: "cube", en: "cube", vi: "khối lập phương", emoji: "🧊" },
   ]},
-  { id: "numbers", ten: "Numbers", vi: "Số đếm", emoji: "🔢", mau: "#4FC3F7", ve: "đúng số lượng ngôi sao đó, xếp gọn, KHÔNG viết số", tu: [
+  { id: "numbers", ten: "Numbers", vi: "Số đếm", hoi: "How many stars?", hoivi: "Có mấy ngôi sao?", emoji: "🔢", mau: "#4FC3F7", ve: "đúng số lượng ngôi sao đó, xếp gọn, KHÔNG viết số", tu: [
     { id: "one", en: "one", vi: "số 1", emoji: "1️⃣" },
     { id: "two", en: "two", vi: "số 2", emoji: "2️⃣" },
     { id: "three", en: "three", vi: "số 3", emoji: "3️⃣" },
@@ -106,7 +106,7 @@ window.TU_VUNG = [
     { id: "nineteen", en: "nineteen", vi: "số 19", emoji: "1️⃣9️⃣" },
     { id: "twenty", en: "twenty", vi: "số 20", emoji: "2️⃣0️⃣" },
   ]},
-  { id: "fruits", ten: "Fruits", vi: "Trái cây", emoji: "🍎", mau: "#EF5350", ve: "trái cây tươi bóng, nguyên quả", tu: [
+  { id: "fruits", ten: "Fruits", vi: "Trái cây", hoi: "What fruit is it?", hoivi: "Đây là quả gì?", emoji: "🍎", mau: "#EF5350", ve: "trái cây tươi bóng, nguyên quả", tu: [
     { id: "apple", en: "apple", vi: "quả táo", emoji: "🍎" },
     { id: "banana", en: "banana", vi: "quả chuối", emoji: "🍌" },
     { id: "orange-fruit", en: "orange", vi: "quả cam", emoji: "🍊" },
@@ -126,7 +126,7 @@ window.TU_VUNG = [
     { id: "dragon-fruit", en: "dragon fruit", vi: "thanh long", emoji: "🐉" },
     { id: "avocado", en: "avocado", vi: "quả bơ", emoji: "🥑" },
   ]},
-  { id: "vegetables", ten: "Vegetables", vi: "Rau củ", emoji: "🥕", mau: "#66BB6A", ve: "rau củ tươi, nguyên củ/cây", tu: [
+  { id: "vegetables", ten: "Vegetables", vi: "Rau củ", hoi: "What vegetable is it?", hoivi: "Đây là rau củ gì?", emoji: "🥕", mau: "#66BB6A", ve: "rau củ tươi, nguyên củ/cây", tu: [
     { id: "carrot", en: "carrot", vi: "cà rốt", emoji: "🥕" },
     { id: "tomato", en: "tomato", vi: "cà chua", emoji: "🍅" },
     { id: "potato", en: "potato", vi: "khoai tây", emoji: "🥔" },
@@ -142,7 +142,7 @@ window.TU_VUNG = [
     { id: "garlic", en: "garlic", vi: "tỏi", emoji: "🧄" },
     { id: "peas", en: "peas", vi: "đậu Hà Lan", emoji: "🫛" },
   ]},
-  { id: "food", ten: "Food", vi: "Đồ ăn", emoji: "🍞", mau: "#FFD54F", ve: "món ăn ngon mắt, đặt trên đĩa/bát đơn giản", tu: [
+  { id: "food", ten: "Food", vi: "Đồ ăn", hoi: "What food is it?", hoivi: "Đây là món gì?", emoji: "🍞", mau: "#FFD54F", ve: "món ăn ngon mắt, đặt trên đĩa/bát đơn giản", tu: [
     { id: "rice", en: "rice", vi: "cơm", emoji: "🍚" },
     { id: "bread", en: "bread", vi: "bánh mì", emoji: "🍞" },
     { id: "egg", en: "egg", vi: "quả trứng", emoji: "🥚" },
@@ -162,7 +162,7 @@ window.TU_VUNG = [
     { id: "sandwich", en: "sandwich", vi: "bánh kẹp", emoji: "🥪" },
     { id: "meat", en: "meat", vi: "thịt", emoji: "🥩" },
   ]},
-  { id: "body", ten: "My Body", vi: "Cơ thể", emoji: "🙂", mau: "#81C784", ve: "bé dễ thương, bộ phận cần học được làm nổi bật và to rõ", tu: [
+  { id: "body", ten: "My Body", vi: "Cơ thể", hoi: "What body part is it?", hoivi: "Đây là bộ phận nào?", emoji: "🙂", mau: "#81C784", ve: "bé dễ thương, bộ phận cần học được làm nổi bật và to rõ", tu: [
     { id: "eye", en: "eye", vi: "con mắt", emoji: "👁️" },
     { id: "ear", en: "ear", vi: "cái tai", emoji: "👂" },
     { id: "nose", en: "nose", vi: "cái mũi", emoji: "👃" },
@@ -182,7 +182,7 @@ window.TU_VUNG = [
     { id: "back", en: "back", vi: "cái lưng", emoji: "🧍" },
     { id: "shoulder", en: "shoulder", vi: "vai", emoji: "🤷" },
   ]},
-  { id: "family", ten: "Family", vi: "Gia đình", emoji: "👨‍👩‍👧", mau: "#F06292", ve: "người Việt/châu Á thân thiện, đang cười, toàn thân", tu: [
+  { id: "family", ten: "Family", vi: "Gia đình", hoi: "Who is it?", hoivi: "Đây là ai?", emoji: "👨‍👩‍👧", mau: "#F06292", ve: "người Việt/châu Á thân thiện, đang cười, toàn thân", tu: [
     { id: "mom", en: "mom", vi: "mẹ", emoji: "👩" },
     { id: "dad", en: "dad", vi: "bố", emoji: "👨" },
     { id: "baby", en: "baby", vi: "em bé", emoji: "👶" },
@@ -198,7 +198,7 @@ window.TU_VUNG = [
     { id: "boy", en: "boy", vi: "bé trai", emoji: "👦" },
     { id: "girl", en: "girl", vi: "bé gái", emoji: "👧" },
   ]},
-  { id: "feelings", ten: "Feelings", vi: "Cảm xúc", emoji: "😊", mau: "#FFCA28", ve: "khuôn mặt bé thể hiện rõ cảm xúc đó", tu: [
+  { id: "feelings", ten: "Feelings", vi: "Cảm xúc", hoi: "How do you feel?", hoivi: "Bạn cảm thấy thế nào?", emoji: "😊", mau: "#FFCA28", ve: "khuôn mặt bé thể hiện rõ cảm xúc đó", tu: [
     { id: "happy", en: "happy", vi: "vui", emoji: "😄" },
     { id: "sad", en: "sad", vi: "buồn", emoji: "😢" },
     { id: "angry", en: "angry", vi: "tức giận", emoji: "😠" },
@@ -212,7 +212,7 @@ window.TU_VUNG = [
     { id: "silly", en: "silly", vi: "tinh nghịch", emoji: "🤪" },
     { id: "shy", en: "shy", vi: "ngại ngùng", emoji: "😳" },
   ]},
-  { id: "actions", ten: "Actions", vi: "Hành động", emoji: "🏃", mau: "#FF8A65", ve: "bé đang làm hành động đó, toàn thân, động tác rõ", tu: [
+  { id: "actions", ten: "Actions", vi: "Hành động", hoi: "What are you doing?", hoivi: "Bạn đang làm gì?", emoji: "🏃", mau: "#FF8A65", ve: "bé đang làm hành động đó, toàn thân, động tác rõ", tu: [
     { id: "run", en: "run", vi: "chạy", emoji: "🏃" },
     { id: "jump", en: "jump", vi: "nhảy", emoji: "🤸" },
     { id: "walk", en: "walk", vi: "đi bộ", emoji: "🚶" },
@@ -232,7 +232,7 @@ window.TU_VUNG = [
     { id: "kick", en: "kick", vi: "đá", emoji: "⚽" },
     { id: "wash", en: "wash", vi: "rửa", emoji: "🧼" },
   ]},
-  { id: "clothes", ten: "Clothes", vi: "Quần áo", emoji: "👕", mau: "#AB47BC", ve: "1 món đồ màu tươi, trải phẳng hoặc dựng đứng", tu: [
+  { id: "clothes", ten: "Clothes", vi: "Quần áo", hoi: "What do you wear?", hoivi: "Bạn mặc gì?", emoji: "👕", mau: "#AB47BC", ve: "1 món đồ màu tươi, trải phẳng hoặc dựng đứng", tu: [
     { id: "shirt", en: "shirt", vi: "áo sơ mi", emoji: "👔" },
     { id: "t-shirt", en: "T-shirt", vi: "áo thun", emoji: "👕" },
     { id: "pants", en: "pants", vi: "quần dài", emoji: "👖" },
@@ -249,7 +249,7 @@ window.TU_VUNG = [
     { id: "glasses", en: "glasses", vi: "kính mắt", emoji: "👓" },
     { id: "bag", en: "bag", vi: "cái túi / cặp", emoji: "🎒" },
   ]},
-  { id: "toys", ten: "Toys", vi: "Đồ chơi", emoji: "🧸", mau: "#EC407A", ve: "đồ chơi màu sắc tươi vui", tu: [
+  { id: "toys", ten: "Toys", vi: "Đồ chơi", hoi: "What toy is it?", hoivi: "Đây là đồ chơi gì?", emoji: "🧸", mau: "#EC407A", ve: "đồ chơi màu sắc tươi vui", tu: [
     { id: "ball", en: "ball", vi: "quả bóng", emoji: "⚽" },
     { id: "doll", en: "doll", vi: "búp bê", emoji: "🪆" },
     { id: "teddy-bear", en: "teddy bear", vi: "gấu bông", emoji: "🧸" },
@@ -265,7 +265,7 @@ window.TU_VUNG = [
     { id: "swing", en: "swing", vi: "xích đu", emoji: "🎠" },
     { id: "crayon", en: "crayon", vi: "bút sáp màu", emoji: "🖍️" },
   ]},
-  { id: "vehicles", ten: "Vehicles", vi: "Xe cộ", emoji: "🚗", mau: "#42A5F5", ve: "phương tiện hoạt hình bo tròn, nhìn nghiêng, màu tươi", tu: [
+  { id: "vehicles", ten: "Vehicles", vi: "Xe cộ", hoi: "What vehicle is it?", hoivi: "Đây là xe gì?", emoji: "🚗", mau: "#42A5F5", ve: "phương tiện hoạt hình bo tròn, nhìn nghiêng, màu tươi", tu: [
     { id: "car", en: "car", vi: "ô tô", emoji: "🚗" },
     { id: "bus", en: "bus", vi: "xe buýt", emoji: "🚌" },
     { id: "bike", en: "bike", vi: "xe đạp", emoji: "🚲" },
@@ -283,7 +283,7 @@ window.TU_VUNG = [
     { id: "rocket", en: "rocket", vi: "tên lửa", emoji: "🚀" },
     { id: "tractor", en: "tractor", vi: "máy cày", emoji: "🚜" },
   ]},
-  { id: "home", ten: "My Home", vi: "Đồ trong nhà", emoji: "🏠", mau: "#8D6E63", ve: "1 đồ vật trong nhà, kiểu dáng đơn giản, màu ấm", tu: [
+  { id: "home", ten: "My Home", vi: "Đồ trong nhà", hoi: "What is it?", hoivi: "Đây là đồ vật gì?", emoji: "🏠", mau: "#8D6E63", ve: "1 đồ vật trong nhà, kiểu dáng đơn giản, màu ấm", tu: [
     { id: "house", en: "house", vi: "ngôi nhà", emoji: "🏠" },
     { id: "door", en: "door", vi: "cửa ra vào", emoji: "🚪" },
     { id: "window", en: "window", vi: "cửa sổ", emoji: "🪟" },
@@ -301,7 +301,7 @@ window.TU_VUNG = [
     { id: "pillow", en: "pillow", vi: "cái gối", emoji: "🛌" },
     { id: "phone", en: "phone", vi: "điện thoại", emoji: "📱" },
   ]},
-  { id: "school", ten: "School", vi: "Trường học", emoji: "🏫", mau: "#5C6BC0", ve: "đồ dùng học tập màu tươi", tu: [
+  { id: "school", ten: "School", vi: "Trường học", hoi: "What is it?", hoivi: "Đây là đồ dùng gì?", emoji: "🏫", mau: "#5C6BC0", ve: "đồ dùng học tập màu tươi", tu: [
     { id: "book", en: "book", vi: "quyển sách", emoji: "📕" },
     { id: "pen", en: "pen", vi: "bút mực", emoji: "🖊️" },
     { id: "pencil", en: "pencil", vi: "bút chì", emoji: "✏️" },
@@ -316,7 +316,7 @@ window.TU_VUNG = [
     { id: "notebook", en: "notebook", vi: "quyển vở", emoji: "📓" },
     { id: "school", en: "school", vi: "trường học", emoji: "🏫" },
   ]},
-  { id: "jobs", ten: "Jobs", vi: "Nghề nghiệp", emoji: "👩‍⚕️", mau: "#26A69A", ve: "người Việt/châu Á mặc đồng phục nghề đó, toàn thân, thân thiện", tu: [
+  { id: "jobs", ten: "Jobs", vi: "Nghề nghiệp", hoi: "What job is it?", hoivi: "Đây là nghề gì?", emoji: "👩‍⚕️", mau: "#26A69A", ve: "người Việt/châu Á mặc đồng phục nghề đó, toàn thân, thân thiện", tu: [
     { id: "doctor", en: "doctor", vi: "bác sĩ", emoji: "👩‍⚕️" },
     { id: "nurse", en: "nurse", vi: "y tá", emoji: "🧑‍⚕️" },
     { id: "police", en: "police officer", vi: "cảnh sát", emoji: "👮" },
@@ -330,7 +330,7 @@ window.TU_VUNG = [
     { id: "astronaut", en: "astronaut", vi: "phi hành gia", emoji: "🧑‍🚀" },
     { id: "artist", en: "artist", vi: "họa sĩ", emoji: "🧑‍🎨" },
   ]},
-  { id: "nature", ten: "Nature & Weather", vi: "Thiên nhiên", emoji: "🌤️", mau: "#29B6F6", ve: "cảnh/vật thiên nhiên đơn giản, tươi sáng", tu: [
+  { id: "nature", ten: "Nature & Weather", vi: "Thiên nhiên", hoi: "What is it?", hoivi: "Đây là gì?", emoji: "🌤️", mau: "#29B6F6", ve: "cảnh/vật thiên nhiên đơn giản, tươi sáng", tu: [
     { id: "sun", en: "sun", vi: "mặt trời", emoji: "☀️" },
     { id: "moon", en: "moon", vi: "mặt trăng", emoji: "🌙" },
     { id: "star", en: "star", vi: "ngôi sao", emoji: "🌟" },

@@ -146,7 +146,7 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
     <div class="tien-do"><b id="tien-do"></b></div>
   </div>
   <div class="cau-hoi">
-    <div class="cau-chu"><div class="en">What do you hear?</div><div class="vi">Bé nghe thấy gì?</div></div>
+    <div class="cau-chu"><div class="en" id="kt-hoi"></div><div class="vi" id="kt-hoivi"></div></div>
     <button class="nut-tron" id="nghe-lai" aria-label="Nghe lại">🔊</button>
     <p>Chạm loa để nghe lại</p>
   </div>
@@ -191,8 +191,8 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
   </div>
 </section>
 
-<script src="tu-vung.js"></script>
-<script src="giao-tiep.js"></script>
+<script src="tu-vung.js?v=20261106"></script>
+<script src="giao-tiep.js?v=20261106"></script>
 <script>
 const $ = s => document.querySelector(s);
 const SO_CAU = 8;
@@ -332,6 +332,7 @@ function batDauKT() {
   kieu = "tv";
   cau = tron(chuDe.tu).slice(0, SO_CAU); soCau = 0; dungLanDau = 0;
   napAm(cau.map(t => t.id));
+  $("#kt-hoi").textContent = chuDe.hoi || "What is it?"; $("#kt-hoivi").textContent = chuDe.hoivi || "Đây là gì?";
   sang("kiem-tra"); veCau();
 }
 function veCau() {
