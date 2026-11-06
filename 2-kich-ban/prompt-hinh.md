@@ -989,11 +989,13 @@ Mỗi truyện: mở **1 chat mới**, dán nguyên khung bên dưới. ChatGPT 
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "The Lion and the Mouse" (Sư tử và chuột nhắt). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Sư tử: sư tử đực to khoẻ, bờm xù màu cam vàng, mắt to hiền, mũi nâu. Chuột: chuột nhắt xám bé xíu, tai tròn hồng to, đuôi dài, mắt đen tròn long lanh.
@@ -1013,11 +1015,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "The Tortoise and the Hare" (Rùa và thỏ). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Thỏ: thỏ trắng lông xù, tai dài, áo gi-lê đỏ, dáng nhanh nhẹn. Rùa: rùa xanh lá, mai nâu có hoa văn, khăn quàng vàng, mắt hiền.
@@ -1036,11 +1040,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "The Boy Who Cried Wolf" (Cậu bé chăn cừu nói dối). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Cậu bé chăn cừu: bé trai Việt Nam 8 tuổi, tóc đen ngắn, áo xanh dương, quần nâu, cầm gậy chăn cừu. Đàn cừu trắng lông bông. Dân làng: vài người lớn mặc áo nông dân.
@@ -1060,11 +1066,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "The Ant and the Grasshopper" (Kiến và châu chấu). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Kiến: kiến đỏ nâu chăm chỉ, đội mũ nhỏ, đeo túi. Châu chấu: châu chấu xanh lá cao gầy, đội mũ, cầm đàn vĩ cầm nhỏ.
@@ -1083,11 +1091,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "The Clever Crow" (Con quạ thông minh). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Quạ: quạ đen bóng, mắt to thông minh, mỏ vàng cam. Bình: bình đất nung cổ cao màu nâu đỏ.
@@ -1106,11 +1116,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "Not Yet!" (Chưa được… nhưng sắp rồi!). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Mia: bé gái Việt Nam 6 tuổi, tóc buộc hai bên, áo phông hồng, mũ bảo hiểm tím. Mẹ: phụ nữ Việt Nam trẻ, tóc dài, áo xanh lá. Xe đạp nhỏ màu vàng.
@@ -1129,11 +1141,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "Oops! A Mistake" (Ối! Con làm sai rồi). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Tom: bé trai Việt Nam 6 tuổi, tóc đen xoăn nhẹ, đeo tạp dề vẽ màu cam. Bức tranh con mèo trên giá vẽ.
@@ -1152,11 +1166,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "Sharing Is Caring" (Chia sẻ là yêu thương). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Lan: bé gái Việt Nam 6 tuổi, tóc ngắn có kẹp nơ đỏ, váy vàng. Em trai: bé trai 4 tuổi, tóc đen, áo xanh lá. Gấu bông nâu to có nơ hồng.
@@ -1175,11 +1191,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "Crossing the Road" (Qua đường an toàn). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Ben: bé trai Việt Nam 6 tuổi, đội mũ lưỡi trai đỏ, đeo ba lô xanh. Bố: đàn ông Việt Nam, áo sơ mi xanh nhạt. Phố có vạch kẻ đường và đèn giao thông.
@@ -1198,11 +1216,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "Clean Hands, Happy Me" (Tay sạch, bé khỏe). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Bé dẫn chuyện: bé gái Việt Nam 5 tuổi, tóc ngang vai, áo phông vàng. Vi trùng: những quả bóng nhỏ xanh lá có mặt nghịch ngợm dễ thương (không đáng sợ).
@@ -1222,11 +1242,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "Where Does Rain Come From?" (Mưa từ đâu đến?). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Giọt nước: giọt nước xanh dương nhỏ có mắt to và nụ cười dễ thương. Mặt trời: mặt trời vàng có khuôn mặt cười.
@@ -1245,11 +1267,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "Eat a Rainbow" (Ăn cầu vồng). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Bé dẫn chuyện: bé trai Việt Nam 5 tuổi, tóc đen ngắn, áo phông trắng, tạp dề xanh lá.
@@ -1268,11 +1292,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "The Little Caterpillar" (Chú sâu nhỏ). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Coco: sâu xanh lá tươi, thân tròn nhiều đốt, mắt to tròn, hai râu nhỏ, má hồng. Khi thành bướm: vẫn khuôn mặt Coco, cánh bướm cam hồng tím rực rỡ.
@@ -1291,11 +1317,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "The Brave Little Chick" (Chú gà con dũng cảm). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Gà con: gà con lông vàng tơ, mắt to tròn đen, mỏ cam nhỏ. Gà mẹ: gà mái nâu đỏ, mào đỏ, vẻ hiền từ.
@@ -1314,11 +1342,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "My Snow Friend" (Người bạn tuyết). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Mai: bé gái Việt Nam 6 tuổi, mũ len hồng, áo khoác đỏ, găng tay trắng. Người tuyết: người tuyết nhỏ tròn trắng, mắt đen, mũi cà rốt, khăn quàng đỏ, mũ xô đỏ.
@@ -1338,11 +1368,13 @@ Vẽ các ảnh sau:
 ```
 Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện "Brave on Stage" (Tự tin trên sân khấu). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.
 
-Phong cách (giữ y hệt cho mọi ảnh):
+Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện.
 
 Nhân vật (giữ y hệt ở mọi ảnh): Nam: bé trai Việt Nam 7 tuổi, tóc đen ngắn, áo sơ mi trắng, nơ đỏ. Cô giáo: phụ nữ Việt Nam trẻ, tóc búi, áo dài xanh nhạt. Sân khấu lớp học có rèm đỏ và micro.

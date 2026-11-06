@@ -83,11 +83,13 @@ print(f"ABC: thiếu {len(abc_can)} ảnh")
 def doc_bien(ten, bien):
     t = (GOC / ten).read_text(encoding="utf-8").split(bien, 1)[1]
     return json.loads(t.split(";\nwindow.", 1)[0].rstrip().rstrip(";"))
-TT_STYLE = """Phong cách (giữ y hệt cho mọi ảnh):
+TT_STYLE = """Phong cách (giữ y hệt cho mọi ảnh) — tranh truyện tranh thiếu nhi SINH ĐỘNG như sách truyện cho bé:
 - Ảnh NGANG tỉ lệ 3:2.
-- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
-- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
-- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Tranh hoạt hình vẽ màu kiểu sách truyện thiếu nhi hiện đại: nét viền mềm rõ ràng, màu rực rỡ tươi sáng (hồng, vàng, xanh trời, xanh lá, tím), ánh nắng ấm.
+- Nhân vật mắt to tròn long lanh, má hồng, biểu cảm thật rõ và cường điệu (vui, buồn, sợ, ngạc nhiên), dáng điệu đang chuyển động.
+- Khung cảnh đầy chi tiết dễ thương: hoa, cỏ, mây trắng, cây, bướm, trái tim nhỏ, ngôi sao lấp lánh, nốt nhạc… hợp với cảnh.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu chữ viết nào trong ảnh (app tự thêm số khung và lời thoại song ngữ).
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để góc trên bên trái và dải 1/5 phía dưới là nền đơn giản vì số khung và ô chữ sẽ đè lên đó.
 - Người là người Việt Nam/châu Á, thân thiện."""
 tr_phan = ["## 📖 Truyện tranh (bé 5 tuổi)", "",
            "Mỗi truyện: mở **1 chat mới**, dán nguyên khung bên dưới. ChatGPT vẽ từng ảnh; vẽ xong 1 ảnh thì nhắn `tiếp` để vẽ ảnh sau. Nhân vật phải giống nhau ở mọi khung — nếu khác, nhắn `vẽ lại, giữ nhân vật giống ảnh bìa`.", ""]
