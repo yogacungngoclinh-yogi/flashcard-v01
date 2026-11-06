@@ -48,9 +48,17 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 /* Kiểm tra */
 .tien-do{height:16px;background:#eee3d2;border-radius:99px;overflow:hidden;flex:1}
 .tien-do b{display:block;height:100%;width:0;background:var(--mau);border-radius:99px;transition:width .4s}
-.cau-hoi{text-align:center;padding:12px 0 4px}
-.cau-hoi .nut-tron{width:110px;height:110px;font-size:54px;margin:0 auto;background:var(--mau);color:#fff}
-.cau-hoi p{margin:8px 0 0;color:var(--phu);font-size:18px}
+.cau-hoi{text-align:center;padding:6px 0 4px}
+.cau-hoi .nut-tron{width:min(36vw,150px);height:min(36vw,150px);font-size:min(18vw,76px);margin:6px auto 0;background:var(--mau);color:#fff}
+.cau-hoi p{margin:6px 0 0;color:var(--phu);font-size:16px}
+.cau-chu{line-height:1.1}
+.cau-chu .en{font-size:clamp(26px,7.5vw,40px);font-weight:800;color:var(--chu)}
+.cau-chu .vi{font-size:clamp(18px,5vw,26px);font-weight:800;color:var(--vi);margin-top:2px}
+.hang-hoi{display:flex;align-items:center;justify-content:center;gap:10px;max-width:560px;margin:0 auto}
+.hang-hoi .nv-nho{font-size:52px;line-height:1;flex:none}
+.hang-hoi .nv-nho img{height:72px;width:auto;border-radius:16px}
+.hang-hoi .cau-chu{text-align:left}
+.nhan-dung{position:absolute;left:6px;right:6px;bottom:6px;background:var(--dung);color:#fff;border-radius:16px;padding:2px 6px;font-size:clamp(22px,6.5vw,34px);font-weight:800;line-height:1.15;text-align:center;z-index:2;animation:vao .3s ease-out}
 .dap-an{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-content:center;min-height:0}
 @media (max-aspect-ratio:3/4){.dap-an{grid-template-columns:1fr 1fr}.dap-an .lua-chon:nth-child(3){grid-column:1/3;width:50%;justify-self:center}}
 .lua-chon{background:var(--the);border-radius:28px;box-shadow:var(--bong);aspect-ratio:1;display:grid;place-items:center;padding:10%;border:5px solid transparent;transition:opacity .3s}
@@ -138,8 +146,9 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
     <div class="tien-do"><b id="tien-do"></b></div>
   </div>
   <div class="cau-hoi">
+    <div class="cau-chu"><div class="en">What do you hear?</div><div class="vi">Bé nghe thấy gì?</div></div>
     <button class="nut-tron" id="nghe-lai" aria-label="Nghe lại">🔊</button>
-    <p>Nghe và chạm vào hình đúng</p>
+    <p>Chạm loa để nghe lại</p>
   </div>
   <div class="dap-an" id="dap-an"></div>
 </section>
@@ -164,9 +173,9 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
     <div class="tien-do"><b id="gt-tien-do"></b></div>
   </div>
   <div class="cau-hoi">
-    <div class="nv-to" id="gt-kt-nv" style="font-size:64px;margin-bottom:6px"></div>
+    <div class="hang-hoi"><div class="nv-nho" id="gt-kt-nv"></div><div class="cau-chu"><div class="en" id="gt-kt-q"></div><div class="vi" id="gt-kt-qvi"></div></div></div>
     <button class="nut-tron" id="gt-nghe-lai" aria-label="Nghe lại">🔊</button>
-    <p>Nghe và chọn câu trả lời đúng</p>
+    <p>Chọn câu trả lời đúng</p>
   </div>
   <div class="dap-an chu" id="gt-dap-an"></div>
 </section>
@@ -340,7 +349,8 @@ $("#dap-an").onclick = e => {
   const b = e.target.closest(".lua-chon"); if (!b || khoa || b.classList.contains("sai")) return;
   const tu = cau[soCau];
   if (b.dataset.id === tu.id) {
-    khoa = true; b.classList.add("dung"); $("#dap-an").classList.add("xong"); if (!saiCauNay) dungLanDau++;
+    khoa = true; b.classList.add("dung");
+    b.insertAdjacentHTML("beforeend", `<span class="nhan-dung">${tu.en}</span>`); $("#dap-an").classList.add("xong"); if (!saiCauNay) dungLanDau++;
     phao(12); tiengDung();
     phatLanLuot([[tu.id, tu.en]], () => {
       if (!$("#kiem-tra").classList.contains("hien")) return;
@@ -413,6 +423,7 @@ function veCauGt() {
   const lua = tron([l, ...tron(bai.luot.filter(x => x.id !== l.id)).slice(0, 2)]);
   $("#gt-tien-do").style.width = (soGt / cauGt.length * 100) + "%";
   $("#gt-kt-nv").innerHTML = anhGt("gt-" + bai.id + "-nv", bai.nv.emoji);
+  $("#gt-kt-q").textContent = l.q; $("#gt-kt-qvi").textContent = l.qvi;
   $("#gt-dap-an").innerHTML = lua.map(x => `<button class="lua-chon" data-id="${x.id}"><span class="em" style="${[...x.emoji].length > 3 ? "font-size:min(7vw,30px);white-space:nowrap" : ""}">${anhGt(x.id, x.emoji)}</span><b>${x.a}</b></button>`).join("");
   setTimeout(() => { if (cauGt[soGt] === l && !khoaGt) phat(l.id + "-q", l.q); }, 120);
 }
