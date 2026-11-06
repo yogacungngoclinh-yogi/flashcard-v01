@@ -22,6 +22,7 @@ def viec():
         for tr in t["trang"]:
             ds += [(c["id"], c["en"], "-15%") for c in tr["cau"]]
         ds.append((t["baiHoc"]["id"], t["baiHoc"]["en"], "-15%"))
+        ds.append((f"tr-{t['id']}-ten", t["ten"], "-15%"))
     for b in doc_js("truyen.js", "window.BAI_DOC ="):
         toc = "-15%" if b["cap"] == 1 else "-8%"
         for tr in b["trang"]:

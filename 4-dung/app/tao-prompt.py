@@ -79,22 +79,41 @@ else:
 RA.write_text(RA.read_text(encoding="utf-8") + "\n" + "\n".join(phan_abc), encoding="utf-8")
 print(f"ABC: thiếu {len(abc_can)} ảnh")
 
-# ---- Truyện + Bài đọc: 1 ảnh mỗi trang ----
+# ---- Truyện tranh (bé 5 tuổi): 1 chat ChatGPT / truyện, bìa + từng khung ----
 def doc_bien(ten, bien):
     t = (GOC / ten).read_text(encoding="utf-8").split(bien, 1)[1]
     return json.loads(t.split(";\nwindow.", 1)[0].rstrip().rstrip(";"))
-TR_STYLE = """Vẽ tranh minh hoạ truyện thiếu nhi cho bé 5–10 tuổi. Mỗi mục = 1 ảnh riêng, cùng phong cách, nhân vật giữ y hệt nhau giữa các trang:
-- Ảnh vuông 1:1, KHÔNG có chữ trong ảnh.
+TT_STYLE = """Phong cách (giữ y hệt cho mọi ảnh):
+- Ảnh NGANG tỉ lệ 3:2.
+- TUYỆT ĐỐI KHÔNG có chữ, số, bong bóng thoại hay ký hiệu nào trong ảnh (app sẽ tự thêm số khung và lời thoại song ngữ).
+- Hoạt hình 3D mềm mại kiểu phim hoạt hình thiếu nhi, nhân vật mắt to tròn dễ thương, biểu cảm rõ, màu tươi sáng, ánh sáng ấm, nền đơn giản sáng màu.
+- Nhân vật chính nằm ở giữa/nửa trên khung. Để trống góc trên bên trái và dải 1/5 phía dưới (chỉ là nền đơn giản) vì số khung và ô chữ sẽ đè lên đó.
+- Người là người Việt Nam/châu Á, thân thiện."""
+tr_phan = ["## 📖 Truyện tranh (bé 5 tuổi)", "",
+           "Mỗi truyện: mở **1 chat mới**, dán nguyên khung bên dưới. ChatGPT vẽ từng ảnh; vẽ xong 1 ảnh thì nhắn `tiếp` để vẽ ảnh sau. Nhân vật phải giống nhau ở mọi khung — nếu khác, nhắn `vẽ lại, giữ nhân vật giống ảnh bìa`.", ""]
+tr_tong = tr_thieu = 0
+for t in doc_bien("truyen.js", "window.TRUYEN ="):
+    muc = [(t["bia"]["anh"], f"ẢNH BÌA: {t['bia']['ve']}. Chừa trống 1/3 phía dưới (nền đơn giản) để app đặt tên truyện.")]
+    muc += [(p["anh"], f"KHUNG {n}: {p['ve']}. (Lời truyện: \"{' '.join(c['en'] for c in p['cau'])}\")") for n, p in enumerate(t["trang"], 1)]
+    tr_tong += len(muc); can = [m for m in muc if m[0] not in co_san]; tr_thieu += len(can)
+    tr_phan += [f"### {t['emoji']} {t['ten']} — {t['vi']} ({len(muc) - len(can)}/{len(muc)} ảnh)", ""]
+    if not can: tr_phan += ["Đủ ảnh ✅", ""]; continue
+    dong = "\n".join(f"{j}. {mo} → đặt tên file: {id_}.png" for j, (id_, mo) in enumerate(can, 1))
+    tr_phan += ["```", f"Vẽ bộ tranh truyện tranh thiếu nhi cho bé 5 tuổi, truyện \"{t['ten']}\" ({t['vi']}). Mỗi mục = 1 ảnh riêng, vẽ lần lượt từng ảnh trong cuộc trò chuyện này.",
+                "", TT_STYLE, "", f"Nhân vật (giữ y hệt ở mọi ảnh): {t['nv']}", "", "Vẽ các ảnh sau:", dong, "```", ""]
+
+# ---- Bài đọc (bé 10 tuổi): 1 ảnh mỗi trang ----
+TR_STYLE = """Vẽ tranh minh hoạ bài đọc tiếng Anh cho bé 8–10 tuổi. Mỗi mục = 1 ảnh riêng, cùng phong cách, nhân vật giữ y hệt nhau giữa các trang:
+- Ảnh ngang 3:2, KHÔNG có chữ trong ảnh.
 - Hoạt hình 3D mềm mại kiểu phim hoạt hình, màu tươi sáng, nền đơn giản sáng màu (không phải nền trắng trơn), bố cục rõ ràng.
 - Người là người Việt Nam/châu Á, thân thiện."""
-tr_phan = ["## 📖 Truyện & 📰 Bài đọc", ""]
-tr_tong = tr_thieu = 0
-for t in doc_bien("truyen.js", "window.TRUYEN =") + doc_bien("truyen.js", "window.BAI_DOC ="):
+tr_phan += ["## 📰 Bài đọc (bé 10 tuổi)", ""]
+for t in doc_bien("truyen.js", "window.BAI_DOC ="):
     muc = [(p["anh"], " ".join(c["vi"] for c in p["cau"])) for p in t["trang"] if p.get("anh")]
     tr_tong += len(muc); can = [m for m in muc if m[0] not in co_san]; tr_thieu += len(can)
     tr_phan += [f"### {t['ten']} — {t['vi']} ({len(muc) - len(can)}/{len(muc)} ảnh)", ""]
     if not can: tr_phan += ["Đủ ảnh ✅", ""]; continue
     dong = "\n".join(f"{j}. Cảnh: {mo} → đặt tên file: {id_}.png" for j, (id_, mo) in enumerate(can, 1))
-    tr_phan += ["```", TR_STYLE, "", f"Truyện/bài: {t['ten']} ({t['vi']}). Vẽ các cảnh sau:", dong, "```", ""]
+    tr_phan += ["```", TR_STYLE, "", f"Bài đọc: {t['ten']} ({t['vi']}). Vẽ các cảnh sau:", dong, "```", ""]
 RA.write_text(RA.read_text(encoding="utf-8") + "\n" + "\n".join(tr_phan), encoding="utf-8")
 print(f"Truyen + bai doc: {tr_tong} anh, thieu {tr_thieu}")

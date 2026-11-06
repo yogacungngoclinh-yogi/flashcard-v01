@@ -65,6 +65,29 @@
 .album div{aspect-ratio:1;background:var(--the);border-radius:20px;display:grid;place-items:center;font-size:40px;box-shadow:0 4px 0 rgba(59,47,74,.12)}
 .album div.chua{font-size:20px;color:var(--phu);opacity:.5}
 .sticker-to{font-size:min(40vw,170px);animation:vao .6s cubic-bezier(.3,1.6,.6,1)}
+.tt-trang{flex:1;min-height:0;overflow-y:auto;display:grid;grid-template-columns:1fr;grid-auto-rows:max-content;gap:18px;align-content:start;width:100%;max-width:1000px;margin:0 auto;padding:4px 4px 28px}
+@media(min-width:760px){.tt-trang{grid-template-columns:1fr 1fr}.tt-bia,.tt-bh,.tt-cuoi{grid-column:1/-1}}
+.tt-o,.tt-bia,.tt-bh{background:var(--the);border:4px solid #3B2F4A;border-radius:24px;overflow:hidden;box-shadow:var(--bong);transition:border-color .2s,box-shadow .2s}
+.tt-o.dang,.tt-bia.dang,.tt-bh.dang{border-color:var(--mau);box-shadow:0 0 0 6px color-mix(in srgb,var(--mau) 35%,transparent)}
+.tt-anh{position:relative;aspect-ratio:3/2;background:color-mix(in srgb,var(--mau) 22%,#fff);display:grid;place-items:center;font-size:min(26vw,120px);cursor:pointer}
+.tt-anh img{width:100%;height:100%;object-fit:cover}
+.tt-so{position:absolute;top:10px;left:10px;width:54px;height:54px;border-radius:50%;background:var(--mau);color:#fff;font-size:30px;font-weight:800;display:grid;place-items:center;border:4px solid #fff;box-shadow:0 3px 0 rgba(0,0,0,.25);font-style:normal}
+.tt-o.da .tt-so{background:#43A047}
+.tt-chu{position:relative;margin-top:-28px;padding:0 12px 14px;display:flex;flex-direction:column;gap:12px}
+.tt-cau{position:relative;background:#FFF6D8;border:3px solid #3B2F4A;border-radius:16px;padding:10px 14px;text-align:left;cursor:pointer}
+.tt-cau.thoai{background:#fff;border-radius:30px;margin-top:10px}
+.tt-cau.thoai::before{content:"";position:absolute;top:-18px;left:40px;border:16px solid transparent;border-bottom-color:#3B2F4A;border-top:0}
+.tt-cau.thoai::after{content:"";position:absolute;top:-12px;left:44px;border:12px solid transparent;border-bottom-color:#fff;border-top:0}
+.tt-cau.dang{background:#FFFBEA;outline:5px solid var(--mau);outline-offset:-1px}
+.tt-cau .en{margin:0;font-size:clamp(25px,6.6vw,34px);font-weight:800;line-height:1.28}
+.tt-cau .vi{margin:4px 0 0;font-size:clamp(20px,5.2vw,26px);font-weight:700;color:var(--vi);line-height:1.25}
+
+.tt-tieu{position:absolute;left:0;right:0;bottom:0;padding:12px 16px 14px;background:linear-gradient(transparent,rgba(255,255,255,.95) 35%);text-align:center}
+.tt-tieu .en{margin:0;font-size:clamp(32px,9vw,52px);font-weight:800;color:var(--mau);-webkit-text-stroke:1px #3B2F4A;line-height:1.1}
+.tt-tieu .vi{margin:2px 0 0;font-size:clamp(20px,5.5vw,28px);font-weight:800;color:var(--vi)}
+.tt-bh{background:#FFF3F6;padding:12px}
+.tt-bh h3{margin:0 0 8px;font-size:22px;color:#D81B60}
+.tt-cuoi{display:flex;justify-content:center;padding:6px 0 10px}
 </style>`);
 
   document.body.insertAdjacentHTML("beforeend", `
@@ -108,6 +131,10 @@
 <section class="man" id="album">
   <div class="dau"><button class="nut-tron" data-ve aria-label="Về trang chủ">🏠</button><h1>🎖️ Album sticker</h1></div>
   <div class="album" id="album-luoi"></div>
+</section>
+<section class="man" id="tt">
+  <div class="dau"><button class="nut-tron" data-ve aria-label="Về trang chủ">🏠</button><h1 id="tt-ten"></h1><button class="nut-tron" id="tt-tu" aria-label="Tự đọc / Dừng">⏸️</button></div>
+  <div class="tt-trang" id="tt-trang"></div>
 </section>`);
 
   // ---------- màn kết thúc chung ----------
@@ -122,11 +149,75 @@
 
   // ============ TRUYỆN + BÀI ĐỌC (karaoke) ============
   let docVat, docTrang = [], docSo = 0, docXong = null, docTok = 0, docRaf = 0;
+  // ---- Truyện tranh (bé 5 tuổi): khung đánh số + ô thoại song ngữ, tự đọc từng câu ----
+  let ttSeq = [], ttI = 0, ttTu = true, ttTok = 0, ttRaf = 0, ttAm = null, ttHet = false;
+  const boNhay = s => /^'.*'$/.test(s) ? s.slice(1, -1) : s;
+  const chuW = s => s.split(" ").map(w => `<span class="w">${esc(w)}</span>`).join(" ");
   function moTruyen(id, xong) {
-    docVat = TRUYEN.find(t => t.id === id); kieu = "tr"; docXong = xong || null;
-    docTrang = [...docVat.trang, { emoji: "🌟", bh: true, cau: [docVat.baiHoc] }];
-    batDauDoc();
+    const t = docVat = TRUYEN.find(x => x.id === id); kieu = "tr"; docXong = xong || null;
+    ttSeq = [{ id: `tr-${t.id}-ten`, en: t.ten }];
+    const cauHtml = c => {
+      const i = ttSeq.push(c) - 1, thoai = c.en.startsWith("'");
+      return `<div class="tt-cau${thoai ? " thoai" : ""}" data-i="${i}"><p class="en">${chuW(thoai ? boNhay(c.en) : c.en)}</p><p class="vi">${esc(thoai ? boNhay(c.vi) : c.vi)}</p></div>`;
+    };
+    let h = `<div class="tt-bia"><div class="tt-anh">${anhGt(t.bia ? t.bia.anh : "", t.emoji)}<div class="tt-tieu" data-i="0"><p class="en">${chuW(t.ten)}</p><p class="vi">${esc(t.vi)}</p></div></div></div>`;
+    t.trang.forEach((p, n) => {
+      h += `<article class="tt-o"><div class="tt-anh">${p.anh ? anhGt(p.anh, p.emoji) : p.emoji}<i class="tt-so">${n + 1}</i></div><div class="tt-chu">${p.cau.map(cauHtml).join("")}</div></article>`;
+    });
+    h += `<div class="tt-bh"><h3>⭐ Moral · Bài học</h3>${cauHtml(t.baiHoc)}</div><div class="tt-cuoi"><button class="nut-to" id="tt-xong">✅ Xong rồi!</button></div>`;
+    document.body.style.setProperty("--mau", t.mau);
+    g("tt-ten").textContent = t.emoji + " " + t.vi;
+    g("tt-trang").innerHTML = h; g("tt-trang").scrollTop = 0;
+    napAm(ttSeq.map(c => c.id));
+    ttTu = true; ttHet = false; g("tt-tu").textContent = "⏸️";
+    sang("tt"); ttTok++; setTimeout(() => ttDoc(0), 500);
   }
+  function ttDung() { ttTok++; cancelAnimationFrame(ttRaf); if (ttAm) ttAm.pause(); }
+  function ttDoc(i) {
+    const tok = ++ttTok, box = g("tt-trang");
+    cancelAnimationFrame(ttRaf);
+    box.querySelectorAll(".dang").forEach(e => e.classList.remove("dang"));
+    if (!dangMo("tt")) return;
+    if (i >= ttSeq.length) { ttHet = true; g("tt-xong").scrollIntoView({ block: "center", behavior: "smooth" }); return; }
+    ttI = i; ttHet = false;
+    const el = box.querySelector(`[data-i="${i}"]`), khung = el.closest(".tt-o,.tt-bia,.tt-bh"), c = ttSeq[i];
+    el.classList.add("dang"); khung.classList.add("dang");
+    khung.scrollIntoView({ block: khung.offsetHeight <= box.clientHeight ? "nearest" : "start", behavior: "smooth" });
+    const spans = [...el.querySelectorAll(".w")], tg = (window.THOI_GIAN || {})[c.id] || [];
+    spans.forEach(s => s.classList.remove("dang", "da"));
+    const a = ttAm = phat(c.id, c.en);
+    const ve = () => {
+      if (tok !== ttTok) return;
+      const ms = a.currentTime * 1000; let k = -1;
+      for (let j = 0; j < tg.length; j++) if (ms >= tg[j][0] - 40) k = j;
+      spans.forEach((s, j) => { s.classList.toggle("dang", j === k); s.classList.toggle("da", j < k); });
+      ttRaf = requestAnimationFrame(ve);
+    };
+    ttRaf = requestAnimationFrame(ve);
+    a.onended = () => {
+      if (tok !== ttTok) return;
+      cancelAnimationFrame(ttRaf);
+      spans.forEach(s => { s.classList.remove("dang"); s.classList.add("da"); });
+      const sau = box.querySelector(`[data-i="${i + 1}"]`);
+      if (khung.classList.contains("tt-o") && (!sau || sau.closest(".tt-o,.tt-bia,.tt-bh") !== khung)) khung.classList.add("da");
+      if (ttTu) setTimeout(() => { if (tok === ttTok && dangMo("tt")) ttDoc(i + 1); }, 900);
+      else { el.classList.remove("dang"); khung.classList.remove("dang"); ttHet = true; }
+    };
+  }
+  g("tt-trang").addEventListener("click", e => {
+    if (e.target.closest("#tt-xong")) {
+      ttDung(); ghiSao("tr-" + docVat.id, 3);
+      if (docXong) { const f = docXong; docXong = null; return f(); }
+      return manXong("tr-" + docVat.id, 3, "Bé đã đọc xong truyện “" + docVat.vi + "”");
+    }
+    const o = e.target.closest("[data-i]") || e.target.closest(".tt-o,.tt-bia,.tt-bh")?.querySelector("[data-i]");
+    if (o) ttDoc(+o.dataset.i);
+  });
+  g("tt-tu").onclick = () => {
+    ttTu = !ttTu; g("tt-tu").textContent = ttTu ? "⏸️" : "▶️";
+    if (!ttTu) { ttDung(); g("tt-trang").querySelectorAll(".dang").forEach(e => e.classList.remove("dang")); }
+    else ttDoc(ttHet ? ttI + 1 : ttI);
+  };
   function moBaiDoc(id) {
     docVat = BAI_DOC.find(b => b.id === id); kieu = "dd"; docXong = null;
     docTrang = docVat.trang; batDauDoc();
