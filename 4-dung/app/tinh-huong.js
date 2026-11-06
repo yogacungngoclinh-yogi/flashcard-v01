@@ -629,5 +629,635 @@ window.TINH_HUONG = [
     "emoji": "🛏️"
    }
   ]
+ },
+ {
+  "id": "library",
+  "ten": "At the Library",
+  "vi": "Ở thư viện",
+  "emoji": "📚",
+  "mau": "#7E57C2",
+  "nv": {
+   "ten": "Mrs. Lan",
+   "emoji": "👩‍💼",
+   "giong": "en-US-JennyNeural",
+   "mo": "cô thủ thư Việt Nam đeo kính, cầm sách"
+  },
+  "luot": [
+   {
+    "id": "th-library-1",
+    "q": "Hello! What are you looking for?",
+    "qvi": "Chào cháu! Cháu tìm gì?",
+    "a": "I'm looking for a book about animals.",
+    "avi": "Cháu tìm sách về động vật ạ.",
+    "emoji": "📗"
+   },
+   {
+    "id": "th-library-2",
+    "q": "Do you have a library card?",
+    "qvi": "Cháu có thẻ thư viện không?",
+    "a": "Yes, here it is.",
+    "avi": "Dạ có, đây ạ.",
+    "emoji": "🪪"
+   },
+   {
+    "id": "th-library-3",
+    "q": "How many books do you want to borrow?",
+    "qvi": "Cháu muốn mượn mấy quyển?",
+    "a": "I want to borrow two books.",
+    "avi": "Cháu muốn mượn hai quyển.",
+    "emoji": "📚"
+   },
+   {
+    "id": "th-library-4",
+    "q": "Please bring them back next Friday.",
+    "qvi": "Thứ Sáu tuần sau cháu trả lại nhé.",
+    "a": "OK, I will.",
+    "avi": "Dạ, cháu sẽ trả ạ.",
+    "emoji": "📅"
+   },
+   {
+    "id": "th-library-5",
+    "q": "Please be quiet in the library.",
+    "qvi": "Trong thư viện cháu giữ trật tự nhé.",
+    "a": "Sorry, I'll whisper.",
+    "avi": "Cháu xin lỗi, cháu sẽ nói nhỏ.",
+    "emoji": "🤫"
+   },
+   {
+    "id": "th-library-6",
+    "q": "Did you like the book?",
+    "qvi": "Cháu có thích quyển sách không?",
+    "a": "Yes, it was very interesting!",
+    "avi": "Có ạ, sách rất hay!",
+    "emoji": "🤩"
+   }
+  ]
+ },
+ {
+  "id": "playground",
+  "ten": "At the Playground",
+  "vi": "Ở sân chơi",
+  "emoji": "🛝",
+  "mau": "#FF7043",
+  "nv": {
+   "ten": "Ben",
+   "emoji": "👦",
+   "giong": "en-US-GuyNeural",
+   "mo": "bạn trai 9 tuổi mặc áo thun, đội mũ lưỡi trai"
+  },
+  "luot": [
+   {
+    "id": "th-playground-1",
+    "q": "Hi! Do you want to play with me?",
+    "qvi": "Chào! Bạn muốn chơi với mình không?",
+    "a": "Sure! What do you want to play?",
+    "avi": "Được chứ! Bạn muốn chơi gì?",
+    "emoji": "🙌"
+   },
+   {
+    "id": "th-playground-2",
+    "q": "Let's go on the slide!",
+    "qvi": "Đi cầu trượt nào!",
+    "a": "OK! You go first.",
+    "avi": "Được! Bạn đi trước đi.",
+    "emoji": "🛝"
+   },
+   {
+    "id": "th-playground-3",
+    "q": "Can you push me on the swing?",
+    "qvi": "Bạn đẩy xích đu cho mình nhé?",
+    "a": "Of course. Hold on tight!",
+    "avi": "Tất nhiên. Bám chặt vào nhé!",
+    "emoji": "🎠"
+   },
+   {
+    "id": "th-playground-4",
+    "q": "Let's play hide and seek!",
+    "qvi": "Chơi trốn tìm đi!",
+    "a": "Great! I'll count to ten.",
+    "avi": "Hay quá! Mình sẽ đếm đến mười.",
+    "emoji": "🙈"
+   },
+   {
+    "id": "th-playground-5",
+    "q": "Ouch! I fell down.",
+    "qvi": "Ui da! Mình bị ngã.",
+    "a": "Are you OK? Let me help you.",
+    "avi": "Bạn có sao không? Để mình giúp.",
+    "emoji": "🩹"
+   },
+   {
+    "id": "th-playground-6",
+    "q": "I have to go home now.",
+    "qvi": "Mình phải về nhà rồi.",
+    "a": "Bye! See you tomorrow.",
+    "avi": "Tạm biệt! Mai gặp nhé.",
+    "emoji": "👋"
+   }
+  ]
+ },
+ {
+  "id": "supermarket",
+  "ten": "At the Supermarket",
+  "vi": "Ở siêu thị",
+  "emoji": "🛒",
+  "mau": "#66BB6A",
+  "nv": {
+   "ten": "Mom",
+   "emoji": "👩",
+   "giong": "en-US-JennyNeural",
+   "mo": "người mẹ Việt Nam đẩy xe siêu thị"
+  },
+  "luot": [
+   {
+    "id": "th-supermarket-1",
+    "q": "Can you get a basket, please?",
+    "qvi": "Con lấy giúp mẹ cái giỏ nhé?",
+    "a": "Here's a basket, Mom.",
+    "avi": "Giỏ đây mẹ ạ.",
+    "emoji": "🧺"
+   },
+   {
+    "id": "th-supermarket-2",
+    "q": "We need some fruit. What do you want?",
+    "qvi": "Nhà mình cần trái cây. Con muốn gì?",
+    "a": "Can we buy some bananas?",
+    "avi": "Mình mua chuối được không mẹ?",
+    "emoji": "🍌"
+   },
+   {
+    "id": "th-supermarket-3",
+    "q": "How many apples do we need?",
+    "qvi": "Mình cần mấy quả táo nhỉ?",
+    "a": "We need five apples.",
+    "avi": "Mình cần năm quả táo.",
+    "emoji": "🍎"
+   },
+   {
+    "id": "th-supermarket-4",
+    "q": "Where is the milk?",
+    "qvi": "Sữa ở đâu nhỉ?",
+    "a": "It's in the fridge over there.",
+    "avi": "Ở trong tủ mát đằng kia ạ.",
+    "emoji": "🥛"
+   },
+   {
+    "id": "th-supermarket-5",
+    "q": "Can you find the bread?",
+    "qvi": "Con tìm bánh mì được không?",
+    "a": "Yes! I found it.",
+    "avi": "Dạ! Con tìm thấy rồi.",
+    "emoji": "🍞"
+   },
+   {
+    "id": "th-supermarket-6",
+    "q": "Let's pay at the checkout.",
+    "qvi": "Mình ra quầy tính tiền nhé.",
+    "a": "Can I help carry the bags?",
+    "avi": "Con xách túi giúp mẹ nhé?",
+    "emoji": "🛍️"
+   }
+  ]
+ },
+ {
+  "id": "zoo",
+  "ten": "At the Zoo",
+  "vi": "Ở sở thú",
+  "emoji": "🦁",
+  "mau": "#FFB300",
+  "nv": {
+   "ten": "Mr. Tony",
+   "emoji": "🧑‍🌾",
+   "giong": "en-US-GuyNeural",
+   "mo": "chú nhân viên sở thú mặc đồ kaki, đội mũ rộng vành"
+  },
+  "luot": [
+   {
+    "id": "th-zoo-1",
+    "q": "Which animal do you want to see?",
+    "qvi": "Cháu muốn xem con gì?",
+    "a": "I want to see the elephants.",
+    "avi": "Cháu muốn xem voi.",
+    "emoji": "🐘"
+   },
+   {
+    "id": "th-zoo-2",
+    "q": "What do elephants eat?",
+    "qvi": "Voi ăn gì nhỉ?",
+    "a": "They eat grass and fruit.",
+    "avi": "Chúng ăn cỏ và trái cây.",
+    "emoji": "🌿"
+   },
+   {
+    "id": "th-zoo-3",
+    "q": "Which animal is the tallest?",
+    "qvi": "Con vật nào cao nhất?",
+    "a": "The giraffe is the tallest.",
+    "avi": "Hươu cao cổ cao nhất.",
+    "emoji": "🦒"
+   },
+   {
+    "id": "th-zoo-4",
+    "q": "Can monkeys climb trees?",
+    "qvi": "Khỉ có trèo cây được không?",
+    "a": "Yes, they are very good climbers.",
+    "avi": "Có, chúng trèo rất giỏi.",
+    "emoji": "🐒"
+   },
+   {
+    "id": "th-zoo-5",
+    "q": "Please don't feed the animals.",
+    "qvi": "Cháu đừng cho thú ăn nhé.",
+    "a": "OK, I won't.",
+    "avi": "Dạ, cháu sẽ không cho ăn.",
+    "emoji": "🚫"
+   },
+   {
+    "id": "th-zoo-6",
+    "q": "What's your favorite animal?",
+    "qvi": "Cháu thích con vật nào nhất?",
+    "a": "My favorite animal is the panda.",
+    "avi": "Cháu thích gấu trúc nhất.",
+    "emoji": "🐼"
+   }
+  ]
+ },
+ {
+  "id": "cooking",
+  "ten": "Cooking Together",
+  "vi": "Nấu ăn cùng bố",
+  "emoji": "🍳",
+  "mau": "#FF8A65",
+  "nv": {
+   "ten": "Dad",
+   "emoji": "👨",
+   "giong": "en-US-GuyNeural",
+   "mo": "người bố Việt Nam đeo tạp dề trong bếp"
+  },
+  "luot": [
+   {
+    "id": "th-cooking-1",
+    "q": "Let's make pancakes together!",
+    "qvi": "Cùng làm bánh kếp nào!",
+    "a": "Yay! What do we need?",
+    "avi": "Hay quá! Mình cần gì ạ?",
+    "emoji": "🥞"
+   },
+   {
+    "id": "th-cooking-2",
+    "q": "Can you crack the eggs?",
+    "qvi": "Con đập trứng được không?",
+    "a": "Yes, I can do it.",
+    "avi": "Dạ, con làm được.",
+    "emoji": "🥚"
+   },
+   {
+    "id": "th-cooking-3",
+    "q": "Now add some milk, please.",
+    "qvi": "Giờ con cho thêm sữa vào nhé.",
+    "a": "How much milk?",
+    "avi": "Bao nhiêu sữa ạ?",
+    "emoji": "🥛"
+   },
+   {
+    "id": "th-cooking-4",
+    "q": "Be careful! The pan is hot.",
+    "qvi": "Cẩn thận! Chảo đang nóng.",
+    "a": "OK, I'll be careful.",
+    "avi": "Dạ, con sẽ cẩn thận.",
+    "emoji": "🔥"
+   },
+   {
+    "id": "th-cooking-5",
+    "q": "Do you want honey or jam?",
+    "qvi": "Con muốn mật ong hay mứt?",
+    "a": "Honey, please.",
+    "avi": "Cho con mật ong ạ.",
+    "emoji": "🍯"
+   },
+   {
+    "id": "th-cooking-6",
+    "q": "Can you help me wash the dishes?",
+    "qvi": "Con giúp bố rửa bát nhé?",
+    "a": "Sure, Dad!",
+    "avi": "Vâng, bố ơi!",
+    "emoji": "🍽️"
+   }
+  ]
+ },
+ {
+  "id": "bus",
+  "ten": "On the Bus",
+  "vi": "Trên xe buýt",
+  "emoji": "🚌",
+  "mau": "#29B6F6",
+  "nv": {
+   "ten": "Mr. Hai",
+   "emoji": "🧑‍✈️",
+   "giong": "en-US-GuyNeural",
+   "mo": "chú tài xế xe buýt mặc đồng phục xanh"
+  },
+  "luot": [
+   {
+    "id": "th-bus-1",
+    "q": "Where are you going?",
+    "qvi": "Cháu đi đâu?",
+    "a": "I'm going to the museum.",
+    "avi": "Cháu đến bảo tàng ạ.",
+    "emoji": "🏛️"
+   },
+   {
+    "id": "th-bus-2",
+    "q": "Do you have a ticket?",
+    "qvi": "Cháu có vé chưa?",
+    "a": "No. How much is a ticket?",
+    "avi": "Chưa ạ. Vé bao nhiêu tiền ạ?",
+    "emoji": "🎫"
+   },
+   {
+    "id": "th-bus-3",
+    "q": "It's seven thousand dong.",
+    "qvi": "Bảy nghìn đồng.",
+    "a": "Here you are.",
+    "avi": "Đây ạ.",
+    "emoji": "💵"
+   },
+   {
+    "id": "th-bus-4",
+    "q": "Please sit down and hold on.",
+    "qvi": "Cháu ngồi xuống và bám chắc nhé.",
+    "a": "Thank you. Is this seat free?",
+    "avi": "Cảm ơn chú. Ghế này trống không ạ?",
+    "emoji": "💺"
+   },
+   {
+    "id": "th-bus-5",
+    "q": "Which stop do you need?",
+    "qvi": "Cháu xuống trạm nào?",
+    "a": "Please tell me when we get to the museum.",
+    "avi": "Đến bảo tàng chú báo cháu nhé.",
+    "emoji": "🚏"
+   },
+   {
+    "id": "th-bus-6",
+    "q": "This is your stop!",
+    "qvi": "Đến trạm của cháu rồi!",
+    "a": "Thank you! Goodbye!",
+    "avi": "Cháu cảm ơn! Chào chú ạ!",
+    "emoji": "👋"
+   }
+  ]
+ },
+ {
+  "id": "new-friend",
+  "ten": "A New Friend",
+  "vi": "Bạn mới",
+  "emoji": "🤝",
+  "mau": "#EC407A",
+  "nv": {
+   "ten": "Kai",
+   "emoji": "🧒",
+   "giong": "en-US-GuyNeural",
+   "mo": "bạn nhỏ người Nhật 10 tuổi, đeo cặp sách, cười thân thiện"
+  },
+  "luot": [
+   {
+    "id": "th-new-friend-1",
+    "q": "Hi, I'm Kai. I'm new here.",
+    "qvi": "Chào, mình là Kai. Mình mới chuyển đến.",
+    "a": "Hi Kai! Welcome to our class.",
+    "avi": "Chào Kai! Chào mừng đến lớp mình.",
+    "emoji": "🏫"
+   },
+   {
+    "id": "th-new-friend-2",
+    "q": "I'm from Japan. Where are you from?",
+    "qvi": "Mình đến từ Nhật Bản. Còn bạn?",
+    "a": "I'm from Hanoi.",
+    "avi": "Mình ở Hà Nội.",
+    "emoji": "🗾"
+   },
+   {
+    "id": "th-new-friend-3",
+    "q": "Do you like games?",
+    "qvi": "Bạn có thích trò chơi không?",
+    "a": "Yes, I love board games.",
+    "avi": "Có, mình rất thích cờ bàn.",
+    "emoji": "🎲"
+   },
+   {
+    "id": "th-new-friend-4",
+    "q": "Can you show me the canteen?",
+    "qvi": "Bạn chỉ mình căng tin được không?",
+    "a": "Sure, follow me!",
+    "avi": "Được, đi theo mình!",
+    "emoji": "🍱"
+   },
+   {
+    "id": "th-new-friend-5",
+    "q": "Can I sit next to you?",
+    "qvi": "Mình ngồi cạnh bạn được không?",
+    "a": "Yes, of course!",
+    "avi": "Được chứ!",
+    "emoji": "🪑"
+   },
+   {
+    "id": "th-new-friend-6",
+    "q": "Will you be my friend?",
+    "qvi": "Bạn làm bạn với mình nhé?",
+    "a": "Yes! Let's be best friends.",
+    "avi": "Đồng ý! Mình làm bạn thân nhé.",
+    "emoji": "💛"
+   }
+  ]
+ },
+ {
+  "id": "beach",
+  "ten": "At the Beach",
+  "vi": "Ở bãi biển",
+  "emoji": "🏖️",
+  "mau": "#26C6DA",
+  "nv": {
+   "ten": "Uncle Minh",
+   "emoji": "🧔",
+   "giong": "en-US-GuyNeural",
+   "mo": "chú Việt Nam mặc áo sơ mi hoa, đội mũ cói ở bãi biển"
+  },
+  "luot": [
+   {
+    "id": "th-beach-1",
+    "q": "Look at the sea! Isn't it beautiful?",
+    "qvi": "Nhìn biển kìa! Đẹp quá phải không?",
+    "a": "Yes, the water is so blue!",
+    "avi": "Vâng, nước xanh quá!",
+    "emoji": "🌊"
+   },
+   {
+    "id": "th-beach-2",
+    "q": "Did you bring your sunscreen?",
+    "qvi": "Cháu mang kem chống nắng chưa?",
+    "a": "Yes, it's in my bag.",
+    "avi": "Rồi ạ, trong túi cháu.",
+    "emoji": "🧴"
+   },
+   {
+    "id": "th-beach-3",
+    "q": "Let's build a sandcastle!",
+    "qvi": "Cùng xây lâu đài cát nào!",
+    "a": "Good idea! I'll get the bucket.",
+    "avi": "Ý hay! Cháu đi lấy xô.",
+    "emoji": "🏰"
+   },
+   {
+    "id": "th-beach-4",
+    "q": "Can you swim in the sea?",
+    "qvi": "Cháu bơi ở biển được không?",
+    "a": "Only with my life jacket.",
+    "avi": "Chỉ khi mặc áo phao thôi ạ.",
+    "emoji": "🦺"
+   },
+   {
+    "id": "th-beach-5",
+    "q": "Look, I found a shell!",
+    "qvi": "Nhìn này, chú nhặt được vỏ sò!",
+    "a": "Wow, it's so pretty!",
+    "avi": "Ồ, đẹp quá!",
+    "emoji": "🐚"
+   },
+   {
+    "id": "th-beach-6",
+    "q": "Are you hungry? Let's eat some seafood.",
+    "qvi": "Cháu đói chưa? Mình ăn hải sản nhé.",
+    "a": "Yes, I'd love some shrimp!",
+    "avi": "Dạ, cháu thích ăn tôm!",
+    "emoji": "🦐"
+   }
+  ]
+ },
+ {
+  "id": "lost-bag",
+  "ten": "Lost and Found",
+  "vi": "Tìm đồ thất lạc",
+  "emoji": "🔎",
+  "mau": "#8D6E63",
+  "nv": {
+   "ten": "Ms. Thu",
+   "emoji": "👮‍♀️",
+   "giong": "en-US-JennyNeural",
+   "mo": "cô bảo vệ trung tâm thương mại mặc đồng phục, thân thiện"
+  },
+  "luot": [
+   {
+    "id": "th-lost-bag-1",
+    "q": "What's wrong? You look sad.",
+    "qvi": "Có chuyện gì vậy? Trông cháu buồn thế.",
+    "a": "I lost my backpack.",
+    "avi": "Cháu bị mất ba lô.",
+    "emoji": "🎒"
+   },
+   {
+    "id": "th-lost-bag-2",
+    "q": "What does it look like?",
+    "qvi": "Nó trông như thế nào?",
+    "a": "It's red with a cat on it.",
+    "avi": "Màu đỏ, có hình con mèo.",
+    "emoji": "🐱"
+   },
+   {
+    "id": "th-lost-bag-3",
+    "q": "Where did you last see it?",
+    "qvi": "Lần cuối cháu thấy nó ở đâu?",
+    "a": "I left it near the fountain.",
+    "avi": "Cháu để gần đài phun nước.",
+    "emoji": "⛲"
+   },
+   {
+    "id": "th-lost-bag-4",
+    "q": "What's inside your bag?",
+    "qvi": "Trong ba lô có gì?",
+    "a": "My books and a water bottle.",
+    "avi": "Sách và một bình nước ạ.",
+    "emoji": "📚"
+   },
+   {
+    "id": "th-lost-bag-5",
+    "q": "Is this your backpack?",
+    "qvi": "Đây có phải ba lô của cháu không?",
+    "a": "Yes, that's mine! Thank you!",
+    "avi": "Đúng rồi, của cháu! Cháu cảm ơn!",
+    "emoji": "😃"
+   },
+   {
+    "id": "th-lost-bag-6",
+    "q": "Please be careful next time.",
+    "qvi": "Lần sau cháu cẩn thận nhé.",
+    "a": "I will. Thanks for your help.",
+    "avi": "Dạ. Cảm ơn cô đã giúp.",
+    "emoji": "🙏"
+   }
+  ]
+ },
+ {
+  "id": "cinema",
+  "ten": "At the Cinema",
+  "vi": "Đi xem phim",
+  "emoji": "🎬",
+  "mau": "#5C6BC0",
+  "nv": {
+   "ten": "Sister Mai",
+   "emoji": "👩‍🦰",
+   "giong": "en-US-JennyNeural",
+   "mo": "chị gái 16 tuổi tóc dài, cầm vé xem phim"
+  },
+  "luot": [
+   {
+    "id": "th-cinema-1",
+    "q": "Which movie do you want to watch?",
+    "qvi": "Em muốn xem phim nào?",
+    "a": "Let's watch the cartoon.",
+    "avi": "Mình xem phim hoạt hình đi.",
+    "emoji": "🎞️"
+   },
+   {
+    "id": "th-cinema-2",
+    "q": "The movie starts at seven. Is that OK?",
+    "qvi": "Phim bắt đầu lúc bảy giờ. Được không em?",
+    "a": "Yes, that's perfect.",
+    "avi": "Vâng, được ạ.",
+    "emoji": "🕖"
+   },
+   {
+    "id": "th-cinema-3",
+    "q": "Do you want popcorn?",
+    "qvi": "Em ăn bỏng ngô không?",
+    "a": "Yes, a big one, please!",
+    "avi": "Có, cho em hộp to nhé!",
+    "emoji": "🍿"
+   },
+   {
+    "id": "th-cinema-4",
+    "q": "Where are our seats?",
+    "qvi": "Ghế mình ở đâu nhỉ?",
+    "a": "They're in row F.",
+    "avi": "Ở hàng F ạ.",
+    "emoji": "💺"
+   },
+   {
+    "id": "th-cinema-5",
+    "q": "Please turn off your phone.",
+    "qvi": "Em tắt điện thoại đi nhé.",
+    "a": "OK, it's off now.",
+    "avi": "Dạ, em tắt rồi.",
+    "emoji": "📵"
+   },
+   {
+    "id": "th-cinema-6",
+    "q": "Did you enjoy the movie?",
+    "qvi": "Em thích phim không?",
+    "a": "Yes! It was so funny.",
+    "avi": "Có ạ! Phim vui lắm.",
+    "emoji": "😂"
+   }
+  ]
  }
 ];

@@ -19,6 +19,7 @@ khoi = re.split(r'\n  \{ id: "', js)[1:]
 tong = thieu = 0
 phan = []
 for k in khoi:
+    if 'kieu: "chu"' in k: continue  # chủ đề chỉ có chữ, không cần ảnh
     ten, vi = re.search(r'ten: "([^"]+)", vi: "([^"]+)"', k).groups()
     ve = (re.search(r've: "([^"]+)"', k) or [None, ""])[1]
     tu = re.findall(r'\{ id: "([^"]+)", en: "([^"]+)", vi: "([^"]+)"', k)
@@ -77,3 +78,23 @@ else:
     phan_abc += ["Đủ ảnh ✅", ""]
 RA.write_text(RA.read_text(encoding="utf-8") + "\n" + "\n".join(phan_abc), encoding="utf-8")
 print(f"ABC: thiếu {len(abc_can)} ảnh")
+
+# ---- Truyện + Bài đọc: 1 ảnh mỗi trang ----
+def doc_bien(ten, bien):
+    t = (GOC / ten).read_text(encoding="utf-8").split(bien, 1)[1]
+    return json.loads(t.split(";\nwindow.", 1)[0].rstrip().rstrip(";"))
+TR_STYLE = """Vẽ tranh minh hoạ truyện thiếu nhi cho bé 5–10 tuổi. Mỗi mục = 1 ảnh riêng, cùng phong cách, nhân vật giữ y hệt nhau giữa các trang:
+- Ảnh vuông 1:1, KHÔNG có chữ trong ảnh.
+- Hoạt hình 3D mềm mại kiểu phim hoạt hình, màu tươi sáng, nền đơn giản sáng màu (không phải nền trắng trơn), bố cục rõ ràng.
+- Người là người Việt Nam/châu Á, thân thiện."""
+tr_phan = ["## 📖 Truyện & 📰 Bài đọc", ""]
+tr_tong = tr_thieu = 0
+for t in doc_bien("truyen.js", "window.TRUYEN =") + doc_bien("truyen.js", "window.BAI_DOC ="):
+    muc = [(p["anh"], " ".join(c["vi"] for c in p["cau"])) for p in t["trang"] if p.get("anh")]
+    tr_tong += len(muc); can = [m for m in muc if m[0] not in co_san]; tr_thieu += len(can)
+    tr_phan += [f"### {t['ten']} — {t['vi']} ({len(muc) - len(can)}/{len(muc)} ảnh)", ""]
+    if not can: tr_phan += ["Đủ ảnh ✅", ""]; continue
+    dong = "\n".join(f"{j}. Cảnh: {mo} → đặt tên file: {id_}.png" for j, (id_, mo) in enumerate(can, 1))
+    tr_phan += ["```", TR_STYLE, "", f"Truyện/bài: {t['ten']} ({t['vi']}). Vẽ các cảnh sau:", dong, "```", ""]
+RA.write_text(RA.read_text(encoding="utf-8") + "\n" + "\n".join(tr_phan), encoding="utf-8")
+print(f"Truyen + bai doc: {tr_tong} anh, thieu {tr_thieu}")

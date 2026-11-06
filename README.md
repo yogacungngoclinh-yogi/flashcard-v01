@@ -23,9 +23,10 @@ App web học từ vựng tiếng Anh theo chủ đề cho bé 5 tuổi: thẻ h
 
 ## Lộ Trình (theo khung Cambridge Starters/Movers + cách làm Monkey Junior, Duolingo ABC)
 
-- **Bé 5 tuổi** (mầm non → Starters): 🔤 ABC (26 chữ, 4 nhóm) → 👀 Sight words (40 từ Dolch pre-primer, 4 nhóm) → 📚 Từ vựng (20 chủ đề) → 💬 Nói chuyện (10 bài vỡ lòng).
-- **Bé 10 tuổi** (Movers/Flyers): 🗣️ Tình huống hằng ngày (10 bài × 6 lượt: trường, mua sắm, nhà hàng, chỉ đường, khám bệnh, sinh nhật, điện thoại, thời tiết, sở thích, một ngày) → 🧩 Xếp câu (xếp lại câu trả lời của từng tình huống) → 📚 Từ vựng.
-- Dữ liệu: `chu-cai.js` (ABC + sight words, thu giọng `thu-giong-chu.py`), `tinh-huong.js` (thu giọng `thu-giong-giao-tiep.py`).
+- **Bé 5 tuổi** (mầm non → Starters): 🗺️ Lộ trình 100 ngày (mỗi ngày ~8 phút: 1 chữ cái + 4 từ + 2 sight words + trò chơi + 1 truyện; bản đồ 10 cấp, sticker, chuỗi ngày) · 🔤 ABC · 👀 Sight words · 📚 Từ vựng (30 chủ đề, 423 từ) · 📖 Truyện · 💬 Nói chuyện.
+- **Bé 10 tuổi** (Movers/Flyers): 🗣️ Tình huống (20 bài) · 🔁 Mẫu câu thay từ (10 mẫu, 76 câu) · 🧩 Xếp câu · ✍️ Điền từ (nghe + chọn từ thiếu) · 📰 Bài đọc (12 bài, 3 cấp, có câu hỏi) · 📖 Truyện · 📚 Từ vựng.
+- 📖 Truyện: 12 truyện song ngữ (đạo đức, tư duy, kỹ năng, kiến thức), đọc to + tô sáng từng chữ (karaoke), cuối truyện có bài học.
+- Dữ liệu: `chu-cai.js` (thu giọng `thu-giong-chu.py`), `tinh-huong.js` (`thu-giong-giao-tiep.py`), `truyen.js` + `mau-cau.js` (`thu-giong-doc.py`, sinh luôn `thoi-gian.js` cho karaoke). Code tính năng mới: `them.js`.
 - Đổi file dữ liệu → tăng số `?v=` ở thẻ `<script>` trong `index.html` để điện thoại tải bản mới.
 
 ## Cấu Trúc
@@ -47,3 +48,4 @@ App web học từ vựng tiếng Anh theo chủ đề cho bé 5 tuổi: thẻ h
 - 2026-11-06: Kiểm tra: thêm chữ câu hỏi trên nút loa (từ vựng: What do you hear?; Nói chuyện: câu hỏi của nhân vật), nút loa to hơn, chọn đúng hiện chữ tiếng Anh trên thẻ.
 - 2026-11-06: Kiểm tra từ vựng: câu hỏi theo chủ đề (vd Colors: What color is it?; Fruits: What fruit is it?) — trường hoi/hoivi trong tu-vung.js. Gắn ?v= vào file dữ liệu để điện thoại tải bản mới.
 - 2026-11-06: Làm lại trang chủ theo 2 độ tuổi. Thêm ABC (26 chữ), Sight words (40 từ), 10 Tình huống (60 lượt), Xếp câu. Thu 252 giọng mới. Prompt thêm 74 ảnh (70 tình huống + 4 ABC).
+- 2026-11-06: Thêm Lộ trình 100 ngày (sticker, chuỗi ngày), 12 truyện karaoke song ngữ, 12 bài đọc 3 cấp, 10 mẫu câu, Điền từ, +10 tình huống (đủ 20), +10 chủ đề từ vựng (30 chủ đề / 423 từ). Tổng 1.171 file giọng. Prompt thêm ảnh: 107 từ vựng, 140 tình huống, 75 truyện/bài đọc, 4 ABC.

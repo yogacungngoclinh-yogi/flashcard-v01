@@ -222,10 +222,14 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
   </div>
 </section>
 
-<script src="tu-vung.js?v=20261106b"></script>
-<script src="giao-tiep.js?v=20261106b"></script>
-<script src="chu-cai.js?v=20261106b"></script>
-<script src="tinh-huong.js?v=20261106b"></script>
+<script src="tu-vung.js?v=20261106c"></script>
+<script src="giao-tiep.js?v=20261106c"></script>
+<script src="chu-cai.js?v=20261106c"></script>
+<script src="tinh-huong.js?v=20261106c"></script>
+<script src="mau-cau.js?v=20261106c"></script>
+<script src="truyen.js?v=20261106c"></script>
+<script src="thoi-gian.js?v=20261106c"></script>
+<script src="them.js?v=20261106c"></script>
 <script>
 const $ = s => document.querySelector(s);
 const SO_CAU = 8;
@@ -307,8 +311,8 @@ function hinhTu(tu, lop) {
 function sang(id) { document.querySelectorAll(".man").forEach(m => m.classList.toggle("hien", m.id === id)); }
 // Trang chủ: chọn tuổi → chọn khu → lưới bài
 const KHU = {
-  "5": [["abc", "🔤 ABC"], ["sight", "👀 Sight words"], ["tv", "📚 Từ vựng"], ["gt", "💬 Nói chuyện"]],
-  "10": [["th", "🗣️ Tình huống"], ["xc", "🧩 Xếp câu"], ["tv", "📚 Từ vựng"]],
+  "5": [["lt", "🗺️ Lộ trình"], ["abc", "🔤 ABC"], ["sight", "👀 Sight words"], ["tv", "📚 Từ vựng"], ["truyen", "📖 Truyện"], ["gt", "💬 Nói chuyện"]],
+  "10": [["th", "🗣️ Tình huống"], ["mc", "🔁 Mẫu câu"], ["xc", "🧩 Xếp câu"], ["dt", "✍️ Điền từ"], ["doc", "📰 Bài đọc"], ["truyen", "📖 Truyện"], ["tv", "📚 Từ vựng"]],
 };
 const nho = (k, mac) => { try { return localStorage.getItem(k) || mac; } catch { return mac; } };
 const ghiNho = (k, v) => { try { localStorage.setItem(k, v); } catch {} };
@@ -324,6 +328,9 @@ function veTrangChu() {
   if (!KHU[tuoi].some(k => k[0] === khu)) khu = KHU[tuoi][0][0];
   $("#tuoi-5").classList.toggle("chon", tuoi === "5"); $("#tuoi-10").classList.toggle("chon", tuoi === "10");
   $("#khu").innerHTML = KHU[tuoi].map(([id, ten]) => `<button data-khu="${id}" class="${id === khu ? "chon" : ""}">${ten}</button>`).join("");
+  $("#luoi").classList.toggle("lt", khu === "lt");
+  const them = veKhuThem(khu, sao);
+  if (them !== null) { $("#luoi").innerHTML = them; sang("trang-chu"); return; }
   const ds = khu === "tv" ? TU_VUNG.map(c => oChuDe(c, sao))
     : khu === "abc" || khu === "sight" ? CHU_CAI.filter(c => c.khu === khu).map(c => oChuDe(c, sao))
     : khu === "gt" ? GIAO_TIEP.map(b => oBai(b, sao))
@@ -335,7 +342,7 @@ function veTrangChu() {
 $("#tuoi-5").onclick = () => { tuoi = "5"; ghiNho("tuoi", tuoi); khu = nho("khu-5", "abc"); veTrangChu(); };
 $("#tuoi-10").onclick = () => { tuoi = "10"; ghiNho("tuoi", tuoi); khu = nho("khu-10", "th"); veTrangChu(); };
 $("#khu").onclick = e => { const b = e.target.closest("[data-khu]"); if (!b) return; khu = b.dataset.khu; ghiNho("khu-" + tuoi, khu); veTrangChu(); };
-$("#luoi").onclick = e => { const o = e.target.closest(".o"); if (!o) return; o.dataset.xc ? moXc(o.dataset.xc) : o.dataset.bai ? moBai(o.dataset.bai) : moChuDe(o.dataset.cd); };
+$("#luoi").onclick = e => { if (bamThem(e)) return; const o = e.target.closest(".o"); if (!o) return; o.dataset.xc ? moXc(o.dataset.xc) : o.dataset.bai ? moBai(o.dataset.bai) : moChuDe(o.dataset.cd); };
 document.querySelectorAll("[data-ve]").forEach(b => b.onclick = veTrangChu);
 
 function moChuDe(id) {
@@ -377,7 +384,7 @@ $("#vao-kt").onclick = () => batDauKT();
 
 // ---- kiểm tra ----
 const tron = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
-const amHoi = t => chuDe.kieu === "chu" ? t.id + "-w" : t.id;  // ABC/Sight: bài kiểm tra đọc chữ ngắn
+const amHoi = t => chuDe.kieu === "chu" && t.docNgan ? t.id + "-w" : t.id;  // ABC/Sight: bài kiểm tra đọc chữ ngắn
 function batDauKT() {
   kieu = "tv";
   cau = tron(chuDe.tu).slice(0, SO_CAU); soCau = 0; dungLanDau = 0;
@@ -421,8 +428,8 @@ function ketThuc() {
   $("#xong-phu").textContent = `Bé đúng ngay ${dungLanDau}/${cau.length} câu`;
   sang("xong"); phao(24); phat("_well-done", "Well done! You did it!");
 }
-$("#hoc-lai").onclick = () => kieu === "gt" ? moBai(bai.id) : kieu === "xc" ? moBai(xcBai.id) : moChuDe(chuDe.id);
-$("#choi-lai").onclick = () => kieu === "gt" ? ktBai() : kieu === "xc" ? moXc(xcBai.id) : batDauKT();
+$("#hoc-lai").onclick = () => lamLai[kieu] ? lamLai[kieu].hoc() : kieu === "gt" ? moBai(bai.id) : kieu === "xc" ? moBai(xcBai.id) : moChuDe(chuDe.id);
+$("#choi-lai").onclick = () => lamLai[kieu] ? lamLai[kieu].choi() : kieu === "gt" ? ktBai() : kieu === "xc" ? moXc(xcBai.id) : batDauKT();
 function phao(n) {
   const d = ["⭐", "🎉", "✨", "🌟", "🎈"];
   for (let i = 0; i < n; i++) {
