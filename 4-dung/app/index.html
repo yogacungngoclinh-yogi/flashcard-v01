@@ -89,6 +89,20 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .tab button{flex:1;background:var(--the);border-radius:22px;box-shadow:var(--bong);padding:12px 6px;font-size:20px;font-weight:800;color:var(--phu);border:4px solid transparent;line-height:1.1}
 .tab button.chon{color:var(--chu);border-color:#FFB74D;background:#FFF1D6}
 .tab button small{display:block;font-size:15px;font-weight:700;color:var(--vi)}
+.khu{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:none}
+.khu::-webkit-scrollbar{display:none}
+.khu button{flex:none;background:var(--the);border-radius:99px;box-shadow:0 4px 0 rgba(59,47,74,.12);padding:8px 16px;font-size:18px;font-weight:800;color:var(--phu);white-space:nowrap}
+.khu button.chon{color:#fff;background:var(--chu)}
+.o.chu .bieu{font-weight:800;color:#fff;text-shadow:0 3px 0 rgba(0,0,0,.15)}
+.the-vd{font-size:clamp(20px,5.5vw,28px);font-weight:700;color:var(--chu);text-align:center;line-height:1.15}
+.the-vd:empty{display:none}
+.lua-chon .chu-to{font-size:clamp(40px,12vw,72px);font-weight:800;color:var(--chu);line-height:1}
+.xc-dong{min-height:110px;background:var(--the);border-radius:24px;padding:12px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;border:4px dashed #e5dccd;margin-top:8px}
+.xc-kho{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:16px 0;min-height:70px}
+.the-tu{background:#fff;border-radius:16px;box-shadow:0 4px 0 rgba(59,47,74,.15);padding:10px 14px;font-size:clamp(20px,5.5vw,28px);font-weight:800;border:3px solid var(--mau)}
+.xc-dong .the-tu{background:#FFF8E1;box-shadow:none}
+.xc-dong.dung{border:4px solid var(--dung);background:#E8F5E9}
+.xc-dong.sai{animation:lac .4s;border-color:#E53935}
 .o.bai .nv{position:absolute;top:8px;left:12px;font-size:30px}
 .o.bai .ten{font-size:20px;text-align:center;padding:0 8px;line-height:1.05}
 .canh{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:0;padding:0 2px}
@@ -114,7 +128,8 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 
 <section class="man hien" id="trang-chu">
   <div class="dau"><h1>Bé Học Tiếng Anh 🌈</h1></div>
-  <div class="tab"><button id="tab-tv" class="chon">📚 Học từ vựng<small>Vocabulary</small></button><button id="tab-gt">💬 Nói chuyện<small>Let's talk</small></button></div>
+  <div class="tab"><button id="tuoi-5">🧒 Bé 5 tuổi<small>Mầm non · Starters</small></button><button id="tuoi-10">👦 Bé 10 tuổi<small>Giao tiếp · Movers</small></button></div>
+  <div class="khu" id="khu"></div>
   <div class="luoi" id="luoi"></div>
   <div class="thuong-hieu">Chạm vào một chủ đề để học nhé!</div>
 </section>
@@ -130,6 +145,7 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
       <div class="hinh" id="the-hinh"></div>
       <div class="chu-en" id="the-en"></div>
       <div class="chu-vi" id="the-vi"></div>
+      <div class="the-vd" id="the-vd"></div>
       <div class="loa">🔊 chạm để nghe</div>
     </button>
   </div>
@@ -180,6 +196,21 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
   <div class="dap-an chu" id="gt-dap-an"></div>
 </section>
 
+<section class="man" id="xc">
+  <div class="dau">
+    <button class="nut-tron" data-ve aria-label="Về trang chủ">🏠</button>
+    <div class="tien-do"><b id="xc-tien-do"></b></div>
+  </div>
+  <div class="cau-hoi">
+    <div class="cau-chu"><div class="vi" id="xc-vi"></div></div>
+    <button class="nut-tron" id="xc-nghe" aria-label="Nghe câu" style="width:96px;height:96px;font-size:46px">🔊</button>
+    <p>Chạm các từ theo đúng thứ tự</p>
+  </div>
+  <div class="xc-dong" id="xc-dong"></div>
+  <div class="xc-kho" id="xc-kho"></div>
+  <div class="hanh"><button class="nut-to" id="xc-xoa" style="background:#90A4AE">↩️ Xếp lại</button></div>
+</section>
+
 <section class="man" id="xong">
   <div class="ket-qua">
     <div class="sao-to" id="sao-to"></div>
@@ -191,8 +222,10 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
   </div>
 </section>
 
-<script src="tu-vung.js?v=20261106"></script>
-<script src="giao-tiep.js?v=20261106"></script>
+<script src="tu-vung.js?v=20261106b"></script>
+<script src="giao-tiep.js?v=20261106b"></script>
+<script src="chu-cai.js?v=20261106b"></script>
+<script src="tinh-huong.js?v=20261106b"></script>
 <script>
 const $ = s => document.querySelector(s);
 const SO_CAU = 8;
@@ -264,34 +297,49 @@ function noi(chu) {
   speechSynthesis.speak(u);
 }
 function hinhTu(tu, lop) {
-  // Ảnh thật hinh/<id>.png, chưa có thì dùng emoji
-  return `<img src="hinh/${tu.id}.jpg" alt="${tu.en}" onerror="this.outerHTML='<span class=&quot;em ${lop||""}&quot;>${tu.emoji}</span>'">`;
+  // Ảnh thật hinh/<anh hoặc id>.jpg, chưa có thì dùng emoji; anh = "" → dùng emoji luôn
+  const a = tu.anh !== undefined ? tu.anh : tu.id;
+  if (!a) return `<span class="em ${lop || ""}">${tu.emoji}</span>`;
+  return `<img src="hinh/${a}.jpg" alt="${tu.en}" onerror="this.outerHTML='<span class=&quot;em ${lop||""}&quot;>${tu.emoji}</span>'">`;
 }
 
 // ---- màn hình ----
 function sang(id) { document.querySelectorAll(".man").forEach(m => m.classList.toggle("hien", m.id === id)); }
-let tab = "tv";
+// Trang chủ: chọn tuổi → chọn khu → lưới bài
+const KHU = {
+  "5": [["abc", "🔤 ABC"], ["sight", "👀 Sight words"], ["tv", "📚 Từ vựng"], ["gt", "💬 Nói chuyện"]],
+  "10": [["th", "🗣️ Tình huống"], ["xc", "🧩 Xếp câu"], ["tv", "📚 Từ vựng"]],
+};
+const nho = (k, mac) => { try { return localStorage.getItem(k) || mac; } catch { return mac; } };
+const ghiNho = (k, v) => { try { localStorage.setItem(k, v); } catch {} };
+let tuoi = nho("tuoi", "5"), khu = nho("khu-" + tuoi, KHU[tuoi][0][0]);
+const oChuDe = (c, sao) => `<button class="o ${c.kieu || ""}" style="--mau:${c.mau}" data-cd="${c.id}">
+      <span class="sao">${"⭐".repeat(sao[c.id] || 0)}</span>
+      <span class="bieu">${c.emoji}</span><span class="ten">${c.ten}</span><span class="vi">${c.vi}</span></button>`;
+const oBai = (b, sao, xc) => `<button class="o bai" style="--mau:${b.mau}" ${xc ? "data-xc" : "data-bai"}="${b.id}">
+      <span class="sao">${"⭐".repeat(sao[(xc ? "xc-" : "gt-") + b.id] || 0)}</span>
+      <span class="bieu">${xc ? "🧩" : b.emoji}</span><span class="ten">${b.ten}</span><span class="vi">${b.vi}</span><span class="nv">${xc ? b.emoji : b.nv.emoji}</span></button>`;
 function veTrangChu() {
   const sao = docSao();
-  $("#tab-tv").classList.toggle("chon", tab === "tv"); $("#tab-gt").classList.toggle("chon", tab === "gt");
-  $("#luoi").innerHTML = tab === "tv" ? TU_VUNG.map(c => `
-    <button class="o" style="--mau:${c.mau}" data-cd="${c.id}">
-      <span class="sao">${"⭐".repeat(sao[c.id] || 0)}</span>
-      <span class="bieu">${c.emoji}</span><span class="ten">${c.ten}</span><span class="vi">${c.vi}</span>
-    </button>`).join("") : GIAO_TIEP.map(b => `
-    <button class="o bai" style="--mau:${b.mau}" data-bai="${b.id}">
-      <span class="sao">${"⭐".repeat(sao["gt-" + b.id] || 0)}</span>
-      <span class="bieu">${b.emoji}</span><span class="ten">${b.ten}</span><span class="vi">${b.vi}</span><span class="nv">${b.nv.emoji}</span>
-    </button>`).join("");
+  if (!KHU[tuoi].some(k => k[0] === khu)) khu = KHU[tuoi][0][0];
+  $("#tuoi-5").classList.toggle("chon", tuoi === "5"); $("#tuoi-10").classList.toggle("chon", tuoi === "10");
+  $("#khu").innerHTML = KHU[tuoi].map(([id, ten]) => `<button data-khu="${id}" class="${id === khu ? "chon" : ""}">${ten}</button>`).join("");
+  const ds = khu === "tv" ? TU_VUNG.map(c => oChuDe(c, sao))
+    : khu === "abc" || khu === "sight" ? CHU_CAI.filter(c => c.khu === khu).map(c => oChuDe(c, sao))
+    : khu === "gt" ? GIAO_TIEP.map(b => oBai(b, sao))
+    : khu === "th" ? TINH_HUONG.map(b => oBai(b, sao))
+    : TINH_HUONG.map(b => oBai(b, sao, true));
+  $("#luoi").innerHTML = ds.join("");
   sang("trang-chu");
 }
-$("#tab-tv").onclick = () => { tab = "tv"; veTrangChu(); };
-$("#tab-gt").onclick = () => { tab = "gt"; veTrangChu(); };
-$("#luoi").onclick = e => { const o = e.target.closest(".o"); if (!o) return; o.dataset.bai ? moBai(o.dataset.bai) : moChuDe(o.dataset.cd); };
+$("#tuoi-5").onclick = () => { tuoi = "5"; ghiNho("tuoi", tuoi); khu = nho("khu-5", "abc"); veTrangChu(); };
+$("#tuoi-10").onclick = () => { tuoi = "10"; ghiNho("tuoi", tuoi); khu = nho("khu-10", "th"); veTrangChu(); };
+$("#khu").onclick = e => { const b = e.target.closest("[data-khu]"); if (!b) return; khu = b.dataset.khu; ghiNho("khu-" + tuoi, khu); veTrangChu(); };
+$("#luoi").onclick = e => { const o = e.target.closest(".o"); if (!o) return; o.dataset.xc ? moXc(o.dataset.xc) : o.dataset.bai ? moBai(o.dataset.bai) : moChuDe(o.dataset.cd); };
 document.querySelectorAll("[data-ve]").forEach(b => b.onclick = veTrangChu);
 
 function moChuDe(id) {
-  chuDe = TU_VUNG.find(c => c.id === id);
+  chuDe = TU_VUNG.concat(CHU_CAI).find(c => c.id === id);
   document.body.style.setProperty("--mau", chuDe.mau);
   $("#hoc-ten").textContent = chuDe.emoji + " " + chuDe.ten;
   viTri = 0; sang("hoc"); veThe();
@@ -303,6 +351,7 @@ function veThe() {
   $("#the-hinh").innerHTML = hinhTu(tu);
   $("#the-en").textContent = tu.en;
   $("#the-vi").textContent = tu.vi;
+  $("#the-vd").textContent = tu.vd || "";
   $("#cham").innerHTML = chuDe.tu.map((_, i) => `<i class="${i <= viTri ? "da" : ""}"></i>`).join("");
   $("#truoc").style.visibility = viTri ? "visible" : "hidden";
   $("#sau").textContent = viTri === chuDe.tu.length - 1 ? "⭐" : "➡️";
@@ -328,10 +377,11 @@ $("#vao-kt").onclick = () => batDauKT();
 
 // ---- kiểm tra ----
 const tron = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
+const amHoi = t => chuDe.kieu === "chu" ? t.id + "-w" : t.id;  // ABC/Sight: bài kiểm tra đọc chữ ngắn
 function batDauKT() {
   kieu = "tv";
   cau = tron(chuDe.tu).slice(0, SO_CAU); soCau = 0; dungLanDau = 0;
-  napAm(cau.map(t => t.id));
+  napAm(cau.flatMap(t => [t.id, amHoi(t)]));
   $("#kt-hoi").textContent = chuDe.hoi || "What is it?"; $("#kt-hoivi").textContent = chuDe.hoivi || "Đây là gì?";
   sang("kiem-tra"); veCau();
 }
@@ -341,17 +391,18 @@ function veCau() {
   const nhieu = tron(chuDe.tu.filter(t => t.id !== tu.id)).slice(0, 2);
   const lua = tron([tu, ...nhieu]);
   $("#tien-do").style.width = (soCau / cau.length * 100) + "%";
-  $("#dap-an").innerHTML = lua.map(t => `<button class="lua-chon" data-id="${t.id}">${hinhTu(t)}</button>`).join("");
+  $("#dap-an").innerHTML = lua.map(t => `<button class="lua-chon" data-id="${t.id}">${chuDe.kieu === "chu" ? `<span class="chu-to">${t.en}</span>` : hinhTu(t)}</button>`).join("");
   // hiện hình là đọc luôn
-  setTimeout(() => { if (cau[soCau] === tu && !khoa) phat(tu.id, tu.en); }, 120);
+  setTimeout(() => { if (cau[soCau] === tu && !khoa) phat(amHoi(tu), tu.en); }, 120);
 }
-$("#nghe-lai").onclick = () => { const tu = cau[soCau]; phat(tu.id, tu.en); };
+$("#nghe-lai").onclick = () => { const tu = cau[soCau]; phat(amHoi(tu), tu.en); };
 $("#dap-an").onclick = e => {
   const b = e.target.closest(".lua-chon"); if (!b || khoa || b.classList.contains("sai")) return;
   const tu = cau[soCau];
   if (b.dataset.id === tu.id) {
     khoa = true; b.classList.add("dung");
-    b.insertAdjacentHTML("beforeend", `<span class="nhan-dung">${tu.en}</span>`); $("#dap-an").classList.add("xong"); if (!saiCauNay) dungLanDau++;
+    const nhan = chuDe.kieu !== "chu" ? tu.en : tu.vi.split(" · ")[0];
+    b.insertAdjacentHTML("beforeend", `<span class="nhan-dung">${nhan}</span>`); $("#dap-an").classList.add("xong"); if (!saiCauNay) dungLanDau++;
     phao(12); tiengDung();
     phatLanLuot([[tu.id, tu.en]], () => {
       if (!$("#kiem-tra").classList.contains("hien")) return;
@@ -370,8 +421,8 @@ function ketThuc() {
   $("#xong-phu").textContent = `Bé đúng ngay ${dungLanDau}/${cau.length} câu`;
   sang("xong"); phao(24); phat("_well-done", "Well done! You did it!");
 }
-$("#hoc-lai").onclick = () => kieu === "gt" ? moBai(bai.id) : moChuDe(chuDe.id);
-$("#choi-lai").onclick = () => kieu === "gt" ? ktBai() : batDauKT();
+$("#hoc-lai").onclick = () => kieu === "gt" ? moBai(bai.id) : kieu === "xc" ? moBai(xcBai.id) : moChuDe(chuDe.id);
+$("#choi-lai").onclick = () => kieu === "gt" ? ktBai() : kieu === "xc" ? moXc(xcBai.id) : batDauKT();
 function phao(n) {
   const d = ["⭐", "🎉", "✨", "🌟", "🎈"];
   for (let i = 0; i < n; i++) {
@@ -384,7 +435,7 @@ function phao(n) {
 // ---- Nói chuyện ----
 const anhGt = (id, em) => `<img src="hinh/${id}.jpg" alt="" onerror="this.outerHTML='${em}'">`;
 function moBai(id) {
-  bai = GIAO_TIEP.find(b => b.id === id); kieu = "gt";
+  bai = GIAO_TIEP.concat(TINH_HUONG).find(b => b.id === id); kieu = "gt";
   document.body.style.setProperty("--mau", bai.mau);
   $("#gt-ten").textContent = bai.emoji + " " + bai.ten;
   luot = 0; sang("gt-hoc"); veLuot();
@@ -449,6 +500,57 @@ function ketThucGt() {
   $("#sao-to").innerHTML = [0, 1, 2].map(i => `<span style="animation-delay:${i * .25}s;${i < n ? "" : "filter:grayscale(1);opacity:.3"}">⭐</span>`).join("");
   $("#xong-loi").textContent = ["", "Cố lên nào!", "Giỏi lắm!", "Xuất sắc!"][n];
   $("#xong-phu").textContent = `Bé đúng ngay ${dungGt}/${cauGt.length} câu`;
+  sang("xong"); phao(24); phat("_well-done", "Well done! You did it!");
+}
+
+// ---- Xếp câu (bé lớn): xếp lại câu trả lời trong các bài Tình huống ----
+let xcBai, xcDs = [], xcSo = 0, xcDung = 0, xcSai = false, xcKhoa = false;
+function moXc(id) {
+  xcBai = TINH_HUONG.find(b => b.id === id); kieu = "xc";
+  document.body.style.setProperty("--mau", xcBai.mau);
+  xcDs = tron(xcBai.luot); xcSo = 0; xcDung = 0;
+  napAm(xcDs.map(l => l.id + "-a"));
+  sang("xc"); veXc();
+}
+function veXc() {
+  xcKhoa = false; xcSai = false;
+  const l = xcDs[xcSo];
+  const tu = l.a.split(" ").map((w, i) => ({ w, i }));
+  let kho = tron(tu);
+  if (kho.length > 1 && kho.every((x, j) => x.i === j)) kho.reverse();
+  $("#xc-tien-do").style.width = (xcSo / xcDs.length * 100) + "%";
+  $("#xc-vi").textContent = l.avi;
+  $("#xc-dong").className = "xc-dong"; $("#xc-dong").innerHTML = "";
+  $("#xc-kho").innerHTML = kho.map(x => `<button class="the-tu">${x.w}</button>`).join("");
+  setTimeout(() => { if (xcDs[xcSo] === l && !xcKhoa) phat(l.id + "-a", l.a); }, 150);
+}
+const traVeKho = () => [...$("#xc-dong").children].forEach(b => $("#xc-kho").appendChild(b));
+$("#xc-kho").onclick = e => { const b = e.target.closest(".the-tu"); if (!b || xcKhoa) return; $("#xc-dong").appendChild(b); kiemXc(); };
+$("#xc-dong").onclick = e => { const b = e.target.closest(".the-tu"); if (!b || xcKhoa) return; $("#xc-kho").appendChild(b); };
+$("#xc-nghe").onclick = () => { const l = xcDs[xcSo]; phat(l.id + "-a", l.a); };
+$("#xc-xoa").onclick = () => { if (!xcKhoa) traVeKho(); };
+function kiemXc() {
+  if ($("#xc-kho").children.length) return;
+  const l = xcDs[xcSo];
+  const cauBe = [...$("#xc-dong").children].map(b => b.textContent).join(" ");
+  if (cauBe === l.a) {
+    xcKhoa = true; if (!xcSai) xcDung++;
+    $("#xc-dong").classList.add("dung"); phao(12); tiengDung();
+    phatLanLuot([[l.id + "-a", l.a]], () => {
+      if (!$("#xc").classList.contains("hien")) return;
+      xcSo++; xcSo < xcDs.length ? veXc() : ketThucXc();
+    });
+  } else {
+    xcSai = true; tiengSai(); $("#xc-dong").classList.add("sai");
+    setTimeout(() => { traVeKho(); $("#xc-dong").classList.remove("sai"); }, 700);
+  }
+}
+function ketThucXc() {
+  const n = xcDung >= xcDs.length - 1 ? 3 : xcDung >= xcDs.length / 2 ? 2 : 1;
+  ghiSao("xc-" + xcBai.id, n);
+  $("#sao-to").innerHTML = [0, 1, 2].map(i => `<span style="animation-delay:${i * .25}s;${i < n ? "" : "filter:grayscale(1);opacity:.3"}">⭐</span>`).join("");
+  $("#xong-loi").textContent = ["", "Cố lên nào!", "Giỏi lắm!", "Xuất sắc!"][n];
+  $("#xong-phu").textContent = `Bé xếp đúng ngay ${xcDung}/${xcDs.length} câu`;
   sang("xong"); phao(24); phat("_well-done", "Well done! You did it!");
 }
 

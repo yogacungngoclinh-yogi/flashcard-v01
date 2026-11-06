@@ -1,12 +1,14 @@
-# Thu giọng bài giao tiếp: câu hỏi = giọng nhân vật, câu đáp = giọng bé (en-US-AnaNeural).
+# Thu giọng bài giao tiếp + tình huống (giao-tiep.js, tinh-huong.js): câu hỏi = giọng nhân vật, câu đáp = giọng bé (en-US-AnaNeural).
 # Chạy: python thu-giong-giao-tiep.py  (bỏ qua file đã có; --lai để thu lại hết)
 import asyncio, json, sys
 from pathlib import Path
 import edge_tts
 GOC = Path(__file__).parent
 BE = "en-US-AnaNeural"
-js = (GOC / "giao-tiep.js").read_text(encoding="utf-8")
-bai = json.loads(js.split("window.GIAO_TIEP =", 1)[1].rstrip().rstrip(";"))
+bai = []
+for ten, bien in (("giao-tiep.js", "window.GIAO_TIEP ="), ("tinh-huong.js", "window.TINH_HUONG =")):
+    js = (GOC / ten).read_text(encoding="utf-8")
+    bai += json.loads(js.split(bien, 1)[1].rstrip().rstrip(";"))
 
 async def main():
     d = GOC / "am-thanh"; d.mkdir(exist_ok=True)
