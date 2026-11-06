@@ -62,7 +62,9 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .dap-an.xong .lua-chon:not(.dung){opacity:.2;transition:opacity .3s}
 @keyframes chop{0%,100%{box-shadow:var(--bong);background:#fff}50%{box-shadow:0 0 0 12px rgba(76,175,80,.45),var(--bong);background:#E8F5E9}}
 @keyframes nhun{50%{transform:translateY(8px)}}
-.lua-chon.sai{animation:lac .4s;opacity:.35}
+.lua-chon.sai{animation:lac .4s;border-color:#E53935}
+.lua-chon.sai>*{opacity:.3}
+.lua-chon.sai::before{content:"✖";position:absolute;inset:0;display:grid;place-items:center;font-size:min(22vw,96px);font-weight:800;color:#E53935;text-shadow:0 2px 0 #fff;z-index:1;pointer-events:none}
 @keyframes lac{25%{transform:translateX(-10px)}75%{transform:translateX(10px)}}
 /* Kết quả */
 .ket-qua{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center}
@@ -209,12 +211,35 @@ function phatLanLuot(ds, xong) {
   const fin = () => { if (daXong || k !== tokChuoi) return; daXong = true; xong(); };
   const buoc = () => {
     if (k !== tokChuoi) return;
-    if (i >= ds.length) return void setTimeout(fin, 700);
+    if (i >= ds.length) return void setTimeout(fin, 300);
     const [id, chu] = ds[i++];
     phat(id, chu).onended = () => setTimeout(buoc, 250);
   };
-  buoc(); setTimeout(fin, 8000);
+  buoc(); setTimeout(fin, 5000);
 }
+// Tải sẵn file tiếng để bấm là phát ngay
+const daNap = new Set();
+function napAm(ids) { ids.forEach(id => { if (daNap.has(id)) return; daNap.add(id); fetch("am-thanh/" + id + ".mp3").catch(() => {}); }); }
+// Tiếng hiệu ứng nhỏ (tự tạo, không cần file): đúng = chuông vui, sai = "ten ten"
+let ac;
+function nhac(not, kieuSong, am, cach, dai) {
+  try {
+    ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+    if (ac.state === "suspended") ac.resume();
+    let t = ac.currentTime + 0.02;
+    not.forEach(f => {
+      const o = ac.createOscillator(), g = ac.createGain();
+      o.type = kieuSong; o.frequency.value = f;
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(am, t + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dai);
+      o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + dai + 0.05);
+      t += cach;
+    });
+  } catch {}
+}
+const tiengDung = () => nhac([523, 659, 784, 1047, 1319], "triangle", 0.07, 0.08, 0.3);
+const tiengSai = () => nhac([440, 311], "square", 0.035, 0.22, 0.26);
 function phat(id, chu) {
   am.pause(); am.onended = null;
   am.onerror = () => noi(chu);
@@ -273,7 +298,7 @@ function veThe() {
   $("#truoc").style.visibility = viTri ? "visible" : "hidden";
   $("#sau").textContent = viTri === chuDe.tu.length - 1 ? "⭐" : "➡️";
   the.classList.remove("vao"); void the.offsetWidth; the.classList.add("vao");
-  setTimeout(() => phat(tu.id, tu.en), 300);
+  setTimeout(() => { if ($("#hoc").classList.contains("hien") && chuDe.tu[viTri] === tu) phat(tu.id, tu.en); }, 300);
 }
 $("#the").onclick = () => {
   const tu = chuDe.tu[viTri], the = $("#the");
@@ -297,6 +322,7 @@ const tron = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map
 function batDauKT() {
   kieu = "tv";
   cau = tron(chuDe.tu).slice(0, SO_CAU); soCau = 0; dungLanDau = 0;
+  napAm(cau.map(t => t.id));
   sang("kiem-tra"); veCau();
 }
 function veCau() {
@@ -306,9 +332,8 @@ function veCau() {
   const lua = tron([tu, ...nhieu]);
   $("#tien-do").style.width = (soCau / cau.length * 100) + "%";
   $("#dap-an").innerHTML = lua.map(t => `<button class="lua-chon" data-id="${t.id}">${hinhTu(t)}</button>`).join("");
-  const anh = [...document.querySelectorAll("#dap-an img")];
-  Promise.all(anh.map(i => i.complete ? 0 : new Promise(r => { i.addEventListener("load", r); i.addEventListener("error", r); })))
-    .then(() => setTimeout(() => { if (cau[soCau] === tu && !khoa) phat(tu.id, tu.en); }, 500));
+  // hiện hình là đọc luôn
+  setTimeout(() => { if (cau[soCau] === tu && !khoa) phat(tu.id, tu.en); }, 120);
 }
 $("#nghe-lai").onclick = () => { const tu = cau[soCau]; phat(tu.id, tu.en); };
 $("#dap-an").onclick = e => {
@@ -316,15 +341,13 @@ $("#dap-an").onclick = e => {
   const tu = cau[soCau];
   if (b.dataset.id === tu.id) {
     khoa = true; b.classList.add("dung"); $("#dap-an").classList.add("xong"); if (!saiCauNay) dungLanDau++;
-    phao(6);
-    phatLanLuot([["_great", "Great job!"], [tu.id, tu.en]], () => {
+    phao(12); tiengDung();
+    phatLanLuot([[tu.id, tu.en]], () => {
       if (!$("#kiem-tra").classList.contains("hien")) return;
       soCau++; soCau < cau.length ? veCau() : ketThuc();
     });
   } else {
-    saiCauNay = true; b.classList.add("sai");
-    phat("_try-again", "Try again!");
-    setTimeout(() => phat(tu.id, tu.en), 1000);
+    saiCauNay = true; b.classList.add("sai"); tiengSai();
   }
 };
 function ketThuc() {
@@ -381,6 +404,7 @@ $("#gt-xong-noi").onclick = () => {
 
 function ktBai() {
   kieu = "gt"; cauGt = tron(bai.luot); soGt = 0; dungGt = 0;
+  napAm(cauGt.flatMap(l => [l.id + "-q", l.id + "-a"]));
   sang("gt-kt"); veCauGt();
 }
 function veCauGt() {
@@ -390,9 +414,7 @@ function veCauGt() {
   $("#gt-tien-do").style.width = (soGt / cauGt.length * 100) + "%";
   $("#gt-kt-nv").innerHTML = anhGt("gt-" + bai.id + "-nv", bai.nv.emoji);
   $("#gt-dap-an").innerHTML = lua.map(x => `<button class="lua-chon" data-id="${x.id}"><span class="em" style="${[...x.emoji].length > 3 ? "font-size:min(7vw,30px);white-space:nowrap" : ""}">${anhGt(x.id, x.emoji)}</span><b>${x.a}</b></button>`).join("");
-  const anh = [...document.querySelectorAll("#gt-dap-an img")];
-  Promise.all(anh.map(i => i.complete ? 0 : new Promise(r => { i.addEventListener("load", r); i.addEventListener("error", r); })))
-    .then(() => setTimeout(() => { if (cauGt[soGt] === l && !khoaGt) phat(l.id + "-q", l.q); }, 500));
+  setTimeout(() => { if (cauGt[soGt] === l && !khoaGt) phat(l.id + "-q", l.q); }, 120);
 }
 $("#gt-nghe-lai").onclick = () => { const l = cauGt[soGt]; phat(l.id + "-q", l.q); };
 $("#gt-dap-an").onclick = e => {
@@ -400,14 +422,13 @@ $("#gt-dap-an").onclick = e => {
   const l = cauGt[soGt];
   if (b.dataset.id === l.id) {
     khoaGt = true; b.classList.add("dung"); $("#gt-dap-an").classList.add("xong"); if (!saiGt) dungGt++;
-    phao(6);
-    phatLanLuot([["_great", "Great job!"], [l.id + "-a", l.a]], () => {
+    phao(12); tiengDung();
+    phatLanLuot([[l.id + "-a", l.a]], () => {
       if (!$("#gt-kt").classList.contains("hien")) return;
       soGt++; soGt < cauGt.length ? veCauGt() : ketThucGt();
     });
   } else {
-    saiGt = true; b.classList.add("sai"); phat("_try-again", "Try again!");
-    setTimeout(() => phat(l.id + "-q", l.q), 1000);
+    saiGt = true; b.classList.add("sai"); tiengSai();
   }
 };
 function ketThucGt() {
