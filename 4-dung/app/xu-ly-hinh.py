@@ -1,5 +1,6 @@
 # Lấy ảnh từ cho-xu-ly/ → hinh/<id>.jpg (640px), gốc cất vào 3-tai-san/hinh-goc/.
-# Chạy: python xu-ly-hinh.py [--thu]   (--thu = chỉ báo, không chuyển)
+# Chạy: python xu-ly-hinh.py [--thu] [--tu <thư mục>] [--giu-cu]
+#   --thu = chỉ báo, không chuyển · --tu = lấy từ thư mục khác (quét cả thư mục con) · --giu-cu = ảnh app đã có thì bỏ qua
 import json, re, sys, shutil
 from pathlib import Path
 from PIL import Image
@@ -32,18 +33,21 @@ for t in bien("truyen.js", "window.BAI_DOC =") + bien("mau-cau.js", "window.MAU_
 can.discard("")
 
 thu = "--thu" in sys.argv
+giu = "--giu-cu" in sys.argv  # ảnh đã có trong app thì bỏ qua, không thay
+if "--tu" in sys.argv: CHO = Path(sys.argv[sys.argv.index("--tu") + 1])  # thư mục khác, quét cả thư mục con
 KHO.mkdir(parents=True, exist_ok=True)
-moi, la, ghi_de = [], [], []
-for f in sorted(CHO.iterdir()):
+moi, la, ghi_de, bo_qua = [], [], [], []
+for f in sorted(CHO.rglob("*")):
     if f.suffix.lower() not in (".png", ".jpg", ".jpeg", ".webp"): continue
     id_ = f.stem.lower().strip()
     if id_ not in can: la.append(f.name); continue
+    if giu and (HINH / f"{id_}.jpg").exists(): bo_qua.append(id_); continue
     (ghi_de if (HINH / f"{id_}.jpg").exists() else moi).append(id_)
     if thu: continue
     im = Image.open(f).convert("RGB"); im.thumbnail((640, 640))
     im.save(HINH / f"{id_}.jpg", "JPEG", quality=85, optimize=True)
     shutil.move(str(f), KHO / f"{id_}{f.suffix.lower()}")
 co = {p.stem for p in HINH.glob("*.jpg")}
-print(f"moi: {len(moi)} | thay anh cu: {len(ghi_de)} | ten la: {len(la)} | con thieu: {len(can - co)}")
+print(f"moi: {len(moi)} | thay anh cu: {len(ghi_de)} | bo qua (da co): {len(bo_qua)} | ten la: {len(la)} | con thieu: {len(can - co)}")
 if la: print("TEN LA:", ", ".join(la))
 if ghi_de: print("THAY:", ", ".join(ghi_de))
