@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#FF8A65">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon/icon-192.png">
+<link rel="apple-touch-icon" href="icon/apple-touch-icon.png">
 <title>Bé Học Tiếng Anh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
@@ -150,7 +155,7 @@ body.an-viet.t10 :is(.dap-an small,.nhan-dung small){display:none}
   <button class="lt-nut" id="hom-nay"></button>
   <div class="khu" id="khu"></div>
   <div class="luoi" id="luoi"></div>
-  <div class="thuong-hieu">Chạm vào một chủ đề để học nhé!</div>
+  <div class="thuong-hieu">Chạm vào một chủ đề để học nhé! <button class="pp-link" id="vao-pp">🔒 Phụ huynh</button></div>
 </section>
 
 <section class="man" id="hoc">
@@ -241,29 +246,33 @@ body.an-viet.t10 :is(.dap-an small,.nhan-dung small){display:none}
   </div>
 </section>
 
-<script src="tu-vung.js?v=20261107e"></script>
-<script src="giao-tiep.js?v=20261107e"></script>
-<script src="chu-cai.js?v=20261107e"></script>
-<script src="tinh-huong.js?v=20261107e"></script>
-<script src="mau-cau.js?v=20261107e"></script>
-<script src="truyen.js?v=20261107e"></script>
-<script src="thoi-gian.js?v=20261107e"></script>
-<script src="them.js?v=20261107e"></script>
+<script src="tu-vung.js?v=20261107f"></script>
+<script src="giao-tiep.js?v=20261107f"></script>
+<script src="chu-cai.js?v=20261107f"></script>
+<script src="tinh-huong.js?v=20261107f"></script>
+<script src="mau-cau.js?v=20261107f"></script>
+<script src="truyen.js?v=20261107f"></script>
+<script src="thoi-gian.js?v=20261107f"></script>
+<script src="them.js?v=20261107f"></script>
 <script>
 const $ = s => document.querySelector(s);
 const SO_CAU = 8;
 let kieu = "tv", bai, luot = 0, cauGt = [], soGt = 0, dungGt = 0, saiGt = false, khoaGt = false;
 let chuDe, viTri = 0, cau = [], soCau = 0, dungLanDau = 0, saiCauNay = false, khoa = false;
 
+// ---- hồ sơ: mỗi bé có bộ khoá riêng (bé đầu tiên giữ khoá cũ để không mất tiến độ) ----
+const HS_MAC = "b1";
+let hoSo = (() => { try { return localStorage.getItem("ho-so") || HS_MAC; } catch { return HS_MAC; } })();
+const khoaHs = k => k + (hoSo === HS_MAC ? "" : "@" + hoSo);
 // ---- lưu sao ----
-const docSao = () => { try { return JSON.parse(localStorage.getItem("sao") || "{}"); } catch { return {}; } };
-const ghiSao = (id, n) => { try { const s = docSao(); s[id] = Math.max(s[id] || 0, n); localStorage.setItem("sao", JSON.stringify(s)); } catch {} };
+const docSao = () => { try { return JSON.parse(localStorage.getItem(khoaHs("sao")) || "{}"); } catch { return {}; } };
+const ghiSao = (id, n) => { try { const s = docSao(); s[id] = Math.max(s[id] || 0, n); localStorage.setItem(khoaHs("sao"), JSON.stringify(s)); } catch {} };
 
 // ---- sổ từ: ôn cách quãng (hộp 1–4) + từ khó ----
 const KHOANG = [0, 1, 2, 4, 8];  // số ngày chờ theo hộp
 const soNgayNay = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return Math.floor(d.getTime() / 864e5); };
-const docTuNho = () => { try { return JSON.parse(localStorage.getItem("tu-nho") || "{}"); } catch { return {}; } };
-const ghiTuNho = s => { try { localStorage.setItem("tu-nho", JSON.stringify(s)); } catch {} };
+const docTuNho = () => { try { return JSON.parse(localStorage.getItem(khoaHs("tu-nho")) || "{}"); } catch { return {}; } };
+const ghiTuNho = s => { try { localStorage.setItem(khoaHs("tu-nho"), JSON.stringify(s)); } catch {} };
 function tuDung(id) { const s = docTuNho(), t = s[id] || { h: 0, s: 0 }; t.h = Math.min(4, (t.h || 0) + 1); t.d = soNgayNay() + KHOANG[t.h]; s[id] = t; ghiTuNho(s); }
 function tuSai(id) { const s = docTuNho(), t = s[id] || { h: 0, s: 0 }; t.h = 1; t.s = (t.s || 0) + 1; t.d = soNgayNay() + 1; s[id] = t; ghiTuNho(s); }
 // ---- làm sai: lần 1 "Try again!", lần 2 đáp án đúng nhấp nháy + đọc lên ----
@@ -325,8 +334,8 @@ function nhac(not, kieuSong, am, cach, dai) {
     });
   } catch {}
 }
-const tiengDung = () => nhac([523, 659, 784, 1047, 1319], "triangle", 0.07, 0.08, 0.3);
-const tiengSai = () => nhac([440, 311], "square", 0.035, 0.22, 0.26);
+const tiengDung = () => { nhac([523, 659, 784, 1047, 1319], "triangle", 0.07, 0.08, 0.3); window.ghiNk && ghiNk("d"); };
+const tiengSai = () => { nhac([440, 311], "square", 0.035, 0.22, 0.26); window.ghiNk && ghiNk("s"); };
 function phat(id, chu) {
   am.pause(); am.onended = null;
   am.onerror = () => noi(chu);
@@ -355,8 +364,8 @@ const KHU = {
   "5": [["lt", "🗺️ Lộ trình"], ["abc", "🔤 ABC"], ["sight", "👀 Sight words"], ["tv", "📚 Từ vựng"], ["truyen", "📖 Truyện"], ["gt", "💬 Nói chuyện"]],
   "10": [["th", "🗣️ Tình huống"], ["mc", "🔁 Mẫu câu"], ["xc", "🧩 Xếp câu"], ["dt", "✍️ Điền từ"], ["doc", "📰 Bài đọc"], ["truyen", "📖 Truyện"], ["tv", "📚 Từ vựng"]],
 };
-const nho = (k, mac) => { try { return localStorage.getItem(k) || mac; } catch { return mac; } };
-const ghiNho = (k, v) => { try { localStorage.setItem(k, v); } catch {} };
+const nho = (k, mac) => { try { return localStorage.getItem(khoaHs(k)) || mac; } catch { return mac; } };
+const ghiNho = (k, v) => { try { localStorage.setItem(khoaHs(k), v); } catch {} };
 let tuoi = nho("tuoi", "5"), khu = nho("khu-" + tuoi, KHU[tuoi][0][0]);
 const oChuDe = (c, sao) => `<button class="o ${c.kieu || ""}" style="--mau:${c.mau}" data-cd="${c.id}">
       <span class="sao">${"⭐".repeat(sao[c.id] || 0)}</span>
@@ -371,6 +380,7 @@ function veTrangChu() {
   document.body.classList.toggle("t10", tuoi === "10");
   document.body.classList.toggle("an-viet", nho("an-viet", "0") === "1");
   $("#bt-viet").textContent = nho("an-viet", "0") === "1" ? "🙈 Đang ẩn nghĩa Việt" : "👀 Đang hiện nghĩa Việt";
+  window.veChipHs && veChipHs(); window.veMucTieu && veMucTieu();
   $("#hom-nay").style.display = tuoi === "5" ? "" : "none";
   if (tuoi === "5") $("#hom-nay").innerHTML = `▶️ Học hôm nay<small>Ngày ${ngayHomNay()} · khoảng 8 phút</small>`;
   $("#khu").className = tuoi === "5" ? "khu khu-to" : "khu";
@@ -619,6 +629,8 @@ function ketThucXc() {
 }
 
 veTrangChu();
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
+<script src="phu-huynh.js?v=20261107f"></script>
 </body>
 </html>

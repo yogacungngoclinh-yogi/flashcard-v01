@@ -452,8 +452,8 @@
   const ngayStr = d => d.toISOString().slice(0, 10);
   const homNay = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return ngayStr(d); };
   const homQua = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset() - 1440); return ngayStr(d); };
-  const docLt = () => { try { return JSON.parse(localStorage.getItem("lo-trinh") || "{}"); } catch { return {}; } };
-  const ghiLt = v => { try { localStorage.setItem("lo-trinh", JSON.stringify(v)); } catch {} };
+  const docLt = () => { try { return JSON.parse(localStorage.getItem(khoaHs("lo-trinh")) || "{}"); } catch { return {}; } };
+  const ghiLt = v => { try { localStorage.setItem(khoaHs("lo-trinh"), JSON.stringify(v)); } catch {} };
   const chuoiNgay = lt => (lt.ngayCuoi === homNay() || lt.ngayCuoi === homQua()) ? (lt.chuoi || 0) : 0;
   function veLoTrinh() {
     const lt = docLt(), xong = lt.xong || 0, nay = Math.min(xong + 1, SO_NGAY);
