@@ -65,6 +65,8 @@
 .album div{aspect-ratio:1;background:var(--the);border-radius:20px;display:grid;place-items:center;font-size:40px;box-shadow:0 4px 0 rgba(59,47,74,.12)}
 .album div.chua{font-size:20px;color:var(--phu);opacity:.5}
 .sticker-to{font-size:min(40vw,170px);animation:vao .6s cubic-bezier(.3,1.6,.6,1)}
+.cau-hoi .cau-chu{cursor:pointer}
+.cau-hoi .cau-chu>:first-child::after{content:" 🔊";font-size:.65em;opacity:.8}
 .tt-tu{margin-left:auto;flex:none;display:flex;align-items:center;gap:6px;height:48px;padding:0 16px 0 12px;border-radius:999px;background:var(--the);box-shadow:var(--bong);font-family:inherit;font-weight:800;font-size:18px;color:#555;border:3px solid #66BB6A;white-space:nowrap}
 .tt-tu b{font-size:22px}
 .tt-tu.dung{background:#FFA000;border-color:#FFA000;color:#fff;animation:nhay 1.6s ease-in-out infinite}
@@ -225,6 +227,11 @@
     if (o) ttDoc(+o.dataset.i);
   });
   // nút góc phải: đang tự đọc → "Dừng"; đang dừng → "Đọc tiếp" (lúc dừng bé chạm câu nào thì đọc câu đó rồi đứng lại)
+  // chạm vào chính câu hỏi cũng nghe lại (cùng việc với nút loa to bên dưới)
+  document.addEventListener("click", e => {
+    const c = e.target.closest(".cau-hoi .cau-chu"); if (!c) return;
+    const n = c.closest(".cau-hoi").querySelector('.nut-tron[id$="nghe"],.nut-tron[id$="nghe-lai"]'); if (n) n.click();
+  });
   function nutTu() {
     const n = g("tt-tu"); n.classList.toggle("dung", !ttTu);
     n.innerHTML = ttTu ? "<b>⏸️</b>Dừng" : "<b>▶️</b>Đọc tiếp";
@@ -313,7 +320,7 @@
     g("dd-td").style.width = (ddSo / docVat.hoi.length * 100) + "%";
     g("dd-hoi").textContent = h.q; g("dd-hoivi").textContent = h.qvi;
     g("dd-da").classList.remove("xong");
-    g("dd-da").innerHTML = h.dap.map((d, i) => `<button class="lua-chon" data-i="${i}"><b>${esc(d)}</b></button>`).join("");
+    g("dd-da").innerHTML = h.dap.map((d, i) => `<button class="lua-chon" data-i="${i}"><span class="tx"><b>${esc(d)}</b>${h.dapvi && h.dapvi[i] !== d ? `<small>${esc(h.dapvi[i])}</small>` : ""}</span></button>`).join("");
     setTimeout(() => { if (docVat.hoi[ddSo] === h && !ddKhoa) phat(h.id, h.q); }, 150);
   }
   g("dd-nghe").onclick = () => { const h = docVat.hoi[ddSo]; phat(h.id, h.q); };
@@ -332,6 +339,7 @@
 
   // ============ CÂU HỎI CHỌN HÌNH (dùng chung) ============
   let k2 = null;
+  const nhanHtml = s => { const [a, ...b] = String(s).split(" · "); return esc(a) + (b.length ? `<small>${esc(b.join(" · "))}</small>` : ""); };
   function ktHinh(cfg) {
     k2 = { ...cfg, ds: tron(cfg.ds), so: 0, dung: 0, sai: false, khoa: false };
     napAm(k2.ds.map(x => cfg.am(x)[0]));
@@ -354,7 +362,7 @@
     const x = k2.ds[k2.so];
     if (b.dataset.dung === "1") {
       k2.khoa = true; if (!k2.sai) k2.dung++;
-      b.classList.add("dung"); b.insertAdjacentHTML("beforeend", `<span class="nhan-dung">${esc(k2.nhan(x))}</span>`);
+      b.classList.add("dung"); b.insertAdjacentHTML("beforeend", `<span class="nhan-dung">${nhanHtml(k2.nhan(x))}</span>`);
       g("kt2-da").classList.add("xong"); phao(12); tiengDung();
       phatLanLuot([k2.am(x)], () => {
         if (!dangMo("kt2")) return;
@@ -391,7 +399,7 @@
   function ktMc() {
     kieu = "mc";
     ktHinh({ ds: mcVat.tu, hoi: mcVat.mau_en, hoivi: mcVat.mau_vi,
-      am: t => [t.id, t.en], hinh: hinhMc, nhan: t => t.chu,
+      am: t => [t.id, t.en], hinh: hinhMc, nhan: t => t.chu + " · " + t.vi,
       xong: (d, n) => { kieu = "mc"; manXong("mc-" + mcVat.id, soSao(d, n), `Bé chọn đúng ngay ${d}/${n} câu`); } });
   }
   g("mc-kt").onclick = ktMc;
@@ -491,7 +499,7 @@
     if (b.k === "kt") {
       nut.style.display = "none";
       return ktHinh({ ds: b.ds, goc: b.ds, hoi: "Find the picture!", hoivi: "Tìm hình đúng nhé!",
-        am: t => [t.id, t.en], hinh: t => hinhTu(t), nhan: t => t.en,
+        am: t => [t.id, t.en], hinh: t => hinhTu(t), nhan: t => t.en + " · " + (t.vi || "").split(" · ").pop(),
         xong: () => { kieu = "ngay"; ngB++; veNgay(); } });
     }
     if (b.k === "truyen") { return moTruyen(b.tr.id, () => { kieu = "ngay"; ngB++; veNgay(); }); }

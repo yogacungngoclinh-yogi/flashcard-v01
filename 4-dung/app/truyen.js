@@ -1591,6 +1591,7 @@ window.BAI_DOC = [
      "Lucky",
      "Bella"
     ],
+    "dapvi": ["Kitty", "Lucky", "Bella"],
     "dung": 0
    },
    {
@@ -1602,6 +1603,7 @@ window.BAI_DOC = [
      "White and black",
      "Brown"
     ],
+    "dapvi": ["Màu cam", "Trắng và đen", "Màu nâu"],
     "dung": 1
    },
    {
@@ -1613,6 +1615,7 @@ window.BAI_DOC = [
      "In a box",
      "On my bed"
     ],
+    "dapvi": ["Trên ghế sofa", "Trong cái hộp", "Trên giường của em"],
     "dung": 2
    }
   ]
@@ -1668,6 +1671,7 @@ window.BAI_DOC = [
      "Mom",
      "My brother"
     ],
+    "dapvi": ["Bố", "Mẹ", "Em trai của em"],
     "dung": 0
    },
    {
@@ -1679,6 +1683,7 @@ window.BAI_DOC = [
      "Kind",
      "Tall"
     ],
+    "dapvi": ["Vui tính", "Tốt bụng", "Cao"],
     "dung": 1
    },
    {
@@ -1690,6 +1695,7 @@ window.BAI_DOC = [
      "Mom",
      "My brother"
     ],
+    "dapvi": ["Bố", "Mẹ", "Em trai của em"],
     "dung": 2
    }
   ]
@@ -1745,6 +1751,7 @@ window.BAI_DOC = [
      "Sunny",
      "Snowy"
     ],
+    "dapvi": ["Có mưa", "Có nắng", "Có tuyết"],
     "dung": 1
    },
    {
@@ -1756,6 +1763,7 @@ window.BAI_DOC = [
      "Tennis",
      "Chess"
     ],
+    "dapvi": ["Bóng đá", "Quần vợt", "Cờ vua"],
     "dung": 0
    },
    {
@@ -1767,6 +1775,7 @@ window.BAI_DOC = [
      "Rice",
      "Ice cream"
     ],
+    "dapvi": ["Bánh ngọt", "Cơm", "Kem"],
     "dung": 2
    }
   ]
@@ -1822,6 +1831,7 @@ window.BAI_DOC = [
      "Eight o'clock",
      "Ten o'clock"
     ],
+    "dapvi": ["Sáu giờ", "Tám giờ", "Mười giờ"],
     "dung": 0
    },
    {
@@ -1833,6 +1843,7 @@ window.BAI_DOC = [
      "Bread and eggs",
      "Noodles"
     ],
+    "dapvi": ["Cơm và cá", "Bánh mì và trứng", "Mì"],
     "dung": 1
    },
    {
@@ -1844,6 +1855,7 @@ window.BAI_DOC = [
      "Water",
      "Milk"
     ],
+    "dapvi": ["Nước ép", "Nước lọc", "Sữa"],
     "dung": 2
    }
   ]
@@ -1899,6 +1911,7 @@ window.BAI_DOC = [
      "Last Monday",
      "Yesterday"
     ],
+    "dapvi": ["Chủ nhật tuần trước", "Thứ Hai tuần trước", "Hôm qua"],
     "dung": 0
    },
    {
@@ -1910,6 +1923,7 @@ window.BAI_DOC = [
      "They jumped from tree to tree",
      "They swam"
     ],
+    "dapvi": ["Chúng ngủ", "Chúng nhảy từ cây này sang cây khác", "Chúng bơi"],
     "dung": 1
    },
    {
@@ -1921,6 +1935,7 @@ window.BAI_DOC = [
      "It is small",
      "It is tall"
     ],
+    "dapvi": ["Nó vui nhộn", "Nó nhỏ", "Nó cao"],
     "dung": 2
    }
   ]
@@ -1976,6 +1991,7 @@ window.BAI_DOC = [
      "Nine",
      "Ten"
     ],
+    "dapvi": ["Tám tuổi", "Chín tuổi", "Mười tuổi"],
     "dung": 1
    },
    {
@@ -1987,6 +2003,7 @@ window.BAI_DOC = [
      "Short and brown",
      "Curly and yellow"
     ],
+    "dapvi": ["Dài và đen", "Ngắn và nâu", "Xoăn và vàng"],
     "dung": 0
    },
    {
@@ -1998,6 +2015,7 @@ window.BAI_DOC = [
      "Watch TV",
      "Read comics and draw"
     ],
+    "dapvi": ["Chơi bóng đá", "Xem ti vi", "Đọc truyện tranh và vẽ"],
     "dung": 2
    }
   ]
@@ -2053,6 +2071,7 @@ window.BAI_DOC = [
      "It is hot",
      "It is late"
     ],
+    "dapvi": ["Trời đang mưa", "Trời nóng", "Đã muộn"],
     "dung": 0
    },
    {
@@ -2064,6 +2083,7 @@ window.BAI_DOC = [
      "A tent",
      "A robot"
     ],
+    "dapvi": ["Lâu đài cát", "Một cái lều", "Một con rô-bốt"],
     "dung": 1
    },
    {
@@ -2075,6 +2095,7 @@ window.BAI_DOC = [
      "Lemonade",
      "Hot chocolate"
     ],
+    "dapvi": ["Bánh kếp", "Nước chanh", "Sô-cô-la nóng"],
     "dung": 2
    }
   ]
@@ -2130,6 +2151,7 @@ window.BAI_DOC = [
      "Go swimming",
      "Watch a movie"
     ],
+    "dapvi": ["Dọn phòng", "Đi bơi", "Xem phim"],
     "dung": 0
    },
    {
@@ -2141,6 +2163,7 @@ window.BAI_DOC = [
      "My grandparents",
      "My friend"
     ],
+    "dapvi": ["Cô giáo của em", "Ông bà của em", "Bạn của em"],
     "dung": 1
    },
    {
@@ -2152,6 +2175,7 @@ window.BAI_DOC = [
      "Fried rice",
      "Noodle soup"
     ],
+    "dapvi": ["Bánh pizza", "Cơm chiên", "Món mì nước"],
     "dung": 2
    }
   ]
@@ -2207,6 +2231,7 @@ window.BAI_DOC = [
      "A chef",
      "A pilot"
     ],
+    "dapvi": ["Bác sĩ", "Đầu bếp", "Phi công"],
     "dung": 1
    },
    {
@@ -2218,6 +2243,7 @@ window.BAI_DOC = [
      "Pancakes",
      "Pizza"
     ],
+    "dapvi": ["Gỏi cuốn", "Bánh kếp", "Bánh pizza"],
     "dung": 0
    },
    {
@@ -2229,6 +2255,7 @@ window.BAI_DOC = [
      "She watched TV",
      "She washed the vegetables"
     ],
+    "dapvi": ["Bạn ấy mua đồ ăn", "Bạn ấy xem ti vi", "Bạn ấy rửa rau"],
     "dung": 2
    }
   ]
@@ -2284,6 +2311,7 @@ window.BAI_DOC = [
      "Next to the gym",
      "In front of the gate"
     ],
+    "dapvi": ["Phía sau thư viện", "Cạnh phòng tập thể dục", "Trước cổng trường"],
     "dung": 0
    },
    {
@@ -2295,6 +2323,7 @@ window.BAI_DOC = [
      "Every morning before lessons",
      "On Sundays"
     ],
+    "dapvi": ["Sau bữa trưa", "Mỗi sáng trước giờ học", "Vào chủ nhật"],
     "dung": 1
    },
    {
@@ -2306,6 +2335,7 @@ window.BAI_DOC = [
      "They ate them all",
      "They gave them to the school kitchen"
     ],
+    "dapvi": ["Các bạn bán chúng", "Các bạn ăn hết", "Các bạn tặng cho bếp ăn của trường"],
     "dung": 2
    }
   ]
@@ -2361,6 +2391,7 @@ window.BAI_DOC = [
      "In the countryside",
      "By the sea"
     ],
+    "dapvi": ["Ở thành phố", "Ở nông thôn", "Cạnh biển"],
     "dung": 1
    },
    {
@@ -2372,6 +2403,7 @@ window.BAI_DOC = [
      "Played video games",
      "Went swimming"
     ],
+    "dapvi": ["Cho vịt và gà ăn", "Chơi trò chơi điện tử", "Đi bơi"],
     "dung": 0
    },
    {
@@ -2383,6 +2415,7 @@ window.BAI_DOC = [
      "Scared",
      "Calm and happy"
     ],
+    "dapvi": ["Chán", "Sợ", "Bình yên và vui"],
     "dung": 2
    }
   ]
@@ -2438,6 +2471,7 @@ window.BAI_DOC = [
      "In a box",
      "In the park"
     ],
+    "dapvi": ["Dưới ghế đá", "Trong cái hộp", "Trong công viên"],
     "dung": 0
    },
    {
@@ -2449,6 +2483,7 @@ window.BAI_DOC = [
      "Some bread",
      "Meat"
     ],
+    "dapvi": ["Sữa", "Một ít bánh mì", "Thịt"],
     "dung": 1
    },
    {
@@ -2460,6 +2495,7 @@ window.BAI_DOC = [
      "From the police",
      "From a phone number on the collar"
     ],
+    "dapvi": ["Từ tờ áp phích", "Từ công an", "Từ số điện thoại trên vòng cổ"],
     "dung": 2
    }
   ]

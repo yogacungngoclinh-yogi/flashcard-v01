@@ -17,7 +17,7 @@ window.CHU_CAI = [
     "vi": "apple · quả táo",
     "emoji": "🍎",
     "anh": "apple",
-    "doc": "A. A is for apple.",
+    "doc": "Letter A is for apple.",
     "docNgan": "Letter A."
    },
    {
@@ -26,7 +26,7 @@ window.CHU_CAI = [
     "vi": "ball · quả bóng",
     "emoji": "⚽",
     "anh": "ball",
-    "doc": "B. B is for ball.",
+    "doc": "Letter B is for ball.",
     "docNgan": "Letter B."
    },
    {
@@ -35,7 +35,7 @@ window.CHU_CAI = [
     "vi": "cat · con mèo",
     "emoji": "🐱",
     "anh": "cat",
-    "doc": "C. C is for cat.",
+    "doc": "Letter C is for cat.",
     "docNgan": "Letter C."
    },
    {
@@ -44,7 +44,7 @@ window.CHU_CAI = [
     "vi": "dog · con chó",
     "emoji": "🐶",
     "anh": "dog",
-    "doc": "D. D is for dog.",
+    "doc": "Letter D is for dog.",
     "docNgan": "Letter D."
    },
    {
@@ -53,7 +53,7 @@ window.CHU_CAI = [
     "vi": "egg · quả trứng",
     "emoji": "🥚",
     "anh": "egg",
-    "doc": "E. E is for egg.",
+    "doc": "Letter E is for egg.",
     "docNgan": "Letter E."
    },
    {
@@ -62,7 +62,7 @@ window.CHU_CAI = [
     "vi": "fish · con cá",
     "emoji": "🐟",
     "anh": "fish",
-    "doc": "F. F is for fish.",
+    "doc": "Letter F is for fish.",
     "docNgan": "Letter F."
    },
    {
@@ -71,7 +71,7 @@ window.CHU_CAI = [
     "vi": "grapes · chùm nho",
     "emoji": "🍇",
     "anh": "grapes",
-    "doc": "G. G is for grapes.",
+    "doc": "Letter G is for grapes.",
     "docNgan": "Letter G."
    }
   ]
@@ -93,7 +93,7 @@ window.CHU_CAI = [
     "vi": "hat · cái mũ",
     "emoji": "👒",
     "anh": "hat",
-    "doc": "H. H is for hat.",
+    "doc": "Letter H is for hat.",
     "docNgan": "Letter H."
    },
    {
@@ -102,7 +102,7 @@ window.CHU_CAI = [
     "vi": "ice cream · kem",
     "emoji": "🍦",
     "anh": "ice-cream",
-    "doc": "I. I is for ice cream.",
+    "doc": "Letter I is for ice cream.",
     "docNgan": "Letter I."
    },
    {
@@ -111,7 +111,7 @@ window.CHU_CAI = [
     "vi": "juice · nước ép",
     "emoji": "🧃",
     "anh": "juice",
-    "doc": "J. J is for juice.",
+    "doc": "Letter J is for juice.",
     "docNgan": "Letter J."
    },
    {
@@ -120,7 +120,7 @@ window.CHU_CAI = [
     "vi": "kite · con diều",
     "emoji": "🪁",
     "anh": "kite",
-    "doc": "K. K is for kite.",
+    "doc": "Letter K is for kite.",
     "docNgan": "Letter K."
    },
    {
@@ -129,7 +129,7 @@ window.CHU_CAI = [
     "vi": "lion · sư tử",
     "emoji": "🦁",
     "anh": "lion",
-    "doc": "L. L is for lion.",
+    "doc": "Letter L is for lion.",
     "docNgan": "Letter L."
    },
    {
@@ -138,7 +138,7 @@ window.CHU_CAI = [
     "vi": "monkey · con khỉ",
     "emoji": "🐵",
     "anh": "monkey",
-    "doc": "M. M is for monkey.",
+    "doc": "Letter M is for monkey.",
     "docNgan": "Letter M."
    },
    {
@@ -147,7 +147,7 @@ window.CHU_CAI = [
     "vi": "nose · cái mũi",
     "emoji": "👃",
     "anh": "nose",
-    "doc": "N. N is for nose.",
+    "doc": "Letter N is for nose.",
     "docNgan": "Letter N."
    }
   ]
@@ -169,7 +169,7 @@ window.CHU_CAI = [
     "vi": "octopus · bạch tuộc",
     "emoji": "🐙",
     "anh": "octopus",
-    "doc": "O. O is for octopus.",
+    "doc": "Letter O is for octopus.",
     "docNgan": "Letter O."
    },
    {
@@ -178,7 +178,7 @@ window.CHU_CAI = [
     "vi": "pig · con heo",
     "emoji": "🐷",
     "anh": "pig",
-    "doc": "P. P is for pig.",
+    "doc": "Letter P is for pig.",
     "docNgan": "Letter P."
    },
    {
@@ -187,7 +187,7 @@ window.CHU_CAI = [
     "vi": "queen · nữ hoàng",
     "emoji": "👸",
     "anh": "queen",
-    "doc": "Q. Q is for queen.",
+    "doc": "Letter Q is for queen.",
     "docNgan": "Letter Q."
    },
    {
@@ -196,7 +196,7 @@ window.CHU_CAI = [
     "vi": "rabbit · con thỏ",
     "emoji": "🐰",
     "anh": "rabbit",
-    "doc": "R. R is for rabbit.",
+    "doc": "Letter R is for rabbit.",
     "docNgan": "Letter R."
    },
    {
@@ -205,7 +205,7 @@ window.CHU_CAI = [
     "vi": "sun · mặt trời",
     "emoji": "☀️",
     "anh": "sun",
-    "doc": "S. S is for sun.",
+    "doc": "Letter S is for sun.",
     "docNgan": "Letter S."
    },
    {
@@ -214,7 +214,7 @@ window.CHU_CAI = [
     "vi": "tiger · con hổ",
     "emoji": "🐯",
     "anh": "tiger",
-    "doc": "T. T is for tiger.",
+    "doc": "Letter T is for tiger.",
     "docNgan": "Letter T."
    },
    {
@@ -223,7 +223,7 @@ window.CHU_CAI = [
     "vi": "umbrella · cái ô",
     "emoji": "☂️",
     "anh": "umbrella",
-    "doc": "U. U is for umbrella.",
+    "doc": "Letter U is for umbrella.",
     "docNgan": "Letter U."
    }
   ]
@@ -245,7 +245,7 @@ window.CHU_CAI = [
     "vi": "van · xe tải nhỏ",
     "emoji": "🚐",
     "anh": "van",
-    "doc": "V. V is for van.",
+    "doc": "Letter V is for van.",
     "docNgan": "Letter V."
    },
    {
@@ -254,7 +254,7 @@ window.CHU_CAI = [
     "vi": "watermelon · dưa hấu",
     "emoji": "🍉",
     "anh": "watermelon",
-    "doc": "W. W is for watermelon.",
+    "doc": "Letter W is for watermelon.",
     "docNgan": "Letter W."
    },
    {
@@ -263,7 +263,7 @@ window.CHU_CAI = [
     "vi": "fox · con cáo",
     "emoji": "🦊",
     "anh": "fox",
-    "doc": "X. Fox ends with X.",
+    "doc": "Fox ends with the letter X.",
     "docNgan": "Letter X."
    },
    {
@@ -272,7 +272,7 @@ window.CHU_CAI = [
     "vi": "yellow · màu vàng",
     "emoji": "🟡",
     "anh": "yellow",
-    "doc": "Y. Y is for yellow.",
+    "doc": "Letter Y is for yellow.",
     "docNgan": "Letter Y."
    },
    {
@@ -281,7 +281,7 @@ window.CHU_CAI = [
     "vi": "zebra · ngựa vằn",
     "emoji": "🦓",
     "anh": "zebra",
-    "doc": "Z. Z is for zebra.",
+    "doc": "Letter Z is for zebra.",
     "docNgan": "Letter Z."
    }
   ]

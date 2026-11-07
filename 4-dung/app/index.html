@@ -120,8 +120,12 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .dap-an.chu .lua-chon{aspect-ratio:auto;padding:14px 8px;gap:6px;align-content:center}
 .dap-an.chu .lua-chon .em{font-size:min(14vw,60px);display:block}
 .dap-an.chu .lua-chon b{display:block;font-size:clamp(16px,4.2vw,22px);line-height:1.1}
+.dap-an .lua-chon .tx{display:block}
+@media (max-aspect-ratio:3/4){.dap-an.chu .lua-chon .tx{text-align:left}}
+.dap-an .lua-chon small{display:block;font-size:clamp(14px,3.8vw,19px);font-weight:700;color:var(--vi);line-height:1.1;margin-top:3px}
+.nhan-dung small{color:#fff;opacity:.95;font-size:.62em;font-weight:700;margin:0}
 .dap-an.chu .lua-chon img{max-height:70px;border-radius:12px}
-@media (max-aspect-ratio:3/4){.dap-an.chu{grid-template-columns:1fr}.dap-an.chu .lua-chon:nth-child(3){grid-column:auto;width:auto}.dap-an.chu .lua-chon{display:flex;align-items:center;gap:12px;justify-content:flex-start;padding:10px 16px}.dap-an.chu .lua-chon b{text-align:left}}
+@media (max-aspect-ratio:3/4){.dap-an.chu{grid-template-columns:1fr}.dap-an.chu .lua-chon:nth-child(3){grid-column:auto;width:100%}.dap-an.chu .lua-chon{display:flex;align-items:center;gap:12px;justify-content:flex-start;padding:10px 16px}.dap-an.chu .lua-chon b{text-align:left}}
 </style>
 </head>
 <body>
@@ -222,14 +226,14 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
   </div>
 </section>
 
-<script src="tu-vung.js?v=20261107a"></script>
-<script src="giao-tiep.js?v=20261107a"></script>
-<script src="chu-cai.js?v=20261107a"></script>
-<script src="tinh-huong.js?v=20261107a"></script>
-<script src="mau-cau.js?v=20261107a"></script>
-<script src="truyen.js?v=20261107a"></script>
-<script src="thoi-gian.js?v=20261107a"></script>
-<script src="them.js?v=20261107a"></script>
+<script src="tu-vung.js?v=20261107b"></script>
+<script src="giao-tiep.js?v=20261107b"></script>
+<script src="chu-cai.js?v=20261107b"></script>
+<script src="tinh-huong.js?v=20261107b"></script>
+<script src="mau-cau.js?v=20261107b"></script>
+<script src="truyen.js?v=20261107b"></script>
+<script src="thoi-gian.js?v=20261107b"></script>
+<script src="them.js?v=20261107b"></script>
 <script>
 const $ = s => document.querySelector(s);
 const SO_CAU = 8;
@@ -408,13 +412,16 @@ $("#dap-an").onclick = e => {
   const tu = cau[soCau];
   if (b.dataset.id === tu.id) {
     khoa = true; b.classList.add("dung");
-    const nhan = chuDe.kieu !== "chu" ? tu.en : tu.vi.split(" · ")[0];
+    const nhan = chuDe.kieu !== "chu" ? `${tu.en}<small>${tu.vi}</small>` : tu.vi.split(" · ")[0];
     b.insertAdjacentHTML("beforeend", `<span class="nhan-dung">${nhan}</span>`); $("#dap-an").classList.add("xong"); if (!saiCauNay) dungLanDau++;
     phao(12); tiengDung();
-    phatLanLuot([[tu.id, tu.en]], () => {
+    const tiep = () => {
       if (!$("#kiem-tra").classList.contains("hien")) return;
       soCau++; soCau < cau.length ? veCau() : ketThuc();
-    });
+    };
+    // chữ cái: câu hỏi đã đọc tên chữ rồi → không đọc lại lần nữa (tránh "ây, ây")
+    if (chuDe.hoi === "Which letter?") { const k = ++tokChuoi; setTimeout(() => { if (k === tokChuoi) tiep(); }, 1100); }
+    else phatLanLuot([[tu.id, tu.en]], tiep);
   } else {
     saiCauNay = true; b.classList.add("sai"); tiengSai();
   }
@@ -483,7 +490,7 @@ function veCauGt() {
   $("#gt-tien-do").style.width = (soGt / cauGt.length * 100) + "%";
   $("#gt-kt-nv").innerHTML = anhGt("gt-" + bai.id + "-nv", bai.nv.emoji);
   $("#gt-kt-q").textContent = l.q; $("#gt-kt-qvi").textContent = l.qvi;
-  $("#gt-dap-an").innerHTML = lua.map(x => `<button class="lua-chon" data-id="${x.id}"><span class="em" style="${[...x.emoji].length > 3 ? "font-size:min(7vw,30px);white-space:nowrap" : ""}">${anhGt(x.id, x.emoji)}</span><b>${x.a}</b></button>`).join("");
+  $("#gt-dap-an").innerHTML = lua.map(x => `<button class="lua-chon" data-id="${x.id}"><span class="em" style="${[...x.emoji].length > 3 ? "font-size:min(7vw,30px);white-space:nowrap" : ""}">${anhGt(x.id, x.emoji)}</span><span class="tx"><b>${x.a}</b><small>${x.avi}</small></span></button>`).join("");
   setTimeout(() => { if (cauGt[soGt] === l && !khoaGt) phat(l.id + "-q", l.q); }, 120);
 }
 $("#gt-nghe-lai").onclick = () => { const l = cauGt[soGt]; phat(l.id + "-q", l.q); };
