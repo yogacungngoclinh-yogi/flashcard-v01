@@ -315,7 +315,7 @@
     sang("dd-kt"); veDd();
   }
   function veDd() {
-    ddSai = false; ddKhoa = false;
+    ddSai = false; ddKhoa = false; loiCau = 0;
     const h = docVat.hoi[ddSo];
     g("dd-td").style.width = (ddSo / docVat.hoi.length * 100) + "%";
     g("dd-hoi").textContent = h.q; g("dd-hoivi").textContent = h.qvi;
@@ -334,7 +334,7 @@
         if (!dangMo("dd-kt")) return;
         ddSo++; ddSo < docVat.hoi.length ? veDd() : manXong("dd-" + docVat.id, soSao(ddDung, docVat.hoi.length), `Bé trả lời đúng ngay ${ddDung}/${docVat.hoi.length} câu`);
       }, 1300);
-    } else { ddSai = true; b.classList.add("sai"); tiengSai(); }
+    } else { ddSai = true; b.classList.add("sai"); loiSai(g("dd-da").querySelector(`[data-i="${h.dung}"]`)); }
   };
 
   // ============ CÂU HỎI CHỌN HÌNH (dùng chung) ============
@@ -347,28 +347,29 @@
     sang("kt2"); veK2();
   }
   function veK2() {
-    k2.sai = false; k2.khoa = false;
+    k2.sai = false; k2.khoa = false; loiCau = 0;
     const x = k2.ds[k2.so];
-    const lua = tron([x, ...tron((k2.goc || k2.ds).filter(y => y !== x)).slice(0, 2)]);
+    const nguon = k2.cung ? k2.cung(x) : (k2.goc || k2.ds);
+    const lua = tron([x, ...tron(nguon.filter(y => y.id !== x.id)).slice(0, 2)]);
     g("kt2-td").style.width = (k2.so / k2.ds.length * 100) + "%";
     g("kt2-da").classList.remove("xong");
-    g("kt2-da").innerHTML = lua.map((y, i) => `<button class="lua-chon" data-dung="${y === x ? 1 : 0}">${k2.hinh(y)}</button>`).join("");
+    g("kt2-da").innerHTML = lua.map((y, i) => `<button class="lua-chon" data-dung="${y === x ? 1 : 0}" data-id="${y.id}">${k2.hinh(y)}</button>`).join("");
     if (k2.cauHoi) { const c = k2.cauHoi(x); g("kt2-hoi").textContent = c[0]; g("kt2-hoivi").textContent = c[1]; }
-    setTimeout(() => { if (k2 && k2.ds[k2.so] === x && !k2.khoa) phat(...k2.am(x)); }, 120);
+    setTimeout(() => { if (!k2 || k2.ds[k2.so] !== x || k2.khoa) return; const doc = () => { if (k2 && k2.ds[k2.so] === x && !k2.khoa) phat(...k2.am(x)); }; k2.so === 0 ? huongDan("_hd-chon-hinh", doc) : doc(); }, 120);
   }
   g("kt2-nghe").onclick = () => { if (k2) phat(...k2.am(k2.ds[k2.so])); };
   g("kt2-da").onclick = e => {
     const b = e.target.closest(".lua-chon"); if (!b || !k2 || k2.khoa || b.classList.contains("sai")) return;
     const x = k2.ds[k2.so];
     if (b.dataset.dung === "1") {
-      k2.khoa = true; if (!k2.sai) k2.dung++;
+      k2.khoa = true; if (!k2.sai) { k2.dung++; if (k2.ghi) tuDung(x.id); }
       b.classList.add("dung"); b.insertAdjacentHTML("beforeend", `<span class="nhan-dung">${nhanHtml(k2.nhan(x))}</span>`);
       g("kt2-da").classList.add("xong"); phao(12); tiengDung();
       phatLanLuot([k2.am(x)], () => {
         if (!dangMo("kt2")) return;
         k2.so++; k2.so < k2.ds.length ? veK2() : k2.xong(k2.dung, k2.ds.length);
       });
-    } else { k2.sai = true; b.classList.add("sai"); tiengSai(); }
+    } else { if (!k2.sai && k2.ghi) tuSai(x.id); k2.sai = true; b.classList.add("sai"); loiSai(g("kt2-da").querySelector('[data-dung="1"]'), () => phat(...k2.am(x))); }
   };
 
   // ============ MẪU CÂU THAY TỪ ============
@@ -457,6 +458,7 @@
   function veLoTrinh() {
     const lt = docLt(), xong = lt.xong || 0, nay = Math.min(xong + 1, SO_NGAY);
     let h = `<div class="lt-dau"><span>🔥 ${chuoiNgay(lt)} ngày liên tiếp</span><span>🎖️ ${xong} sticker</span><button data-album="1">Album</button></div>`;
+    h += onNut();
     h += `<button class="lt-nut" data-ngay="${nay}">▶️ Học Ngày ${nay}<small>${CAP[Math.floor((nay - 1) / 10)]} · khoảng 8 phút</small></button>`;
     for (let c = 0; c < 10; c++) {
       h += `<div class="lt-cap"><h3>Cấp ${c + 1}: ${CAP[c]}</h3><div class="lt-hang">`;
@@ -468,18 +470,50 @@
     }
     return h;
   }
+  // ---- sổ từ: từ đến hạn ôn và từ khó ----
+  const tuMap = () => new Map(TU_VUNG.flatMap(c => c.tu.map(t => [t.id, { ...t, chuDe: c }])));
+  function tuDenHan(n, tru) {
+    const s = docTuNho(), hn = soNgayNay(), mp = tuMap();
+    return Object.entries(s).filter(([id, v]) => mp.has(id) && v.d <= hn && !(tru || []).includes(id))
+      .sort((a, b) => a[1].d - b[1].d || (a[1].h || 0) - (b[1].h || 0)).slice(0, n).map(([id]) => mp.get(id));
+  }
+  function tuKho(n) {
+    const s = docTuNho(), mp = tuMap();
+    return Object.entries(s).filter(([id, v]) => mp.has(id) && (v.s || 0) >= 1 && (v.h || 0) <= 2)
+      .sort((a, b) => (b[1].s || 0) - (a[1].s || 0)).slice(0, n).map(([id]) => mp.get(id));
+  }
+  const onNut = cls => {
+    const a = tuDenHan(99).length, b = tuKho(99).length;
+    return `<div class="lt-dau ${cls || ""}">${a ? `<button data-on="han">🔁 Ôn lại (${a} từ)</button>` : ""}${b ? `<button data-on="kho">💪 Từ khó (${b})</button>` : ""}${!a && !b ? "<span>🔁 Học vài ngày là có từ để ôn nhé</span>" : ""}</div>`;
+  };
+  let onLoai = "han";
+  function moOn(loai) {
+    onLoai = loai; const ds = loai === "kho" ? tuKho(8) : tuDenHan(8);
+    if (!ds.length) { tiengSai(); return; }
+    kieu = "on";
+    ktHinh({ ds, cung: x => x.chuDe.tu, hoi: "Find the picture!", hoivi: "Tìm hình đúng nhé!",
+      am: t => [t.id, t.en], hinh: t => hinhTu(t), nhan: t => t.en + " · " + (t.vi || ""), ghi: true,
+      xong: (d, n) => { kieu = "on"; manXong("on-" + loai, soSao(d, n), `Bé nhớ đúng ngay ${d}/${n} từ`); } });
+  }
+  window.ngayHomNay = () => Math.min((docLt().xong || 0) + 1, SO_NGAY);
+  window.hocHomNay = () => moNgay(window.ngayHomNay());
+  const abcAll = () => CHU_CAI.filter(c => c.khu === "abc").flatMap(c => c.tu), swAll = () => CHU_CAI.filter(c => c.khu === "sight").flatMap(c => c.tu);
   function keHoach(d) {
     const tuAll = TU_VUNG.flatMap(c => c.tu.map(t => ({ ...t, chuDe: c })));
     const tv = [0, 1, 2, 3].map(i => tuAll[((d - 1) * 4 + i) % tuAll.length]);
     const abc = CHU_CAI.filter(c => c.khu === "abc").flatMap(c => c.tu);
     const sw = CHU_CAI.filter(c => c.khu === "sight").flatMap(c => c.tu);
     const tr = TRUYEN[(d - 1) % TRUYEN.length];
+    const sw2 = [0, 1].map(i => sw[(2 * (d - 1) + i) % sw.length]), chuHom = abc[(d - 1) % abc.length];
+    const on = tuDenHan(5, tv.map(t => t.id));
     return [
-      { k: "gioi", tv, chu: abc[(d - 1) % abc.length], tr },
+      { k: "gioi", tv, chu: chuHom, tr, on },
+      ...(on.length ? [{ k: "kt", ds: on, on: true }] : []),
       { k: "the", tu: abc[(d - 1) % abc.length], nhom: "🔤 Chữ cái hôm nay", mau: "#FF7043" },
       ...tv.map((t, i) => ({ k: "the", tu: t, nhom: `📚 Từ mới ${i + 1}/4 · ${t.chuDe.vi}`, mau: t.chuDe.mau })),
       ...[0, 1].map(i => ({ k: "the", tu: sw[(2 * (d - 1) + i) % sw.length], nhom: "👀 Sight word", mau: "#5C6BC0" })),
       { k: "kt", ds: tv },
+      { k: "kt", ds: [chuHom, ...sw2], chu: true },
       { k: "truyen", tr },
       { k: "xong" },
     ];
@@ -490,6 +524,7 @@
     if (d > Math.min((lt.xong || 0) + 1, SO_NGAY)) { tiengSai(); return; }
     ngD = d; ngKh = keHoach(d); ngB = 0; kieu = "ngay";
     napAm(ngKh.filter(b => b.k === "the").map(b => b.tu.id));
+    napAm(ngKh.filter(b => b.k === "kt" && b.chu).flatMap(b => b.ds.map(t => t.id + "-w")));
     veNgay();
   }
   function veNgay() {
@@ -498,9 +533,12 @@
     const nut = g("ngay-tiep"); nut.style.display = "";
     if (b.k === "kt") {
       nut.style.display = "none";
-      return ktHinh({ ds: b.ds, goc: b.ds, hoi: "Find the picture!", hoivi: "Tìm hình đúng nhé!",
-        am: t => [t.id, t.en], hinh: t => hinhTu(t), nhan: t => t.en + " · " + (t.vi || "").split(" · ").pop(),
-        xong: () => { kieu = "ngay"; ngB++; veNgay(); } });
+      const xongB = () => { kieu = "ngay"; ngB++; veNgay(); };
+      if (b.chu) return ktHinh({ ds: b.ds, cung: x => /^abc-/.test(x.id) ? abcAll() : swAll(), hoi: "Which one?", hoivi: "Chữ nào đây?",
+        am: t => [t.docNgan ? t.id + "-w" : t.id, t.en], hinh: t => `<span class="chu-to">${esc(t.en)}</span>`, nhan: t => t.en + " · " + t.vi.split(" · ")[0], xong: xongB });
+      return ktHinh({ ds: b.ds, goc: b.on ? undefined : b.ds, cung: b.on ? x => x.chuDe.tu : undefined, ghi: true,
+        hoi: b.on ? "Do you remember?" : "Find the picture!", hoivi: b.on ? "Con còn nhớ không?" : "Tìm hình đúng nhé!",
+        am: t => [t.id, t.en], hinh: t => hinhTu(t), nhan: t => t.en + " · " + (t.vi || "").split(" · ").pop(), xong: xongB });
     }
     if (b.k === "truyen") { return moTruyen(b.tr.id, () => { kieu = "ngay"; ngB++; veNgay(); }); }
     sang("ngay");
@@ -508,7 +546,7 @@
     if (b.k === "gioi") {
       document.body.style.setProperty("--mau", "#FF8A65");
       kh.innerHTML = `<div class="ngay-to">Ngày ${ngD}</div><div class="ngay-nhom">${CAP[Math.floor((ngD - 1) / 10)]}</div>
-        <div class="ngay-gioi">🔤 Chữ cái: <b>${b.chu.en}</b><br>📚 4 từ mới: ${b.tv.map(t => esc(t.en)).join(", ")}<br>👀 2 sight words<br>⭐ Trò chơi tìm hình<br>📖 Truyện: ${esc(b.tr.ten)}</div>`;
+        <div class="ngay-gioi">🔤 Chữ cái: <b>${b.chu.en}</b><br>📚 4 từ mới: ${b.tv.map(t => esc(t.en)).join(", ")}<br>👀 2 sight words<br>${b.on.length ? `🔁 Ôn lại ${b.on.length} từ cũ<br>` : ""}⭐ Trò chơi tìm hình + chữ cái<br>📖 Truyện: ${esc(b.tr.ten)}</div>`;
       nut.textContent = "Bắt đầu 🚀";
     } else if (b.k === "the") {
       const t = b.tu;
@@ -544,6 +582,7 @@
   // ============ TRANG CHỦ: các khu mới ============
   window.veKhuThem = function (khu, sao) {
     if (khu === "lt") return veLoTrinh();
+    if (khu === "tv") return onNut("on-hang") + TU_VUNG.map(c => oChuDe(c, sao)).join("");
     if (khu === "truyen") return TRUYEN.map(t => `<button class="o" style="--mau:${t.mau}" data-tr="${t.id}"><span class="loai">${t.loai}</span><span class="sao">${"⭐".repeat(sao["tr-" + t.id] || 0)}</span><span class="bieu">${t.emoji}</span><span class="ten" style="font-size:18px;text-align:center;line-height:1.05;padding:0 6px">${esc(t.ten)}</span><span class="vi">${esc(t.vi)}</span></button>`).join("");
     if (khu === "doc") return BAI_DOC.map(b => `<button class="o" style="--mau:${b.mau}" data-dd="${b.id}"><span class="loai">Cấp ${b.cap} · ${b.capTen}</span><span class="sao">${"⭐".repeat(sao["dd-" + b.id] || 0)}</span><span class="bieu">${b.emoji}</span><span class="ten" style="font-size:19px;text-align:center;line-height:1.05;padding:0 6px">${esc(b.ten)}</span><span class="vi">${esc(b.vi)}</span></button>`).join("");
     if (khu === "mc") return MAU_CAU.map(m => `<button class="o" style="--mau:${m.mau}" data-mc="${m.id}"><span class="sao">${"⭐".repeat(sao["mc-" + m.id] || 0)}</span><span class="bieu">${m.emoji}</span><span class="ten" style="font-size:19px;text-align:center;line-height:1.05;padding:0 6px">${esc(m.ten)}</span><span class="vi">${esc(m.mau_vi.replace("___", "…"))}</span></button>`).join("");
@@ -551,14 +590,15 @@
     return null;
   };
   window.bamThem = function (e) {
-    const o = e.target.closest("[data-ngay],[data-album],[data-tr],[data-dd],[data-mc],[data-dt]");
+    const o = e.target.closest("[data-ngay],[data-album],[data-tr],[data-dd],[data-mc],[data-dt],[data-on]");
     if (!o) return false;
     const d = o.dataset;
-    if (d.ngay) moNgay(+d.ngay); else if (d.album) moAlbum(); else if (d.tr) moTruyen(d.tr);
+    if (d.on) moOn(d.on); else if (d.ngay) moNgay(+d.ngay); else if (d.album) moAlbum(); else if (d.tr) moTruyen(d.tr);
     else if (d.dd) moBaiDoc(d.dd); else if (d.mc) moMc(d.mc); else if (d.dt) moDt(d.dt);
     return true;
   };
   window.lamLai = {
+    on: { hoc: () => moOn(onLoai), choi: () => moOn(onLoai) },
     tr: { hoc: () => moTruyen(docVat.id), choi: () => moTruyen(docVat.id) },
     dd: { hoc: () => moBaiDoc(docVat.id), choi: () => ktDoc() },
     mc: { hoc: () => moMc(mcVat.id), choi: () => ktMc() },

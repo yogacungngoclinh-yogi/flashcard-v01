@@ -65,8 +65,8 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .lua-chon img{max-width:100%;max-height:100%;object-fit:contain}
 .lua-chon .em{font-size:min(20vw,110px,16vh)}
 .lua-chon{position:relative}
-.lua-chon.dung{border-color:var(--dung);animation:chop .7s ease-in-out infinite}
-.lua-chon.dung::after{content:"👇";position:absolute;top:-34px;left:50%;margin-left:-20px;font-size:38px;line-height:1;animation:nhun .6s ease-in-out infinite}
+.lua-chon.dung,.lua-chon.goiy{border-color:var(--dung);animation:chop .7s ease-in-out infinite}
+.lua-chon.dung::after,.lua-chon.goiy::after{content:"👇";position:absolute;top:-34px;left:50%;margin-left:-20px;font-size:38px;line-height:1;animation:nhun .6s ease-in-out infinite}
 .dap-an.xong .lua-chon:not(.dung){opacity:.2;transition:opacity .3s}
 @keyframes chop{0%,100%{box-shadow:var(--bong);background:#fff}50%{box-shadow:0 0 0 12px rgba(76,175,80,.45),var(--bong);background:#E8F5E9}}
 @keyframes nhun{50%{transform:translateY(8px)}}
@@ -126,13 +126,28 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .nhan-dung small{color:#fff;opacity:.95;font-size:.62em;font-weight:700;margin:0}
 .dap-an.chu .lua-chon img{max-height:70px;border-radius:12px}
 @media (max-aspect-ratio:3/4){.dap-an.chu{grid-template-columns:1fr}.dap-an.chu .lua-chon:nth-child(3){grid-column:auto;width:100%}.dap-an.chu .lua-chon{display:flex;align-items:center;gap:12px;justify-content:flex-start;padding:10px 16px}.dap-an.chu .lua-chon b{text-align:left}}
+/* Trang chủ bé 5 tuổi: ô to có biểu tượng */
+.khu.khu-to{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;overflow:visible;padding:2px 2px 10px}
+.khu-to button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 4px;border-radius:22px;font-size:17px;white-space:normal;text-align:center;line-height:1.05;box-shadow:var(--bong)}
+.khu-to button b{font-size:36px;line-height:1.05}
+.khu-to button.chon{background:var(--chu);color:#fff}
+#hom-nay{margin:2px auto 10px}
+#luoi.lt .lt-nut{display:none}
+.viet{display:none;margin-left:auto;background:var(--the);border-radius:99px;box-shadow:0 4px 0 rgba(59,47,74,.12);padding:6px 14px;font-size:15px;font-weight:800;color:var(--phu)}
+body.t10 .viet{display:block}
+.luoi .on-hang{grid-column:1/-1;margin:0}
+/* Ẩn nghĩa Việt (bé 10 tuổi): làm mờ, chạm để xem 4 giây */
+body.an-viet.t10 :is(.cau-chu .vi,.bong .vi,.dt-vi,.mc-vi,.doc-cau .vi,.tt-cau .vi){filter:blur(9px)}
+body.an-viet.t10 :is(.cau-chu .vi,.bong .vi,.dt-vi,.mc-vi,.doc-cau .vi,.tt-cau .vi).mo{filter:none}
+body.an-viet.t10 :is(.dap-an small,.nhan-dung small){display:none}
 </style>
 </head>
 <body>
 
 <section class="man hien" id="trang-chu">
-  <div class="dau"><h1>Bé Học Tiếng Anh 🌈</h1></div>
+  <div class="dau"><h1>Bé Học Tiếng Anh 🌈</h1><button class="viet" id="bt-viet" aria-label="Ẩn hiện nghĩa tiếng Việt"></button></div>
   <div class="tab"><button id="tuoi-5">🧒 Bé 5 tuổi<small>Mầm non · Starters</small></button><button id="tuoi-10">👦 Bé 10 tuổi<small>Giao tiếp · Movers</small></button></div>
+  <button class="lt-nut" id="hom-nay"></button>
   <div class="khu" id="khu"></div>
   <div class="luoi" id="luoi"></div>
   <div class="thuong-hieu">Chạm vào một chủ đề để học nhé!</div>
@@ -226,14 +241,14 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
   </div>
 </section>
 
-<script src="tu-vung.js?v=20261107b"></script>
-<script src="giao-tiep.js?v=20261107b"></script>
-<script src="chu-cai.js?v=20261107b"></script>
-<script src="tinh-huong.js?v=20261107b"></script>
-<script src="mau-cau.js?v=20261107b"></script>
-<script src="truyen.js?v=20261107b"></script>
-<script src="thoi-gian.js?v=20261107b"></script>
-<script src="them.js?v=20261107b"></script>
+<script src="tu-vung.js?v=20261107e"></script>
+<script src="giao-tiep.js?v=20261107e"></script>
+<script src="chu-cai.js?v=20261107e"></script>
+<script src="tinh-huong.js?v=20261107e"></script>
+<script src="mau-cau.js?v=20261107e"></script>
+<script src="truyen.js?v=20261107e"></script>
+<script src="thoi-gian.js?v=20261107e"></script>
+<script src="them.js?v=20261107e"></script>
 <script>
 const $ = s => document.querySelector(s);
 const SO_CAU = 8;
@@ -243,6 +258,28 @@ let chuDe, viTri = 0, cau = [], soCau = 0, dungLanDau = 0, saiCauNay = false, kh
 // ---- lưu sao ----
 const docSao = () => { try { return JSON.parse(localStorage.getItem("sao") || "{}"); } catch { return {}; } };
 const ghiSao = (id, n) => { try { const s = docSao(); s[id] = Math.max(s[id] || 0, n); localStorage.setItem("sao", JSON.stringify(s)); } catch {} };
+
+// ---- sổ từ: ôn cách quãng (hộp 1–4) + từ khó ----
+const KHOANG = [0, 1, 2, 4, 8];  // số ngày chờ theo hộp
+const soNgayNay = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return Math.floor(d.getTime() / 864e5); };
+const docTuNho = () => { try { return JSON.parse(localStorage.getItem("tu-nho") || "{}"); } catch { return {}; } };
+const ghiTuNho = s => { try { localStorage.setItem("tu-nho", JSON.stringify(s)); } catch {} };
+function tuDung(id) { const s = docTuNho(), t = s[id] || { h: 0, s: 0 }; t.h = Math.min(4, (t.h || 0) + 1); t.d = soNgayNay() + KHOANG[t.h]; s[id] = t; ghiTuNho(s); }
+function tuSai(id) { const s = docTuNho(), t = s[id] || { h: 0, s: 0 }; t.h = 1; t.s = (t.s || 0) + 1; t.d = soNgayNay() + 1; s[id] = t; ghiTuNho(s); }
+// ---- làm sai: lần 1 "Try again!", lần 2 đáp án đúng nhấp nháy + đọc lên ----
+let loiCau = 0;
+function loiSai(dungEl, phatDung) {
+  tiengSai(); loiCau++;
+  if (loiCau === 1) setTimeout(() => phat("_try-again", "Try again!"), 450);
+  else if (dungEl) { dungEl.classList.add("goiy"); if (phatDung) setTimeout(phatDung, 450); }
+}
+// ---- hướng dẫn bằng giọng nói (bé 5 tuổi, mỗi loại 1 lần mỗi phiên) ----
+const daHd = new Set();
+function huongDan(id, tiep) {
+  if (tuoi !== "5" || daHd.has(id)) return tiep();
+  daHd.add(id); let xong = false; const fin = () => { if (!xong) { xong = true; tiep(); } };
+  const a = phat(id, ""); a.onended = () => setTimeout(fin, 250); a.onerror = fin; setTimeout(fin, 6000);
+}
 
 // ---- âm thanh ----
 // Một bộ phát tiếng duy nhất, mở khóa ở lần chạm đầu → điện thoại cho phát tự động ở các câu sau
@@ -312,7 +349,7 @@ function hinhTu(tu, lop) {
 }
 
 // ---- màn hình ----
-function sang(id) { document.querySelectorAll(".man").forEach(m => m.classList.toggle("hien", m.id === id)); }
+function sang(id) { document.querySelectorAll(".mo").forEach(e => e.classList.remove("mo")); document.querySelectorAll(".man").forEach(m => m.classList.toggle("hien", m.id === id)); }
 // Trang chủ: chọn tuổi → chọn khu → lưới bài
 const KHU = {
   "5": [["lt", "🗺️ Lộ trình"], ["abc", "🔤 ABC"], ["sight", "👀 Sight words"], ["tv", "📚 Từ vựng"], ["truyen", "📖 Truyện"], ["gt", "💬 Nói chuyện"]],
@@ -331,7 +368,13 @@ function veTrangChu() {
   const sao = docSao();
   if (!KHU[tuoi].some(k => k[0] === khu)) khu = KHU[tuoi][0][0];
   $("#tuoi-5").classList.toggle("chon", tuoi === "5"); $("#tuoi-10").classList.toggle("chon", tuoi === "10");
-  $("#khu").innerHTML = KHU[tuoi].map(([id, ten]) => `<button data-khu="${id}" class="${id === khu ? "chon" : ""}">${ten}</button>`).join("");
+  document.body.classList.toggle("t10", tuoi === "10");
+  document.body.classList.toggle("an-viet", nho("an-viet", "0") === "1");
+  $("#bt-viet").textContent = nho("an-viet", "0") === "1" ? "🙈 Đang ẩn nghĩa Việt" : "👀 Đang hiện nghĩa Việt";
+  $("#hom-nay").style.display = tuoi === "5" ? "" : "none";
+  if (tuoi === "5") $("#hom-nay").innerHTML = `▶️ Học hôm nay<small>Ngày ${ngayHomNay()} · khoảng 8 phút</small>`;
+  $("#khu").className = tuoi === "5" ? "khu khu-to" : "khu";
+  $("#khu").innerHTML = KHU[tuoi].map(([id, ten]) => { const [ic, ...tx] = ten.split(" "); return `<button data-khu="${id}" class="${id === khu ? "chon" : ""}">${tuoi === "5" ? `<b>${ic}</b>${tx.join(" ")}` : ten}</button>`; }).join("");
   $("#luoi").classList.toggle("lt", khu === "lt");
   const them = veKhuThem(khu, sao);
   if (them !== null) { $("#luoi").innerHTML = them; sang("trang-chu"); return; }
@@ -343,11 +386,17 @@ function veTrangChu() {
   $("#luoi").innerHTML = ds.join("");
   sang("trang-chu");
 }
-$("#tuoi-5").onclick = () => { tuoi = "5"; ghiNho("tuoi", tuoi); khu = nho("khu-5", "abc"); veTrangChu(); };
+$("#tuoi-5").onclick = () => { tuoi = "5"; ghiNho("tuoi", tuoi); khu = nho("khu-5", "lt"); veTrangChu(); };
 $("#tuoi-10").onclick = () => { tuoi = "10"; ghiNho("tuoi", tuoi); khu = nho("khu-10", "th"); veTrangChu(); };
-$("#khu").onclick = e => { const b = e.target.closest("[data-khu]"); if (!b) return; khu = b.dataset.khu; ghiNho("khu-" + tuoi, khu); veTrangChu(); };
+$("#khu").onclick = e => { const b = e.target.closest("[data-khu]"); if (!b) return; khu = b.dataset.khu; ghiNho("khu-" + tuoi, khu); if (tuoi === "5") phat("_khu-" + khu, ""); veTrangChu(); };
 $("#luoi").onclick = e => { if (bamThem(e)) return; const o = e.target.closest(".o"); if (!o) return; o.dataset.xc ? moXc(o.dataset.xc) : o.dataset.bai ? moBai(o.dataset.bai) : moChuDe(o.dataset.cd); };
 document.querySelectorAll("[data-ve]").forEach(b => b.onclick = veTrangChu);
+$("#hom-nay").onclick = () => hocHomNay();
+$("#bt-viet").onclick = () => { ghiNho("an-viet", nho("an-viet", "0") === "1" ? "0" : "1"); veTrangChu(); };
+document.addEventListener("click", e => {
+  const v = e.target.closest(".cau-chu .vi,.bong .vi,.dt-vi,.mc-vi,.doc-cau .vi,.tt-cau .vi");
+  if (v && document.body.classList.contains("an-viet")) { v.classList.add("mo"); setTimeout(() => v.classList.remove("mo"), 4000); }
+}, true);
 
 function moChuDe(id) {
   chuDe = TU_VUNG.concat(CHU_CAI).find(c => c.id === id);
@@ -397,14 +446,14 @@ function batDauKT() {
   sang("kiem-tra"); veCau();
 }
 function veCau() {
-  khoa = false; saiCauNay = false; $("#dap-an").classList.remove("xong");
+  khoa = false; saiCauNay = false; loiCau = 0; $("#dap-an").classList.remove("xong");
   const tu = cau[soCau];
   const nhieu = tron(chuDe.tu.filter(t => t.id !== tu.id)).slice(0, 2);
   const lua = tron([tu, ...nhieu]);
   $("#tien-do").style.width = (soCau / cau.length * 100) + "%";
   $("#dap-an").innerHTML = lua.map(t => `<button class="lua-chon" data-id="${t.id}">${chuDe.kieu === "chu" ? `<span class="chu-to">${t.en}</span>` : hinhTu(t)}</button>`).join("");
   // hiện hình là đọc luôn
-  setTimeout(() => { if (cau[soCau] === tu && !khoa) phat(amHoi(tu), tu.en); }, 120);
+  setTimeout(() => { if (cau[soCau] !== tu || khoa) return; const doc = () => { if (cau[soCau] === tu && !khoa) phat(amHoi(tu), tu.en); }; soCau === 0 ? huongDan("_hd-chon-hinh", doc) : doc(); }, 120);
 }
 $("#nghe-lai").onclick = () => { const tu = cau[soCau]; phat(amHoi(tu), tu.en); };
 $("#dap-an").onclick = e => {
@@ -413,7 +462,7 @@ $("#dap-an").onclick = e => {
   if (b.dataset.id === tu.id) {
     khoa = true; b.classList.add("dung");
     const nhan = chuDe.kieu !== "chu" ? `${tu.en}<small>${tu.vi}</small>` : tu.vi.split(" · ")[0];
-    b.insertAdjacentHTML("beforeend", `<span class="nhan-dung">${nhan}</span>`); $("#dap-an").classList.add("xong"); if (!saiCauNay) dungLanDau++;
+    b.insertAdjacentHTML("beforeend", `<span class="nhan-dung">${nhan}</span>`); $("#dap-an").classList.add("xong"); if (!saiCauNay) { dungLanDau++; if (chuDe.kieu !== "chu") tuDung(tu.id); }
     phao(12); tiengDung();
     const tiep = () => {
       if (!$("#kiem-tra").classList.contains("hien")) return;
@@ -423,7 +472,8 @@ $("#dap-an").onclick = e => {
     if (chuDe.hoi === "Which letter?") { const k = ++tokChuoi; setTimeout(() => { if (k === tokChuoi) tiep(); }, 1100); }
     else phatLanLuot([[tu.id, tu.en]], tiep);
   } else {
-    saiCauNay = true; b.classList.add("sai"); tiengSai();
+    if (!saiCauNay && chuDe.kieu !== "chu") tuSai(tu.id);
+    saiCauNay = true; b.classList.add("sai"); loiSai($(`#dap-an [data-id="${tu.id}"]`), () => phat(amHoi(tu), tu.en));
   }
 };
 function ketThuc() {
@@ -484,14 +534,14 @@ function ktBai() {
   sang("gt-kt"); veCauGt();
 }
 function veCauGt() {
-  khoaGt = false; saiGt = false; $("#gt-dap-an").classList.remove("xong");
+  khoaGt = false; saiGt = false; loiCau = 0; $("#gt-dap-an").classList.remove("xong");
   const l = cauGt[soGt];
   const lua = tron([l, ...tron(bai.luot.filter(x => x.id !== l.id)).slice(0, 2)]);
   $("#gt-tien-do").style.width = (soGt / cauGt.length * 100) + "%";
   $("#gt-kt-nv").innerHTML = anhGt("gt-" + bai.id + "-nv", bai.nv.emoji);
   $("#gt-kt-q").textContent = l.q; $("#gt-kt-qvi").textContent = l.qvi;
   $("#gt-dap-an").innerHTML = lua.map(x => `<button class="lua-chon" data-id="${x.id}"><span class="em" style="${[...x.emoji].length > 3 ? "font-size:min(7vw,30px);white-space:nowrap" : ""}">${anhGt(x.id, x.emoji)}</span><span class="tx"><b>${x.a}</b><small>${x.avi}</small></span></button>`).join("");
-  setTimeout(() => { if (cauGt[soGt] === l && !khoaGt) phat(l.id + "-q", l.q); }, 120);
+  setTimeout(() => { if (cauGt[soGt] !== l || khoaGt) return; const doc = () => { if (cauGt[soGt] === l && !khoaGt) phat(l.id + "-q", l.q); }; soGt === 0 ? huongDan("_hd-chon-cau", doc) : doc(); }, 120);
 }
 $("#gt-nghe-lai").onclick = () => { const l = cauGt[soGt]; phat(l.id + "-q", l.q); };
 $("#gt-dap-an").onclick = e => {
@@ -505,7 +555,7 @@ $("#gt-dap-an").onclick = e => {
       soGt++; soGt < cauGt.length ? veCauGt() : ketThucGt();
     });
   } else {
-    saiGt = true; b.classList.add("sai"); tiengSai();
+    saiGt = true; b.classList.add("sai"); loiSai($(`#gt-dap-an [data-id="${l.id}"]`), () => phat(l.id + "-a", l.a));
   }
 };
 function ketThucGt() {
