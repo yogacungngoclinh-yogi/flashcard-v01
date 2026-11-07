@@ -499,7 +499,7 @@
   window.hocHomNay = () => moNgay(window.ngayHomNay());
   const abcAll = () => CHU_CAI.filter(c => c.khu === "abc").flatMap(c => c.tu), swAll = () => CHU_CAI.filter(c => c.khu === "sight").flatMap(c => c.tu);
   function keHoach(d) {
-    const tuAll = TU_VUNG.flatMap(c => c.tu.map(t => ({ ...t, chuDe: c })));
+    const tuAll = TU_VUNG.filter(c => !c.movers).flatMap(c => c.tu.map(t => ({ ...t, chuDe: c })));
     const tv = [0, 1, 2, 3].map(i => tuAll[((d - 1) * 4 + i) % tuAll.length]);
     const abc = CHU_CAI.filter(c => c.khu === "abc").flatMap(c => c.tu);
     const sw = CHU_CAI.filter(c => c.khu === "sight").flatMap(c => c.tu);
@@ -604,4 +604,5 @@
     mc: { hoc: () => moMc(mcVat.id), choi: () => ktMc() },
     dt: { hoc: () => moBai(dtBai.id), choi: () => moDt(dtBai.id) },
   };
+  window.TH = { manXong, soSao, moBaiDoc, moDt, moOn, tuDenHan, onNut, ktHinh };
 })();

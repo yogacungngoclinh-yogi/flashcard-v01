@@ -82,7 +82,7 @@
   window.veChipHs = function () {
     const h = hsNay();
     let c = g("hs-chip");
-    if (!c) { c = document.createElement("button"); c.id = "hs-chip"; c.className = "hs-chip"; c.onclick = veHs; g("bt-viet").before(c); }
+    if (!c) { c = document.createElement("button"); c.id = "hs-chip"; c.className = "hs-chip"; c.onclick = veHs; g("bt-cham").before(c); }
     c.textContent = h.icon + " " + h.ten;
   };
 
@@ -150,7 +150,7 @@
   <div class="pp-cot">${ngay.map(x => `<div class="${x.s === hn ? "nay" : ""}"><span>${x.gi ? Math.max(1, Math.round(x.gi / 60)) : ""}</span><i style="height:${Math.round(x.gi / maxGi * 90)}px"></i>${x.th}</div>`).join("")}</div>
   <small>Số phút học mỗi ngày (chỉ tính lúc bé thật sự chạm vào màn hình).</small>
   <div class="pp-so"><span>📅 ${soNgay}/7 ngày có học</span><span>⏱️ ${Math.round(tong / 60)} phút</span><span>✅ ${chinhXac === null ? "chưa có bài" : chinhXac + "% câu đúng"}</span><span>🎙️ ${noiT} lần nói</span></div>
-  <div class="pp-so"><span>🌱 ${thuoc} từ đã thuộc</span><span>📖 ${dangHoc} từ đang học</span><span>⭐ ${sao} sao</span><span>🎖️ ${lt.xong || 0}/100 ngày</span></div></div>
+  <div class="pp-so"><span>🌱 ${thuoc} từ đã thuộc</span><span>📖 ${dangHoc} từ đang học</span><span>⭐ ${sao} sao</span><span>🎖️ ${lt.xong || 0}/100 ngày</span>${(lay(khoaHs("lo-trinh10"), {}).xong) ? `<span>🗺️ Movers ${lay(khoaHs("lo-trinh10"), {}).xong}/60 ngày</span>` : ""}${(() => { const ls = lay(khoaHs("thi-ds"), []), c = ls[ls.length - 1]; return c ? `<span>📝 Thi thử: ${c.k} khiên (${c.p}%)</span>` : ""; })()}</div></div>
 <div class="pp-the"><h3>🎯 Mục tiêu mỗi ngày</h3><div class="pp-chon">${[5, 10, 15, 20].map(m => `<button data-pp="mt" data-v="${m}" class="${m === mucTieu() ? "chon" : ""}">${m} phút</button>`).join("")}</div>
   <small>Bé thấy thanh tiến độ ngay trang chủ.</small></div>
 <div class="pp-the"><h3>💪 Từ bé còn yếu</h3>${kho.length ? `<p>${kho.map(t => `<b>${esc(t.en)}</b> (${esc(t.vi)})`).join(" · ")}</p><small>Bé ôn bằng nút “💪 Từ khó” trong Lộ trình / Từ vựng.</small>` : "<p>Chưa có từ nào sai nhiều. Tốt lắm!</p>"}</div>
@@ -242,6 +242,7 @@
       het = setTimeout(() => mr.state === "recording" && mr.stop(), 8000);
     }).catch(() => { nut.textContent = "🎙️ Cho phép micro nhé"; setTimeout(() => nut.textContent = nhan, 2500); });
   }
+  window.ghiAmNoi = ghiAmNoi;
   // Nút trong màn Nói chuyện / Tình huống
   document.querySelector("#gt-hoc .hanh").insertAdjacentHTML("afterbegin", `<button class="nut-to ghi-nut" id="gt-ghi" style="background:#7E57C2">🎙️ Con nói đi</button>`);
   g("gt-ghi").onclick = () => { chuoiAm++; const l = bai.luot[luot]; ghiAmNoi(g("gt-ghi"), [l.id + "-a", l.a], "🎙️ Con nói đi"); };

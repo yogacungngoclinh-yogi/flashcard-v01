@@ -140,6 +140,8 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 #luoi.lt .lt-nut{display:none}
 .viet{display:none;margin-left:auto;background:var(--the);border-radius:99px;box-shadow:0 4px 0 rgba(59,47,74,.12);padding:6px 14px;font-size:15px;font-weight:800;color:var(--phu)}
 body.t10 .viet{display:block}
+.cham-bt{background:var(--the);border-radius:99px;box-shadow:0 4px 0 rgba(59,47,74,.12);padding:6px 12px;font-size:15px;font-weight:800;color:var(--phu);margin-left:6px}
+.cham-bt.bat{background:#FFB74D;color:#fff}
 .luoi .on-hang{grid-column:1/-1;margin:0}
 /* Ẩn nghĩa Việt (bé 10 tuổi): làm mờ, chạm để xem 4 giây */
 body.an-viet.t10 :is(.cau-chu .vi,.bong .vi,.dt-vi,.mc-vi,.doc-cau .vi,.tt-cau .vi){filter:blur(9px)}
@@ -150,7 +152,7 @@ body.an-viet.t10 :is(.dap-an small,.nhan-dung small){display:none}
 <body>
 
 <section class="man hien" id="trang-chu">
-  <div class="dau"><h1>Bé Học Tiếng Anh 🌈</h1><button class="viet" id="bt-viet" aria-label="Ẩn hiện nghĩa tiếng Việt"></button></div>
+  <div class="dau"><h1>Bé Học Tiếng Anh 🌈</h1><button class="cham-bt" id="bt-cham" aria-label="Nghe chậm"></button><button class="viet" id="bt-viet" aria-label="Ẩn hiện nghĩa tiếng Việt"></button></div>
   <div class="tab"><button id="tuoi-5">🧒 Bé 5 tuổi<small>Mầm non · Starters</small></button><button id="tuoi-10">👦 Bé 10 tuổi<small>Giao tiếp · Movers</small></button></div>
   <button class="lt-nut" id="hom-nay"></button>
   <div class="khu" id="khu"></div>
@@ -246,14 +248,15 @@ body.an-viet.t10 :is(.dap-an small,.nhan-dung small){display:none}
   </div>
 </section>
 
-<script src="tu-vung.js?v=20261107f"></script>
-<script src="giao-tiep.js?v=20261107f"></script>
-<script src="chu-cai.js?v=20261107f"></script>
-<script src="tinh-huong.js?v=20261107f"></script>
-<script src="mau-cau.js?v=20261107f"></script>
-<script src="truyen.js?v=20261107f"></script>
-<script src="thoi-gian.js?v=20261107f"></script>
-<script src="them.js?v=20261107f"></script>
+<script src="tu-vung.js?v=20261107h"></script>
+<script src="giao-tiep.js?v=20261107h"></script>
+<script src="ngu-phap.js?v=20261107h"></script>
+<script src="chu-cai.js?v=20261107h"></script>
+<script src="tinh-huong.js?v=20261107h"></script>
+<script src="mau-cau.js?v=20261107h"></script>
+<script src="truyen.js?v=20261107h"></script>
+<script src="thoi-gian.js?v=20261107h"></script>
+<script src="them.js?v=20261107h"></script>
 <script>
 const $ = s => document.querySelector(s);
 const SO_CAU = 8;
@@ -340,6 +343,7 @@ function phat(id, chu) {
   am.pause(); am.onended = null;
   am.onerror = () => noi(chu);
   am.src = "am-thanh/" + id + ".mp3";
+  am.defaultPlaybackRate = am.playbackRate = nho("cham", "0") === "1" ? 0.75 : 1;
   am.currentTime = 0;
   am.play().catch(() => {});
   return am;
@@ -362,7 +366,7 @@ function sang(id) { document.querySelectorAll(".mo").forEach(e => e.classList.re
 // Trang chủ: chọn tuổi → chọn khu → lưới bài
 const KHU = {
   "5": [["lt", "🗺️ Lộ trình"], ["abc", "🔤 ABC"], ["sight", "👀 Sight words"], ["tv", "📚 Từ vựng"], ["truyen", "📖 Truyện"], ["gt", "💬 Nói chuyện"]],
-  "10": [["th", "🗣️ Tình huống"], ["mc", "🔁 Mẫu câu"], ["xc", "🧩 Xếp câu"], ["dt", "✍️ Điền từ"], ["doc", "📰 Bài đọc"], ["truyen", "📖 Truyện"], ["tv", "📚 Từ vựng"]],
+  "10": [["lt10", "🗺️ Lộ trình"], ["th", "🗣️ Tình huống"], ["ng", "📐 Ngữ pháp"], ["doc", "📰 Bài đọc"], ["vt", "🔤 Viết từ"], ["mc", "🔁 Mẫu câu"], ["xc", "🧩 Xếp câu"], ["dt", "✍️ Điền từ"], ["tc", "🎮 Trò chơi"], ["thi", "📝 Thi thử"], ["truyen", "📖 Truyện"], ["tv", "📚 Từ vựng"]],
 };
 const nho = (k, mac) => { try { return localStorage.getItem(khoaHs(k)) || mac; } catch { return mac; } };
 const ghiNho = (k, v) => { try { localStorage.setItem(khoaHs(k), v); } catch {} };
@@ -379,13 +383,13 @@ function veTrangChu() {
   $("#tuoi-5").classList.toggle("chon", tuoi === "5"); $("#tuoi-10").classList.toggle("chon", tuoi === "10");
   document.body.classList.toggle("t10", tuoi === "10");
   document.body.classList.toggle("an-viet", nho("an-viet", "0") === "1");
+  $("#bt-cham").textContent = nho("cham", "0") === "1" ? "🐢 Chậm: bật" : "🐢 Chậm"; $("#bt-cham").classList.toggle("bat", nho("cham", "0") === "1");
   $("#bt-viet").textContent = nho("an-viet", "0") === "1" ? "🙈 Đang ẩn nghĩa Việt" : "👀 Đang hiện nghĩa Việt";
   window.veChipHs && veChipHs(); window.veMucTieu && veMucTieu();
-  $("#hom-nay").style.display = tuoi === "5" ? "" : "none";
-  if (tuoi === "5") $("#hom-nay").innerHTML = `▶️ Học hôm nay<small>Ngày ${ngayHomNay()} · khoảng 8 phút</small>`;
+  $("#hom-nay").innerHTML = tuoi === "5" ? `▶️ Học hôm nay<small>Ngày ${ngayHomNay()} · khoảng 8 phút</small>` : `▶️ Học hôm nay<small>Ngày ${ngayHomNay10()} · Movers · khoảng 15 phút</small>`;
   $("#khu").className = tuoi === "5" ? "khu khu-to" : "khu";
   $("#khu").innerHTML = KHU[tuoi].map(([id, ten]) => { const [ic, ...tx] = ten.split(" "); return `<button data-khu="${id}" class="${id === khu ? "chon" : ""}">${tuoi === "5" ? `<b>${ic}</b>${tx.join(" ")}` : ten}</button>`; }).join("");
-  $("#luoi").classList.toggle("lt", khu === "lt");
+  $("#luoi").classList.toggle("lt", khu === "lt" || khu === "lt10");
   const them = veKhuThem(khu, sao);
   if (them !== null) { $("#luoi").innerHTML = them; sang("trang-chu"); return; }
   const ds = khu === "tv" ? TU_VUNG.map(c => oChuDe(c, sao))
@@ -397,11 +401,12 @@ function veTrangChu() {
   sang("trang-chu");
 }
 $("#tuoi-5").onclick = () => { tuoi = "5"; ghiNho("tuoi", tuoi); khu = nho("khu-5", "lt"); veTrangChu(); };
-$("#tuoi-10").onclick = () => { tuoi = "10"; ghiNho("tuoi", tuoi); khu = nho("khu-10", "th"); veTrangChu(); };
+$("#tuoi-10").onclick = () => { tuoi = "10"; ghiNho("tuoi", tuoi); khu = nho("khu-10", "lt10"); veTrangChu(); };
 $("#khu").onclick = e => { const b = e.target.closest("[data-khu]"); if (!b) return; khu = b.dataset.khu; ghiNho("khu-" + tuoi, khu); if (tuoi === "5") phat("_khu-" + khu, ""); veTrangChu(); };
 $("#luoi").onclick = e => { if (bamThem(e)) return; const o = e.target.closest(".o"); if (!o) return; o.dataset.xc ? moXc(o.dataset.xc) : o.dataset.bai ? moBai(o.dataset.bai) : moChuDe(o.dataset.cd); };
 document.querySelectorAll("[data-ve]").forEach(b => b.onclick = veTrangChu);
-$("#hom-nay").onclick = () => hocHomNay();
+$("#hom-nay").onclick = () => tuoi === "5" ? hocHomNay() : hocHomNay10();
+$("#bt-cham").onclick = () => { ghiNho("cham", nho("cham", "0") === "1" ? "0" : "1"); veTrangChu(); };
 $("#bt-viet").onclick = () => { ghiNho("an-viet", nho("an-viet", "0") === "1" ? "0" : "1"); veTrangChu(); };
 document.addEventListener("click", e => {
   const v = e.target.closest(".cau-chu .vi,.bong .vi,.dt-vi,.mc-vi,.doc-cau .vi,.tt-cau .vi");
@@ -631,6 +636,7 @@ function ketThucXc() {
 veTrangChu();
 if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
-<script src="phu-huynh.js?v=20261107f"></script>
+<script src="phu-huynh.js?v=20261107h"></script>
+<script src="mo-rong.js?v=20261107h"></script>
 </body>
 </html>

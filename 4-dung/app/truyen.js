@@ -1591,7 +1591,11 @@ window.BAI_DOC = [
      "Lucky",
      "Bella"
     ],
-    "dapvi": ["Kitty", "Lucky", "Bella"],
+    "dapvi": [
+     "Kitty",
+     "Lucky",
+     "Bella"
+    ],
     "dung": 0
    },
    {
@@ -1603,7 +1607,11 @@ window.BAI_DOC = [
      "White and black",
      "Brown"
     ],
-    "dapvi": ["Màu cam", "Trắng và đen", "Màu nâu"],
+    "dapvi": [
+     "Màu cam",
+     "Trắng và đen",
+     "Màu nâu"
+    ],
     "dung": 1
    },
    {
@@ -1615,7 +1623,11 @@ window.BAI_DOC = [
      "In a box",
      "On my bed"
     ],
-    "dapvi": ["Trên ghế sofa", "Trong cái hộp", "Trên giường của em"],
+    "dapvi": [
+     "Trên ghế sofa",
+     "Trong cái hộp",
+     "Trên giường của em"
+    ],
     "dung": 2
    }
   ]
@@ -1671,7 +1683,11 @@ window.BAI_DOC = [
      "Mom",
      "My brother"
     ],
-    "dapvi": ["Bố", "Mẹ", "Em trai của em"],
+    "dapvi": [
+     "Bố",
+     "Mẹ",
+     "Em trai của em"
+    ],
     "dung": 0
    },
    {
@@ -1683,7 +1699,11 @@ window.BAI_DOC = [
      "Kind",
      "Tall"
     ],
-    "dapvi": ["Vui tính", "Tốt bụng", "Cao"],
+    "dapvi": [
+     "Vui tính",
+     "Tốt bụng",
+     "Cao"
+    ],
     "dung": 1
    },
    {
@@ -1695,7 +1715,11 @@ window.BAI_DOC = [
      "Mom",
      "My brother"
     ],
-    "dapvi": ["Bố", "Mẹ", "Em trai của em"],
+    "dapvi": [
+     "Bố",
+     "Mẹ",
+     "Em trai của em"
+    ],
     "dung": 2
    }
   ]
@@ -1751,7 +1775,11 @@ window.BAI_DOC = [
      "Sunny",
      "Snowy"
     ],
-    "dapvi": ["Có mưa", "Có nắng", "Có tuyết"],
+    "dapvi": [
+     "Có mưa",
+     "Có nắng",
+     "Có tuyết"
+    ],
     "dung": 1
    },
    {
@@ -1763,7 +1791,11 @@ window.BAI_DOC = [
      "Tennis",
      "Chess"
     ],
-    "dapvi": ["Bóng đá", "Quần vợt", "Cờ vua"],
+    "dapvi": [
+     "Bóng đá",
+     "Quần vợt",
+     "Cờ vua"
+    ],
     "dung": 0
    },
    {
@@ -1775,7 +1807,11 @@ window.BAI_DOC = [
      "Rice",
      "Ice cream"
     ],
-    "dapvi": ["Bánh ngọt", "Cơm", "Kem"],
+    "dapvi": [
+     "Bánh ngọt",
+     "Cơm",
+     "Kem"
+    ],
     "dung": 2
    }
   ]
@@ -1831,7 +1867,11 @@ window.BAI_DOC = [
      "Eight o'clock",
      "Ten o'clock"
     ],
-    "dapvi": ["Sáu giờ", "Tám giờ", "Mười giờ"],
+    "dapvi": [
+     "Sáu giờ",
+     "Tám giờ",
+     "Mười giờ"
+    ],
     "dung": 0
    },
    {
@@ -1843,7 +1883,11 @@ window.BAI_DOC = [
      "Bread and eggs",
      "Noodles"
     ],
-    "dapvi": ["Cơm và cá", "Bánh mì và trứng", "Mì"],
+    "dapvi": [
+     "Cơm và cá",
+     "Bánh mì và trứng",
+     "Mì"
+    ],
     "dung": 1
    },
    {
@@ -1855,7 +1899,11 @@ window.BAI_DOC = [
      "Water",
      "Milk"
     ],
-    "dapvi": ["Nước ép", "Nước lọc", "Sữa"],
+    "dapvi": [
+     "Nước ép",
+     "Nước lọc",
+     "Sữa"
+    ],
     "dung": 2
    }
   ]
@@ -1911,7 +1959,11 @@ window.BAI_DOC = [
      "Last Monday",
      "Yesterday"
     ],
-    "dapvi": ["Chủ nhật tuần trước", "Thứ Hai tuần trước", "Hôm qua"],
+    "dapvi": [
+     "Chủ nhật tuần trước",
+     "Thứ Hai tuần trước",
+     "Hôm qua"
+    ],
     "dung": 0
    },
    {
@@ -1923,7 +1975,11 @@ window.BAI_DOC = [
      "They jumped from tree to tree",
      "They swam"
     ],
-    "dapvi": ["Chúng ngủ", "Chúng nhảy từ cây này sang cây khác", "Chúng bơi"],
+    "dapvi": [
+     "Chúng ngủ",
+     "Chúng nhảy từ cây này sang cây khác",
+     "Chúng bơi"
+    ],
     "dung": 1
    },
    {
@@ -1935,7 +1991,11 @@ window.BAI_DOC = [
      "It is small",
      "It is tall"
     ],
-    "dapvi": ["Nó vui nhộn", "Nó nhỏ", "Nó cao"],
+    "dapvi": [
+     "Nó vui nhộn",
+     "Nó nhỏ",
+     "Nó cao"
+    ],
     "dung": 2
    }
   ]
@@ -1991,7 +2051,11 @@ window.BAI_DOC = [
      "Nine",
      "Ten"
     ],
-    "dapvi": ["Tám tuổi", "Chín tuổi", "Mười tuổi"],
+    "dapvi": [
+     "Tám tuổi",
+     "Chín tuổi",
+     "Mười tuổi"
+    ],
     "dung": 1
    },
    {
@@ -2003,7 +2067,11 @@ window.BAI_DOC = [
      "Short and brown",
      "Curly and yellow"
     ],
-    "dapvi": ["Dài và đen", "Ngắn và nâu", "Xoăn và vàng"],
+    "dapvi": [
+     "Dài và đen",
+     "Ngắn và nâu",
+     "Xoăn và vàng"
+    ],
     "dung": 0
    },
    {
@@ -2015,7 +2083,11 @@ window.BAI_DOC = [
      "Watch TV",
      "Read comics and draw"
     ],
-    "dapvi": ["Chơi bóng đá", "Xem ti vi", "Đọc truyện tranh và vẽ"],
+    "dapvi": [
+     "Chơi bóng đá",
+     "Xem ti vi",
+     "Đọc truyện tranh và vẽ"
+    ],
     "dung": 2
    }
   ]
@@ -2071,7 +2143,11 @@ window.BAI_DOC = [
      "It is hot",
      "It is late"
     ],
-    "dapvi": ["Trời đang mưa", "Trời nóng", "Đã muộn"],
+    "dapvi": [
+     "Trời đang mưa",
+     "Trời nóng",
+     "Đã muộn"
+    ],
     "dung": 0
    },
    {
@@ -2083,7 +2159,11 @@ window.BAI_DOC = [
      "A tent",
      "A robot"
     ],
-    "dapvi": ["Lâu đài cát", "Một cái lều", "Một con rô-bốt"],
+    "dapvi": [
+     "Lâu đài cát",
+     "Một cái lều",
+     "Một con rô-bốt"
+    ],
     "dung": 1
    },
    {
@@ -2095,7 +2175,11 @@ window.BAI_DOC = [
      "Lemonade",
      "Hot chocolate"
     ],
-    "dapvi": ["Bánh kếp", "Nước chanh", "Sô-cô-la nóng"],
+    "dapvi": [
+     "Bánh kếp",
+     "Nước chanh",
+     "Sô-cô-la nóng"
+    ],
     "dung": 2
    }
   ]
@@ -2151,7 +2235,11 @@ window.BAI_DOC = [
      "Go swimming",
      "Watch a movie"
     ],
-    "dapvi": ["Dọn phòng", "Đi bơi", "Xem phim"],
+    "dapvi": [
+     "Dọn phòng",
+     "Đi bơi",
+     "Xem phim"
+    ],
     "dung": 0
    },
    {
@@ -2163,7 +2251,11 @@ window.BAI_DOC = [
      "My grandparents",
      "My friend"
     ],
-    "dapvi": ["Cô giáo của em", "Ông bà của em", "Bạn của em"],
+    "dapvi": [
+     "Cô giáo của em",
+     "Ông bà của em",
+     "Bạn của em"
+    ],
     "dung": 1
    },
    {
@@ -2175,7 +2267,11 @@ window.BAI_DOC = [
      "Fried rice",
      "Noodle soup"
     ],
-    "dapvi": ["Bánh pizza", "Cơm chiên", "Món mì nước"],
+    "dapvi": [
+     "Bánh pizza",
+     "Cơm chiên",
+     "Món mì nước"
+    ],
     "dung": 2
    }
   ]
@@ -2231,7 +2327,11 @@ window.BAI_DOC = [
      "A chef",
      "A pilot"
     ],
-    "dapvi": ["Bác sĩ", "Đầu bếp", "Phi công"],
+    "dapvi": [
+     "Bác sĩ",
+     "Đầu bếp",
+     "Phi công"
+    ],
     "dung": 1
    },
    {
@@ -2243,7 +2343,11 @@ window.BAI_DOC = [
      "Pancakes",
      "Pizza"
     ],
-    "dapvi": ["Gỏi cuốn", "Bánh kếp", "Bánh pizza"],
+    "dapvi": [
+     "Gỏi cuốn",
+     "Bánh kếp",
+     "Bánh pizza"
+    ],
     "dung": 0
    },
    {
@@ -2255,7 +2359,11 @@ window.BAI_DOC = [
      "She watched TV",
      "She washed the vegetables"
     ],
-    "dapvi": ["Bạn ấy mua đồ ăn", "Bạn ấy xem ti vi", "Bạn ấy rửa rau"],
+    "dapvi": [
+     "Bạn ấy mua đồ ăn",
+     "Bạn ấy xem ti vi",
+     "Bạn ấy rửa rau"
+    ],
     "dung": 2
    }
   ]
@@ -2311,7 +2419,11 @@ window.BAI_DOC = [
      "Next to the gym",
      "In front of the gate"
     ],
-    "dapvi": ["Phía sau thư viện", "Cạnh phòng tập thể dục", "Trước cổng trường"],
+    "dapvi": [
+     "Phía sau thư viện",
+     "Cạnh phòng tập thể dục",
+     "Trước cổng trường"
+    ],
     "dung": 0
    },
    {
@@ -2323,7 +2435,11 @@ window.BAI_DOC = [
      "Every morning before lessons",
      "On Sundays"
     ],
-    "dapvi": ["Sau bữa trưa", "Mỗi sáng trước giờ học", "Vào chủ nhật"],
+    "dapvi": [
+     "Sau bữa trưa",
+     "Mỗi sáng trước giờ học",
+     "Vào chủ nhật"
+    ],
     "dung": 1
    },
    {
@@ -2335,7 +2451,11 @@ window.BAI_DOC = [
      "They ate them all",
      "They gave them to the school kitchen"
     ],
-    "dapvi": ["Các bạn bán chúng", "Các bạn ăn hết", "Các bạn tặng cho bếp ăn của trường"],
+    "dapvi": [
+     "Các bạn bán chúng",
+     "Các bạn ăn hết",
+     "Các bạn tặng cho bếp ăn của trường"
+    ],
     "dung": 2
    }
   ]
@@ -2391,7 +2511,11 @@ window.BAI_DOC = [
      "In the countryside",
      "By the sea"
     ],
-    "dapvi": ["Ở thành phố", "Ở nông thôn", "Cạnh biển"],
+    "dapvi": [
+     "Ở thành phố",
+     "Ở nông thôn",
+     "Cạnh biển"
+    ],
     "dung": 1
    },
    {
@@ -2403,7 +2527,11 @@ window.BAI_DOC = [
      "Played video games",
      "Went swimming"
     ],
-    "dapvi": ["Cho vịt và gà ăn", "Chơi trò chơi điện tử", "Đi bơi"],
+    "dapvi": [
+     "Cho vịt và gà ăn",
+     "Chơi trò chơi điện tử",
+     "Đi bơi"
+    ],
     "dung": 0
    },
    {
@@ -2415,7 +2543,11 @@ window.BAI_DOC = [
      "Scared",
      "Calm and happy"
     ],
-    "dapvi": ["Chán", "Sợ", "Bình yên và vui"],
+    "dapvi": [
+     "Chán",
+     "Sợ",
+     "Bình yên và vui"
+    ],
     "dung": 2
    }
   ]
@@ -2471,7 +2603,11 @@ window.BAI_DOC = [
      "In a box",
      "In the park"
     ],
-    "dapvi": ["Dưới ghế đá", "Trong cái hộp", "Trong công viên"],
+    "dapvi": [
+     "Dưới ghế đá",
+     "Trong cái hộp",
+     "Trong công viên"
+    ],
     "dung": 0
    },
    {
@@ -2483,7 +2619,11 @@ window.BAI_DOC = [
      "Some bread",
      "Meat"
     ],
-    "dapvi": ["Sữa", "Một ít bánh mì", "Thịt"],
+    "dapvi": [
+     "Sữa",
+     "Một ít bánh mì",
+     "Thịt"
+    ],
     "dung": 1
    },
    {
@@ -2495,8 +2635,840 @@ window.BAI_DOC = [
      "From the police",
      "From a phone number on the collar"
     ],
-    "dapvi": ["Từ tờ áp phích", "Từ công an", "Từ số điện thoại trên vòng cổ"],
+    "dapvi": [
+     "Từ tờ áp phích",
+     "Từ công an",
+     "Từ số điện thoại trên vòng cổ"
+    ],
     "dung": 2
+   }
+  ]
+ },
+ {
+  "id": "beach-day",
+  "cap": 2,
+  "capTen": "Movers",
+  "dai": true,
+  "ten": "A Day at the Beach",
+  "vi": "Một ngày ở bãi biển",
+  "emoji": "🏖️",
+  "mau": "#29B6F6",
+  "trang": [
+   {
+    "emoji": "🏖️",
+    "anh": "dd-beach-day",
+    "cau": [
+     {
+      "id": "dd-beach-day-1",
+      "en": "Last Saturday, Linh's family went to the beach.",
+      "vi": "Thứ Bảy tuần trước, gia đình Linh đi biển."
+     },
+     {
+      "id": "dd-beach-day-2",
+      "en": "They left home at six o'clock because the road was quiet in the morning.",
+      "vi": "Họ rời nhà lúc sáu giờ vì buổi sáng đường rất vắng."
+     },
+     {
+      "id": "dd-beach-day-3",
+      "en": "Linh and her brother built a big sandcastle near the water.",
+      "vi": "Linh và em trai xây một lâu đài cát lớn gần mép nước."
+     },
+     {
+      "id": "dd-beach-day-4",
+      "en": "Then they swam in the sea, but the water was cold.",
+      "vi": "Sau đó hai chị em bơi ở biển, nhưng nước lạnh."
+     },
+     {
+      "id": "dd-beach-day-5",
+      "en": "At twelve o'clock, Mom gave them sandwiches and orange juice.",
+      "vi": "Lúc mười hai giờ, mẹ đưa cho hai chị em bánh mì kẹp và nước cam."
+     },
+     {
+      "id": "dd-beach-day-6",
+      "en": "In the afternoon, a big wave broke their sandcastle.",
+      "vi": "Buổi chiều, một cơn sóng lớn làm hỏng lâu đài cát."
+     },
+     {
+      "id": "dd-beach-day-7",
+      "en": "Linh was sad, but Dad took a photo of it before it fell down.",
+      "vi": "Linh buồn, nhưng bố đã chụp ảnh lâu đài trước khi nó sập."
+     },
+     {
+      "id": "dd-beach-day-8",
+      "en": "They went home at five o'clock and everybody was tired but happy.",
+      "vi": "Họ về nhà lúc năm giờ, ai cũng mệt nhưng vui."
+     }
+    ]
+   }
+  ],
+  "hoi": [
+   {
+    "id": "dd-beach-day-q1",
+    "q": "What time did they leave home?",
+    "qvi": "Họ rời nhà lúc mấy giờ?",
+    "dap": [
+     "At five o'clock",
+     "At six o'clock",
+     "At seven o'clock"
+    ],
+    "dapvi": [
+     "Lúc năm giờ",
+     "Lúc sáu giờ",
+     "Lúc bảy giờ"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-beach-day-q2",
+    "q": "Why did they leave early?",
+    "qvi": "Vì sao họ đi sớm?",
+    "dap": [
+     "The road was quiet",
+     "The beach was closed",
+     "They were hungry"
+    ],
+    "dapvi": [
+     "Đường vắng",
+     "Bãi biển đóng cửa",
+     "Họ đói"
+    ],
+    "dung": 0
+   },
+   {
+    "id": "dd-beach-day-q3",
+    "q": "True or false? The water was warm.",
+    "qvi": "Đúng hay sai? Nước biển ấm.",
+    "dap": [
+     "True",
+     "False"
+    ],
+    "dapvi": [
+     "Đúng",
+     "Sai"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-beach-day-q4",
+    "q": "What did Mom give them for lunch?",
+    "qvi": "Mẹ đưa gì cho hai chị em ăn trưa?",
+    "dap": [
+     "Rice and fish",
+     "Sandwiches and orange juice",
+     "Noodles and milk"
+    ],
+    "dapvi": [
+     "Cơm và cá",
+     "Bánh mì kẹp và nước cam",
+     "Mì và sữa"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-beach-day-q5",
+    "q": "What did Dad do before the sandcastle fell down?",
+    "qvi": "Bố làm gì trước khi lâu đài sập?",
+    "dap": [
+     "He took a photo",
+     "He built another one",
+     "He went swimming"
+    ],
+    "dapvi": [
+     "Bố chụp ảnh",
+     "Bố xây cái khác",
+     "Bố đi bơi"
+    ],
+    "dung": 0
+   }
+  ]
+ },
+ {
+  "id": "new-bag",
+  "cap": 2,
+  "capTen": "Movers",
+  "dai": true,
+  "ten": "My New School Bag",
+  "vi": "Chiếc cặp mới của em",
+  "emoji": "🎒",
+  "mau": "#EC407A",
+  "trang": [
+   {
+    "emoji": "🎒",
+    "anh": "dd-new-bag",
+    "cau": [
+     {
+      "id": "dd-new-bag-1",
+      "en": "Yesterday, Mai and her mother went shopping for a new school bag.",
+      "vi": "Hôm qua, Mai và mẹ đi mua một chiếc cặp mới."
+     },
+     {
+      "id": "dd-new-bag-2",
+      "en": "Her old bag was too small and the zip was broken.",
+      "vi": "Chiếc cặp cũ quá nhỏ và khoá kéo bị hỏng."
+     },
+     {
+      "id": "dd-new-bag-3",
+      "en": "In the shop, they saw a red bag, a blue bag and a green bag.",
+      "vi": "Trong cửa hàng, hai mẹ con thấy một cặp đỏ, một cặp xanh dương và một cặp xanh lá."
+     },
+     {
+      "id": "dd-new-bag-4",
+      "en": "The red bag was the most beautiful, but it was very expensive.",
+      "vi": "Chiếc cặp đỏ đẹp nhất, nhưng nó rất đắt."
+     },
+     {
+      "id": "dd-new-bag-5",
+      "en": "The blue bag was cheaper than the red one, and it had three pockets.",
+      "vi": "Chiếc cặp xanh dương rẻ hơn chiếc đỏ và có ba túi."
+     },
+     {
+      "id": "dd-new-bag-6",
+      "en": "Mai tried it on and said, \"This one is bigger and better than my old bag!\"",
+      "vi": "Mai đeo thử và nói: “Cái này to hơn và tốt hơn cặp cũ của con!”"
+     },
+     {
+      "id": "dd-new-bag-7",
+      "en": "Her mother paid two hundred thousand dong for it.",
+      "vi": "Mẹ trả hai trăm nghìn đồng cho chiếc cặp."
+     },
+     {
+      "id": "dd-new-bag-8",
+      "en": "Now Mai carries her new blue bag to school every day.",
+      "vi": "Bây giờ ngày nào Mai cũng đeo chiếc cặp xanh mới đến trường."
+     }
+    ]
+   }
+  ],
+  "hoi": [
+   {
+    "id": "dd-new-bag-q1",
+    "q": "Why did Mai need a new bag?",
+    "qvi": "Vì sao Mai cần cặp mới?",
+    "dap": [
+     "Her old bag was too small",
+     "She lost her bag",
+     "She liked red"
+    ],
+    "dapvi": [
+     "Cặp cũ quá nhỏ",
+     "Bạn làm mất cặp",
+     "Bạn thích màu đỏ"
+    ],
+    "dung": 0
+   },
+   {
+    "id": "dd-new-bag-q2",
+    "q": "Which bag was the most expensive?",
+    "qvi": "Chiếc cặp nào đắt nhất?",
+    "dap": [
+     "The blue bag",
+     "The green bag",
+     "The red bag"
+    ],
+    "dapvi": [
+     "Cặp xanh dương",
+     "Cặp xanh lá",
+     "Cặp đỏ"
+    ],
+    "dung": 2
+   },
+   {
+    "id": "dd-new-bag-q3",
+    "q": "True or false? The blue bag was more expensive than the red bag.",
+    "qvi": "Đúng hay sai? Cặp xanh dương đắt hơn cặp đỏ.",
+    "dap": [
+     "True",
+     "False"
+    ],
+    "dapvi": [
+     "Đúng",
+     "Sai"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-new-bag-q4",
+    "q": "How many pockets did the blue bag have?",
+    "qvi": "Cặp xanh dương có mấy túi?",
+    "dap": [
+     "Two",
+     "Three",
+     "Four"
+    ],
+    "dapvi": [
+     "Hai",
+     "Ba",
+     "Bốn"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-new-bag-q5",
+    "q": "Where does Mai carry her bag every day?",
+    "qvi": "Ngày nào Mai cũng đeo cặp đi đâu?",
+    "dap": [
+     "To the park",
+     "To the shop",
+     "To school"
+    ],
+    "dapvi": [
+     "Đến công viên",
+     "Đến cửa hàng",
+     "Đến trường"
+    ],
+    "dung": 2
+   }
+  ]
+ },
+ {
+  "id": "lost-bike",
+  "cap": 2,
+  "capTen": "Movers",
+  "dai": true,
+  "ten": "The Lost Bike",
+  "vi": "Chiếc xe đạp biến mất",
+  "emoji": "🚲",
+  "mau": "#FF7043",
+  "trang": [
+   {
+    "emoji": "🚲",
+    "anh": "dd-lost-bike",
+    "cau": [
+     {
+      "id": "dd-lost-bike-1",
+      "en": "Nam has a black bike. He rides it to school every day.",
+      "vi": "Nam có một chiếc xe đạp đen. Ngày nào bạn cũng đạp xe đến trường."
+     },
+     {
+      "id": "dd-lost-bike-2",
+      "en": "One afternoon, he left it outside the library and went in to read a book.",
+      "vi": "Một buổi chiều, bạn để xe ngoài thư viện rồi vào đọc sách."
+     },
+     {
+      "id": "dd-lost-bike-3",
+      "en": "When he came out, his bike wasn't there!",
+      "vi": "Khi bước ra, xe của bạn không còn ở đó!"
+     },
+     {
+      "id": "dd-lost-bike-4",
+      "en": "Nam looked behind the trees and next to the fence, but he couldn't find it.",
+      "vi": "Nam tìm sau những cái cây và cạnh hàng rào nhưng không thấy."
+     },
+     {
+      "id": "dd-lost-bike-5",
+      "en": "Then he saw a little boy on a black bike across the street.",
+      "vi": "Rồi bạn thấy một cậu bé trên chiếc xe đạp đen ở bên kia đường."
+     },
+     {
+      "id": "dd-lost-bike-6",
+      "en": "It was his bike! The boy said, \"Sorry, I thought it was my brother's bike.\"",
+      "vi": "Đó chính là xe của bạn! Cậu bé nói: “Xin lỗi, em tưởng đó là xe của anh em.”"
+     },
+     {
+      "id": "dd-lost-bike-7",
+      "en": "Nam wasn't angry. He smiled and said, \"It's OK, but please ask first next time.\"",
+      "vi": "Nam không giận. Bạn mỉm cười và nói: “Không sao, nhưng lần sau hãy hỏi trước nhé.”"
+     },
+     {
+      "id": "dd-lost-bike-8",
+      "en": "After that, Nam always put a lock on his bike.",
+      "vi": "Từ đó, Nam luôn khoá xe của mình."
+     }
+    ]
+   }
+  ],
+  "hoi": [
+   {
+    "id": "dd-lost-bike-q1",
+    "q": "Where did Nam leave his bike?",
+    "qvi": "Nam để xe ở đâu?",
+    "dap": [
+     "Outside the library",
+     "Outside the school",
+     "Outside the shop"
+    ],
+    "dapvi": [
+     "Ngoài thư viện",
+     "Ngoài trường",
+     "Ngoài cửa hàng"
+    ],
+    "dung": 0
+   },
+   {
+    "id": "dd-lost-bike-q2",
+    "q": "Where did Nam look for the bike?",
+    "qvi": "Nam tìm xe ở đâu?",
+    "dap": [
+     "Behind the trees and next to the fence",
+     "Under the bridge",
+     "Inside the library"
+    ],
+    "dapvi": [
+     "Sau những cái cây và cạnh hàng rào",
+     "Dưới cây cầu",
+     "Trong thư viện"
+    ],
+    "dung": 0
+   },
+   {
+    "id": "dd-lost-bike-q3",
+    "q": "True or false? The boy took the bike on purpose.",
+    "qvi": "Đúng hay sai? Cậu bé cố ý lấy xe.",
+    "dap": [
+     "True",
+     "False"
+    ],
+    "dapvi": [
+     "Đúng",
+     "Sai"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-lost-bike-q4",
+    "q": "What did Nam say to the boy?",
+    "qvi": "Nam nói gì với cậu bé?",
+    "dap": [
+     "Go away",
+     "It's OK, but please ask first next time",
+     "I don't like this bike"
+    ],
+    "dapvi": [
+     "Đi chỗ khác",
+     "Không sao, nhưng lần sau hãy hỏi trước",
+     "Mình không thích chiếc xe này"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-lost-bike-q5",
+    "q": "What did Nam do after that?",
+    "qvi": "Sau đó Nam làm gì?",
+    "dap": [
+     "He sold his bike",
+     "He put a lock on his bike",
+     "He walked to school"
+    ],
+    "dapvi": [
+     "Bán xe",
+     "Khoá xe lại",
+     "Đi bộ đến trường"
+    ],
+    "dung": 1
+   }
+  ]
+ },
+ {
+  "id": "museum-trip",
+  "cap": 3,
+  "capTen": "Flyers",
+  "dai": true,
+  "ten": "The School Trip",
+  "vi": "Chuyến tham quan của lớp",
+  "emoji": "🦕",
+  "mau": "#5C6BC0",
+  "trang": [
+   {
+    "emoji": "🦕",
+    "anh": "dd-museum-trip",
+    "cau": [
+     {
+      "id": "dd-museum-trip-1",
+      "en": "Last Thursday, Class 5A visited the science museum in the city centre.",
+      "vi": "Thứ Năm tuần trước, lớp 5A tham quan bảo tàng khoa học ở trung tâm thành phố."
+     },
+     {
+      "id": "dd-museum-trip-2",
+      "en": "They travelled by bus and the journey took about forty minutes.",
+      "vi": "Cả lớp đi bằng xe buýt và chuyến đi mất khoảng bốn mươi phút."
+     },
+     {
+      "id": "dd-museum-trip-3",
+      "en": "First, a guide showed them a huge model of a dinosaur that was more than ten metres long.",
+      "vi": "Đầu tiên, một hướng dẫn viên cho cả lớp xem mô hình khủng long khổng lồ dài hơn mười mét."
+     },
+     {
+      "id": "dd-museum-trip-4",
+      "en": "After that, the children watched a short film about space and the planets.",
+      "vi": "Sau đó, các bạn xem một bộ phim ngắn về vũ trụ và các hành tinh."
+     },
+     {
+      "id": "dd-museum-trip-5",
+      "en": "Minh asked the guide how many moons Jupiter has, and she was surprised by his clever question.",
+      "vi": "Minh hỏi cô hướng dẫn sao Mộc có bao nhiêu mặt trăng, và cô ngạc nhiên vì câu hỏi thông minh của bạn."
+     },
+     {
+      "id": "dd-museum-trip-6",
+      "en": "At lunchtime, they sat in the garden and ate their sandwiches because the café was too crowded.",
+      "vi": "Đến giờ ăn trưa, cả lớp ngồi ngoài vườn ăn bánh mì kẹp vì quán cà phê quá đông."
+     },
+     {
+      "id": "dd-museum-trip-7",
+      "en": "Before they left, everybody bought a small souvenir, and Minh chose a model rocket.",
+      "vi": "Trước khi về, ai cũng mua một món quà lưu niệm nhỏ, và Minh chọn một mô hình tên lửa."
+     },
+     {
+      "id": "dd-museum-trip-8",
+      "en": "On the way home, some children fell asleep on the bus, but Minh couldn't stop talking about the rocket.",
+      "vi": "Trên đường về, vài bạn ngủ gật trên xe buýt, nhưng Minh cứ nói mãi về chiếc tên lửa."
+     }
+    ]
+   }
+  ],
+  "hoi": [
+   {
+    "id": "dd-museum-trip-q1",
+    "q": "How did the class travel to the museum?",
+    "qvi": "Cả lớp đến bảo tàng bằng gì?",
+    "dap": [
+     "By train",
+     "By bus",
+     "By bike"
+    ],
+    "dapvi": [
+     "Bằng tàu hoả",
+     "Bằng xe buýt",
+     "Bằng xe đạp"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-museum-trip-q2",
+    "q": "How long was the journey?",
+    "qvi": "Chuyến đi kéo dài bao lâu?",
+    "dap": [
+     "About twenty minutes",
+     "About forty minutes",
+     "About one hour"
+    ],
+    "dapvi": [
+     "Khoảng hai mươi phút",
+     "Khoảng bốn mươi phút",
+     "Khoảng một giờ"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-museum-trip-q3",
+    "q": "True or false? The children watched a film about animals.",
+    "qvi": "Đúng hay sai? Các bạn xem phim về động vật.",
+    "dap": [
+     "True",
+     "False"
+    ],
+    "dapvi": [
+     "Đúng",
+     "Sai"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-museum-trip-q4",
+    "q": "Why was the guide surprised?",
+    "qvi": "Vì sao cô hướng dẫn ngạc nhiên?",
+    "dap": [
+     "Minh asked a clever question",
+     "Minh was late",
+     "The bus was broken"
+    ],
+    "dapvi": [
+     "Minh hỏi một câu thông minh",
+     "Minh đến muộn",
+     "Xe buýt bị hỏng"
+    ],
+    "dung": 0
+   },
+   {
+    "id": "dd-museum-trip-q5",
+    "q": "Why did they eat lunch in the garden?",
+    "qvi": "Vì sao cả lớp ăn trưa ngoài vườn?",
+    "dap": [
+     "It was raining",
+     "The café was too crowded",
+     "The café was closed"
+    ],
+    "dapvi": [
+     "Trời mưa",
+     "Quán cà phê quá đông",
+     "Quán cà phê đóng cửa"
+    ],
+    "dung": 1
+   }
+  ]
+ },
+ {
+  "id": "rainy-camp",
+  "cap": 3,
+  "capTen": "Flyers",
+  "dai": true,
+  "ten": "A Rainy Camping Weekend",
+  "vi": "Cuối tuần cắm trại trong mưa",
+  "emoji": "⛺",
+  "mau": "#43A047",
+  "trang": [
+   {
+    "emoji": "⛺",
+    "anh": "dd-rainy-camp",
+    "cau": [
+     {
+      "id": "dd-rainy-camp-1",
+      "en": "Tom's family planned to go camping in the mountains last weekend.",
+      "vi": "Gia đình Tom dự định đi cắm trại trên núi vào cuối tuần trước."
+     },
+     {
+      "id": "dd-rainy-camp-2",
+      "en": "On Friday evening they put up their tent next to a small river.",
+      "vi": "Tối thứ Sáu họ dựng lều cạnh một con sông nhỏ."
+     },
+     {
+      "id": "dd-rainy-camp-3",
+      "en": "During the night it started to rain heavily and the wind became stronger.",
+      "vi": "Trong đêm trời bắt đầu mưa to và gió mạnh hơn."
+     },
+     {
+      "id": "dd-rainy-camp-4",
+      "en": "In the morning, the tent was wet inside, so they decided to move to a nearby wooden cabin.",
+      "vi": "Buổi sáng, bên trong lều bị ướt, nên họ quyết định chuyển sang một căn nhà gỗ gần đó."
+     },
+     {
+      "id": "dd-rainy-camp-5",
+      "en": "Tom's sister was cold, so Dad made hot chocolate on a small stove.",
+      "vi": "Em gái Tom thấy lạnh, nên bố pha sô-cô-la nóng trên một cái bếp nhỏ."
+     },
+     {
+      "id": "dd-rainy-camp-6",
+      "en": "They played board games all afternoon because they couldn't go hiking.",
+      "vi": "Họ chơi cờ bàn cả buổi chiều vì không thể đi bộ đường dài."
+     },
+     {
+      "id": "dd-rainy-camp-7",
+      "en": "On Sunday the sun finally came out, and everyone walked to a beautiful waterfall.",
+      "vi": "Chủ nhật mặt trời cuối cùng cũng ló ra, và mọi người đi bộ đến một thác nước tuyệt đẹp."
+     },
+     {
+      "id": "dd-rainy-camp-8",
+      "en": "Although the weekend was wet, Tom said it was the best trip he had ever had.",
+      "vi": "Dù cuối tuần ẩm ướt, Tom nói đó là chuyến đi tuyệt nhất mà bạn từng có."
+     }
+    ]
+   }
+  ],
+  "hoi": [
+   {
+    "id": "dd-rainy-camp-q1",
+    "q": "Where did they put up the tent?",
+    "qvi": "Họ dựng lều ở đâu?",
+    "dap": [
+     "Next to a small river",
+     "On top of a hill",
+     "Under a big tree"
+    ],
+    "dapvi": [
+     "Cạnh một con sông nhỏ",
+     "Trên đỉnh đồi",
+     "Dưới gốc cây lớn"
+    ],
+    "dung": 0
+   },
+   {
+    "id": "dd-rainy-camp-q2",
+    "q": "What happened during the night?",
+    "qvi": "Đêm đó chuyện gì xảy ra?",
+    "dap": [
+     "It snowed",
+     "It rained heavily",
+     "It was very hot"
+    ],
+    "dapvi": [
+     "Trời có tuyết",
+     "Trời mưa to",
+     "Trời rất nóng"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-rainy-camp-q3",
+    "q": "Why did they move to a cabin?",
+    "qvi": "Vì sao họ chuyển sang nhà gỗ?",
+    "dap": [
+     "The tent was wet inside",
+     "They were scared of animals",
+     "The tent was too small"
+    ],
+    "dapvi": [
+     "Lều bị ướt bên trong",
+     "Họ sợ thú rừng",
+     "Lều quá nhỏ"
+    ],
+    "dung": 0
+   },
+   {
+    "id": "dd-rainy-camp-q4",
+    "q": "True or false? They went hiking on Saturday afternoon.",
+    "qvi": "Đúng hay sai? Chiều thứ Bảy họ đi bộ đường dài.",
+    "dap": [
+     "True",
+     "False"
+    ],
+    "dapvi": [
+     "Đúng",
+     "Sai"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-rainy-camp-q5",
+    "q": "What did Tom think about the trip?",
+    "qvi": "Tom nghĩ gì về chuyến đi?",
+    "dap": [
+     "It was boring",
+     "It was the best trip he had ever had",
+     "It was too cold to enjoy"
+    ],
+    "dapvi": [
+     "Nó chán",
+     "Đó là chuyến đi tuyệt nhất bạn từng có",
+     "Trời quá lạnh để thích"
+    ],
+    "dung": 1
+   }
+  ]
+ },
+ {
+  "id": "market-help",
+  "cap": 3,
+  "capTen": "Flyers",
+  "dai": true,
+  "ten": "Helping at the Market",
+  "vi": "Giúp bà bán hàng ở chợ",
+  "emoji": "🥭",
+  "mau": "#FFA000",
+  "trang": [
+   {
+    "emoji": "🥭",
+    "anh": "dd-market-help",
+    "cau": [
+     {
+      "id": "dd-market-help-1",
+      "en": "Every Sunday morning, Lan helps her grandmother sell vegetables at the market.",
+      "vi": "Sáng chủ nhật nào Lan cũng giúp bà bán rau ở chợ."
+     },
+     {
+      "id": "dd-market-help-2",
+      "en": "They get up at four o'clock because the best customers arrive early.",
+      "vi": "Hai bà cháu dậy lúc bốn giờ vì những khách hàng tốt nhất đến sớm."
+     },
+     {
+      "id": "dd-market-help-3",
+      "en": "Lan's job is to put the tomatoes, cucumbers and carrots into plastic bags.",
+      "vi": "Việc của Lan là cho cà chua, dưa leo và cà rốt vào túi ni lông."
+     },
+     {
+      "id": "dd-market-help-4",
+      "en": "Her grandmother weighs everything carefully and tells each customer the price.",
+      "vi": "Bà cân mọi thứ cẩn thận và báo giá cho từng khách."
+     },
+     {
+      "id": "dd-market-help-5",
+      "en": "Last Sunday, a tourist asked Lan a question in English, and she answered it politely.",
+      "vi": "Chủ nhật tuần trước, một du khách hỏi Lan bằng tiếng Anh, và bạn trả lời rất lịch sự."
+     },
+     {
+      "id": "dd-market-help-6",
+      "en": "He bought two kilos of mangoes and said, \"Your English is excellent!\"",
+      "vi": "Ông mua hai ký xoài và nói: “Tiếng Anh của cháu tuyệt lắm!”"
+     },
+     {
+      "id": "dd-market-help-7",
+      "en": "Lan felt very proud because she often practises English with her brother at home.",
+      "vi": "Lan rất tự hào vì bạn thường luyện tiếng Anh với anh trai ở nhà."
+     },
+     {
+      "id": "dd-market-help-8",
+      "en": "At noon, they counted the money and bought noodle soup for lunch.",
+      "vi": "Buổi trưa, hai bà cháu đếm tiền và mua mì nước cho bữa trưa."
+     }
+    ]
+   }
+  ],
+  "hoi": [
+   {
+    "id": "dd-market-help-q1",
+    "q": "What time do they get up?",
+    "qvi": "Họ dậy lúc mấy giờ?",
+    "dap": [
+     "At four o'clock",
+     "At six o'clock",
+     "At eight o'clock"
+    ],
+    "dapvi": [
+     "Lúc bốn giờ",
+     "Lúc sáu giờ",
+     "Lúc tám giờ"
+    ],
+    "dung": 0
+   },
+   {
+    "id": "dd-market-help-q2",
+    "q": "Why do they get up so early?",
+    "qvi": "Vì sao họ dậy sớm như vậy?",
+    "dap": [
+     "The best customers arrive early",
+     "The market closes early",
+     "They are not tired"
+    ],
+    "dapvi": [
+     "Khách tốt nhất đến sớm",
+     "Chợ đóng cửa sớm",
+     "Họ không mệt"
+    ],
+    "dung": 0
+   },
+   {
+    "id": "dd-market-help-q3",
+    "q": "True or false? Lan puts the vegetables into paper bags.",
+    "qvi": "Đúng hay sai? Lan cho rau vào túi giấy.",
+    "dap": [
+     "True",
+     "False"
+    ],
+    "dapvi": [
+     "Đúng",
+     "Sai"
+    ],
+    "dung": 1
+   },
+   {
+    "id": "dd-market-help-q4",
+    "q": "What did the tourist buy?",
+    "qvi": "Du khách đã mua gì?",
+    "dap": [
+     "Two kilos of mangoes",
+     "Some tomatoes",
+     "A bag of rice"
+    ],
+    "dapvi": [
+     "Hai ký xoài",
+     "Một ít cà chua",
+     "Một túi gạo"
+    ],
+    "dung": 0
+   },
+   {
+    "id": "dd-market-help-q5",
+    "q": "Why did Lan feel proud?",
+    "qvi": "Vì sao Lan tự hào?",
+    "dap": [
+     "She earned a lot of money",
+     "The tourist praised her English",
+     "She won a prize"
+    ],
+    "dapvi": [
+     "Bạn kiếm được nhiều tiền",
+     "Du khách khen tiếng Anh của bạn",
+     "Bạn thắng giải"
+    ],
+    "dung": 1
    }
   ]
  }
