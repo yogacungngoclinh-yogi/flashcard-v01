@@ -65,6 +65,11 @@
 .album div{aspect-ratio:1;background:var(--the);border-radius:20px;display:grid;place-items:center;font-size:40px;box-shadow:0 4px 0 rgba(59,47,74,.12)}
 .album div.chua{font-size:20px;color:var(--phu);opacity:.5}
 .sticker-to{font-size:min(40vw,170px);animation:vao .6s cubic-bezier(.3,1.6,.6,1)}
+.tt-tu{margin-left:auto;flex:none;display:flex;align-items:center;gap:6px;height:48px;padding:0 16px 0 12px;border-radius:999px;background:var(--the);box-shadow:var(--bong);font-family:inherit;font-weight:800;font-size:18px;color:#555;border:3px solid #66BB6A;white-space:nowrap}
+.tt-tu b{font-size:22px}
+.tt-tu.dung{background:#FFA000;border-color:#FFA000;color:#fff;animation:nhay 1.6s ease-in-out infinite}
+@keyframes nhay{50%{transform:scale(1.07)}}
+#tt .dau h1{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .tt-trang{flex:1;min-height:0;overflow-y:auto;display:grid;grid-template-columns:1fr;grid-auto-rows:max-content;gap:18px;align-content:start;width:100%;max-width:1000px;margin:0 auto;padding:4px 6px 28px}
 @media(min-width:760px){.tt-trang{grid-template-columns:1fr 1fr}.tt-bia,.tt-bh,.tt-cuoi{grid-column:1/-1}}
 .tt-o,.tt-bia,.tt-bh{--k:var(--mau);position:relative;background:color-mix(in srgb,var(--k) 10%,#fff);border:5px solid var(--k);border-radius:28px;overflow:hidden;box-shadow:0 6px 0 color-mix(in srgb,var(--k) 35%,transparent);transition:transform .25s,box-shadow .25s}
@@ -138,7 +143,7 @@
   <div class="album" id="album-luoi"></div>
 </section>
 <section class="man" id="tt">
-  <div class="dau"><button class="nut-tron" data-ve aria-label="Về trang chủ">🏠</button><h1 id="tt-ten"></h1><button class="nut-tron" id="tt-tu" aria-label="Tự đọc / Dừng">⏸️</button></div>
+  <div class="dau"><button class="nut-tron" data-ve aria-label="Về trang chủ">🏠</button><h1 id="tt-ten"></h1><button class="tt-tu" id="tt-tu" aria-label="Dừng / Đọc tiếp"></button></div>
   <div class="tt-trang" id="tt-trang"></div>
 </section>`);
 
@@ -175,7 +180,7 @@
     g("tt-ten").textContent = t.emoji + " " + t.vi;
     g("tt-trang").innerHTML = h; g("tt-trang").scrollTop = 0;
     napAm(ttSeq.map(c => c.id));
-    ttTu = true; ttHet = false; g("tt-tu").textContent = "⏸️";
+    ttTu = true; ttHet = false; nutTu();
     sang("tt"); ttTok++; setTimeout(() => ttDoc(0), 500);
   }
   function ttDung() { ttTok++; cancelAnimationFrame(ttRaf); if (ttAm) ttAm.pause(); }
@@ -219,8 +224,13 @@
     const o = e.target.closest("[data-i]") || e.target.closest(".tt-o,.tt-bia,.tt-bh")?.querySelector("[data-i]");
     if (o) ttDoc(+o.dataset.i);
   });
+  // nút góc phải: đang tự đọc → "Dừng"; đang dừng → "Đọc tiếp" (lúc dừng bé chạm câu nào thì đọc câu đó rồi đứng lại)
+  function nutTu() {
+    const n = g("tt-tu"); n.classList.toggle("dung", !ttTu);
+    n.innerHTML = ttTu ? "<b>⏸️</b>Dừng" : "<b>▶️</b>Đọc tiếp";
+  }
   g("tt-tu").onclick = () => {
-    ttTu = !ttTu; g("tt-tu").textContent = ttTu ? "⏸️" : "▶️";
+    ttTu = !ttTu; nutTu();
     if (!ttTu) { ttDung(); g("tt-trang").querySelectorAll(".dang").forEach(e => e.classList.remove("dang")); }
     else ttDoc(ttHet ? ttI + 1 : ttI);
   };

@@ -53,3 +53,4 @@ App web học từ vựng tiếng Anh theo chủ đề cho bé 5 tuổi: thẻ h
 - 2026-11-06: Thêm prompt tổng hợp 1 khung cho mọi ảnh còn thiếu (363 ảnh, 4 phong cách A–D): 2-kich-ban/prompt-tong-hop.md, tạo bởi 4-dung/app/tao-prompt-tong.py.
 - 2026-11-07: Nhận 251 ảnh (từ vựng, ABC, nói chuyện, tình huống) → hinh/. Thêm xu-ly-hinh.py (cho-xu-ly → hinh/*.jpg 640px, gốc cất 3-tai-san/hinh-goc/). Còn thiếu 112 ảnh: 100 truyện tranh + 12 bài đọc.
 - 2026-11-07: Nhận 112 ảnh còn lại (100 truyện tranh + 12 bài đọc) → app đủ 100% ảnh. xu-ly-hinh.py thêm `--tu <thư mục>` (quét thư mục con) và `--giu-cu` (bỏ qua ảnh đã có). Giữ ảnh cũ th-bus-2/5, th-cinema-4/5 (bản vẽ lại không dùng).
+- 2026-11-07: Truyện tranh: nút góc trên phải thành nút có chữ "⏸️ Dừng" / "▶️ Đọc tiếp" (màu cam, nhấp nháy khi đang dừng). Lúc dừng, bé chạm câu nào thì đọc câu đó rồi đứng lại.
