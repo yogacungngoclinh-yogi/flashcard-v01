@@ -1,0 +1,737 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:english-daily-330:curriculum:1.4.0",
+  "title": "330 authored guided English sessions",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "content_version",
+    "title_vi",
+    "audience",
+    "scope",
+    "schedule",
+    "image_policy",
+    "scoring_policy",
+    "units",
+    "vocabulary",
+    "stories",
+    "lessons",
+    "language_targets",
+    "deferred_reviews",
+    "supplementary_cards"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.4.0"
+    },
+    "content_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title_vi": {
+      "type": "string",
+      "minLength": 1
+    },
+    "vocabulary": {
+      "type": "array",
+      "minItems": 140,
+      "maxItems": 140,
+      "items": {
+        "$ref": "#/$defs/vocabulary"
+      }
+    },
+    "stories": {
+      "type": "array",
+      "minItems": 46,
+      "maxItems": 46,
+      "items": {
+        "$ref": "#/$defs/story"
+      }
+    },
+    "lessons": {
+      "type": "array",
+      "minItems": 330,
+      "maxItems": 330,
+      "items": {
+        "$ref": "#/$defs/lesson"
+      }
+    },
+    "language_targets": {
+      "type": "array",
+      "minItems": 160,
+      "maxItems": 160,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "unit_id",
+          "title_vi",
+          "model_en",
+          "model_vi",
+          "explanation_vi",
+          "introduced_day",
+          "audio"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "introduced_day": {
+            "type": "integer",
+            "minimum": 91,
+            "maximum": 330
+          },
+          "audio": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    "deferred_reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "language_target_id",
+          "due_day",
+          "status"
+        ],
+        "properties": {
+          "due_day": {
+            "type": "integer",
+            "minimum": 331,
+            "maximum": 365
+          },
+          "status": {
+            "const": "planned_not_scheduled_in_completed_lessons"
+          }
+        }
+      }
+    },
+    "supplementary_cards": {
+      "type": "array",
+      "minItems": 24,
+      "maxItems": 24,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "en",
+          "vi",
+          "image_id",
+          "model_en",
+          "audio"
+        ],
+        "properties": {
+          "audio": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "vocabulary": {
+      "type": "object",
+      "required": [
+        "id",
+        "en",
+        "vi",
+        "unit_id",
+        "image_id",
+        "example_en",
+        "example_vi",
+        "audio"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "vi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unit_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "image_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "example_en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "example_vi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "audio": {
+          "type": "null"
+        }
+      }
+    },
+    "story": {
+      "type": "object",
+      "required": [
+        "id",
+        "image_id",
+        "title_en",
+        "title_vi",
+        "text_en",
+        "text_vi",
+        "simple_en",
+        "simple_vi",
+        "glossary"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "image_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "title_en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title_vi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text_en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text_vi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "simple_en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "simple_vi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adaptations_vi": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "adaptations_vi"
+          ]
+        },
+        {
+          "required": [
+            "authorship"
+          ]
+        }
+      ]
+    },
+    "lesson": {
+      "type": "object",
+      "required": [
+        "id",
+        "day",
+        "unit_id",
+        "title_vi",
+        "kind",
+        "new_vocabulary_ids",
+        "focus_vocabulary_ids",
+        "review_vocabulary_ids",
+        "image_ids",
+        "audio",
+        "age_adaptations",
+        "activities",
+        "completion"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^day-[0-9]{3}$"
+        },
+        "day": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 330
+        },
+        "kind": {
+          "enum": [
+            "learn",
+            "practice",
+            "application",
+            "checkpoint",
+            "reading",
+            "retelling",
+            "functional_language",
+            "sentence_practice",
+            "dialogue"
+          ]
+        },
+        "new_vocabulary_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "focus_vocabulary_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "review_vocabulary_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "image_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "audio": {
+          "type": "null"
+        },
+        "age_adaptations": {
+          "type": "object",
+          "required": [
+            "ages_5_7",
+            "ages_8_10"
+          ]
+        },
+        "activities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/activity"
+          }
+        }
+      }
+    },
+    "activity": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "scoring"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "review_cards",
+            "flashcards",
+            "choice",
+            "match",
+            "speaking_manual",
+            "order_tokens",
+            "offline_project",
+            "reading",
+            "order_sentences",
+            "review_language",
+            "model_language",
+            "dialogue",
+            "text_map",
+            "picture_support",
+            "interactive_challenge",
+            "quick_review"
+          ]
+        },
+        "scoring": {
+          "enum": [
+            "not_scored",
+            "exact_option_id",
+            "pair_id_equality",
+            "adult_observation",
+            "normalized_sentence",
+            "exact_order",
+            "structured_answer",
+            "guided_practice"
+          ]
+        },
+        "vocabulary_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "text_variant_required": {
+          "enum": [
+            "text_en",
+            "simple_en"
+          ]
+        },
+        "age_band": {
+          "enum": [
+            "ages_5_7",
+            "ages_8_10"
+          ]
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "text"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "requires_microphone": {
+          "const": false
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "review_cards"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "vocabulary_ids",
+              "prompt_vi"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "flashcards"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "vocabulary_ids",
+              "prompt_vi"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "choice"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "options",
+              "answer_option_id"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "match"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "left",
+              "right",
+              "answer_pairs"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "speaking_manual"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "sample_answers_en",
+              "rubric_vi",
+              "requires_microphone"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "order_tokens"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "tokens",
+              "answer_token_ids",
+              "answer_text"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "offline_project"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "prompt_vi",
+              "success_criteria_vi"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "reading"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "story_id",
+              "text_fields_by_age"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "order_sentences"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "items",
+              "answer_item_ids"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "review_language"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "language_target_ids",
+              "cards"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "model_language"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "language_target_ids"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "dialogue"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "turns"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "text_map"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "map_spec",
+              "description_vi"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "picture_support"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "supplementary_card_ids",
+              "prompt_vi",
+              "optional"
+            ],
+            "properties": {
+              "supplementary_card_ids": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "optional": {
+                "const": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "interactive_challenge"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "title_vi",
+              "mechanic",
+              "instructions_vi",
+              "items",
+              "answer",
+              "feedback_vi",
+              "adult_fallback_vi",
+              "mechanics_note",
+              "implementation_status"
+            ],
+            "properties": {
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "text_en",
+                    "text_vi"
+                  ]
+                }
+              },
+              "answer": {
+                "type": "object",
+                "minProperties": 1,
+                "maxProperties": 1,
+                "propertyNames": {
+                  "enum": [
+                    "selected_ids",
+                    "ordered_ids",
+                    "pairs",
+                    "groups"
+                  ]
+                }
+              },
+              "implementation_status": {
+                "const": "content_specification_not_app_feature"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "quick_review"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "duration_seconds",
+              "instructions_vi",
+              "questions",
+              "memory_cue_vi",
+              "timer_required"
+            ],
+            "properties": {
+              "questions": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "$ref": "#/$defs/activity"
+                }
+              },
+              "timer_required": {
+                "const": false
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

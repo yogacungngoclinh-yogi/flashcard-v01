@@ -1,0 +1,1052 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> english-kids-learning-core-prep@0.4.0 verify:curriculum:v7
+> node scripts/verify-curriculum.mjs curriculum-v7-365.json
+
+{
+  "integration": "standalone-core-with-real-authored-content",
+  "sourceSchemaVersion": "1.4.2",
+  "sourceContentVersion": "2026-11-08-v7-365-complete-chapter-reviews",
+  "sourceSha256": "70e12ffe9749d31f4e2ef012a9937edadc14c6ebb5386aafd2263c7ec706eba3",
+  "sourceUnchanged": true,
+  "containsRealChildProgress": false,
+  "catalog": {
+    "cards": 320,
+    "lessons": 365,
+    "units": 60
+  },
+  "quickReviewsSimulated": 60,
+  "quickQuestionsSimulated": 180,
+  "snapshotRoundTrips": 180,
+  "structuredChallengesVerified": 16,
+  "originalAppTouched": false,
+  "renderedUIVerified": false,
+  "realAudioVerified": false,
+  "simulations": [
+    {
+      "unitId": "animals",
+      "lessonId": "day-006",
+      "activityId": "d6-quick-review",
+      "questionIds": [
+        "d6-quick-q1",
+        "d6-quick-q2",
+        "d6-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "colors",
+      "lessonId": "day-012",
+      "activityId": "d12-quick-review",
+      "questionIds": [
+        "d12-quick-q1",
+        "d12-quick-q2",
+        "d12-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "numbers",
+      "lessonId": "day-018",
+      "activityId": "d18-quick-review",
+      "questionIds": [
+        "d18-quick-q1",
+        "d18-quick-q2",
+        "d18-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "fruits",
+      "lessonId": "day-024",
+      "activityId": "d24-quick-review",
+      "questionIds": [
+        "d24-quick-q1",
+        "d24-quick-q2",
+        "d24-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "food",
+      "lessonId": "day-030",
+      "activityId": "d30-quick-review",
+      "questionIds": [
+        "d30-quick-q1",
+        "d30-quick-q2",
+        "d30-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "body",
+      "lessonId": "day-036",
+      "activityId": "d36-quick-review",
+      "questionIds": [
+        "d36-quick-q1",
+        "d36-quick-q2",
+        "d36-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "family",
+      "lessonId": "day-042",
+      "activityId": "d42-quick-review",
+      "questionIds": [
+        "d42-quick-q1",
+        "d42-quick-q2",
+        "d42-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "health",
+      "lessonId": "day-048",
+      "activityId": "d48-quick-review",
+      "questionIds": [
+        "d48-quick-q1",
+        "d48-quick-q2",
+        "d48-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "jobs",
+      "lessonId": "day-054",
+      "activityId": "d54-quick-review",
+      "questionIds": [
+        "d54-quick-q1",
+        "d54-quick-q2",
+        "d54-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "materials",
+      "lessonId": "day-060",
+      "activityId": "d60-quick-review",
+      "questionIds": [
+        "d60-quick-q1",
+        "d60-quick-q2",
+        "d60-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "places",
+      "lessonId": "day-066",
+      "activityId": "d66-quick-review",
+      "questionIds": [
+        "d66-quick-q1",
+        "d66-quick-q2",
+        "d66-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "nature",
+      "lessonId": "day-072",
+      "activityId": "d72-quick-review",
+      "questionIds": [
+        "d72-quick-q1",
+        "d72-quick-q2",
+        "d72-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "hobbies",
+      "lessonId": "day-078",
+      "activityId": "d78-quick-review",
+      "questionIds": [
+        "d78-quick-q1",
+        "d78-quick-q2",
+        "d78-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "stories",
+      "lessonId": "day-090",
+      "activityId": "d90-quick-review",
+      "questionIds": [
+        "d90-quick-q1",
+        "d90-quick-q2",
+        "d90-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "polite-english",
+      "lessonId": "day-096",
+      "activityId": "d96-quick-review",
+      "questionIds": [
+        "d96-quick-q1",
+        "d96-quick-q2",
+        "d96-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "one-or-many",
+      "lessonId": "day-102",
+      "activityId": "d102-quick-review",
+      "questionIds": [
+        "d102-quick-q1",
+        "d102-quick-q2",
+        "d102-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "my-your-our",
+      "lessonId": "day-108",
+      "activityId": "d108-quick-review",
+      "questionIds": [
+        "d108-quick-q1",
+        "d108-quick-q2",
+        "d108-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "describe-clearly",
+      "lessonId": "day-114",
+      "activityId": "d114-quick-review",
+      "questionIds": [
+        "d114-quick-q1",
+        "d114-quick-q2",
+        "d114-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "where-is-it",
+      "lessonId": "day-120",
+      "activityId": "d120-quick-review",
+      "questionIds": [
+        "d120-quick-q1",
+        "d120-quick-q2",
+        "d120-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "can-do",
+      "lessonId": "day-126",
+      "activityId": "d126-quick-review",
+      "questionIds": [
+        "d126-quick-q1",
+        "d126-quick-q2",
+        "d126-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "likes-choices",
+      "lessonId": "day-132",
+      "activityId": "d132-quick-review",
+      "questionIds": [
+        "d132-quick-q1",
+        "d132-quick-q2",
+        "d132-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "daily-routine",
+      "lessonId": "day-138",
+      "activityId": "d138-quick-review",
+      "questionIds": [
+        "d138-quick-q1",
+        "d138-quick-q2",
+        "d138-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "paper-map",
+      "lessonId": "day-144",
+      "activityId": "d144-quick-review",
+      "questionIds": [
+        "d144-quick-q1",
+        "d144-quick-q2",
+        "d144-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "small-plans",
+      "lessonId": "day-150",
+      "activityId": "d150-quick-review",
+      "questionIds": [
+        "d150-quick-q1",
+        "d150-quick-q2",
+        "d150-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "week-of-reading",
+      "lessonId": "day-156",
+      "activityId": "d156-quick-review",
+      "questionIds": [
+        "d156-quick-q1",
+        "d156-quick-q2",
+        "d156-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "bag-check-team",
+      "lessonId": "day-162",
+      "activityId": "d162-quick-review",
+      "questionIds": [
+        "d162-quick-q1",
+        "d162-quick-q2",
+        "d162-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "paper-home-tour",
+      "lessonId": "day-168",
+      "activityId": "d168-quick-review",
+      "questionIds": [
+        "d168-quick-q1",
+        "d168-quick-q2",
+        "d168-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "puppet-clothes-choice",
+      "lessonId": "day-174",
+      "activityId": "d174-quick-review",
+      "questionIds": [
+        "d174-quick-q1",
+        "d174-quick-q2",
+        "d174-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "rainy-window-plan",
+      "lessonId": "day-180",
+      "activityId": "d180-quick-review",
+      "questionIds": [
+        "d180-quick-q1",
+        "d180-quick-q2",
+        "d180-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "routine-picture-strip",
+      "lessonId": "day-186",
+      "activityId": "d186-quick-review",
+      "questionIds": [
+        "d186-quick-q1",
+        "d186-quick-q2",
+        "d186-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "evidence-table",
+      "lessonId": "day-192",
+      "activityId": "d192-quick-review",
+      "questionIds": [
+        "d192-quick-q1",
+        "d192-quick-q2",
+        "d192-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "yesterday-puppet-stage",
+      "lessonId": "day-198",
+      "activityId": "d198-quick-review",
+      "questionIds": [
+        "d198-quick-q1",
+        "d198-quick-q2",
+        "d198-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "paint-play-visit",
+      "lessonId": "day-204",
+      "activityId": "d204-quick-review",
+      "questionIds": [
+        "d204-quick-q1",
+        "d204-quick-q2",
+        "d204-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "three-page-recount",
+      "lessonId": "day-210",
+      "activityId": "d210-quick-review",
+      "questionIds": [
+        "d210-quick-q1",
+        "d210-quick-q2",
+        "d210-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "creative-club-borrow-return",
+      "lessonId": "day-216",
+      "activityId": "d216-quick-review",
+      "questionIds": [
+        "d216-quick-q1",
+        "d216-quick-q2",
+        "d216-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "creative-club-missing-label",
+      "lessonId": "day-222",
+      "activityId": "d222-quick-review",
+      "questionIds": [
+        "d222-quick-q1",
+        "d222-quick-q2",
+        "d222-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "creative-club-kind-invitations",
+      "lessonId": "day-228",
+      "activityId": "d228-quick-review",
+      "questionIds": [
+        "d228-quick-q1",
+        "d228-quick-q2",
+        "d228-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "creative-club-feelings-reasons",
+      "lessonId": "day-234",
+      "activityId": "d234-quick-review",
+      "questionIds": [
+        "d234-quick-q1",
+        "d234-quick-q2",
+        "d234-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "creative-club-shared-table-plan",
+      "lessonId": "day-240",
+      "activityId": "d240-quick-review",
+      "questionIds": [
+        "d240-quick-q1",
+        "d240-quick-q2",
+        "d240-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "club-art-story-order",
+      "lessonId": "day-246",
+      "activityId": "d246-quick-review",
+      "questionIds": [
+        "d246-quick-q1",
+        "d246-quick-q2",
+        "d246-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "club-exhibition-who-where-when",
+      "lessonId": "day-252",
+      "activityId": "d252-quick-review",
+      "questionIds": [
+        "d252-quick-q1",
+        "d252-quick-q2",
+        "d252-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "club-reading-stated-not-stated",
+      "lessonId": "day-258",
+      "activityId": "d258-quick-review",
+      "questionIds": [
+        "d258-quick-q1",
+        "d258-quick-q2",
+        "d258-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "club-clean-up-reasons-results",
+      "lessonId": "day-264",
+      "activityId": "d264-quick-review",
+      "questionIds": [
+        "d264-quick-q1",
+        "d264-quick-q2",
+        "d264-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "club-three-sentence-recount",
+      "lessonId": "day-270",
+      "activityId": "d270-quick-review",
+      "questionIds": [
+        "d270-quick-q1",
+        "d270-quick-q2",
+        "d270-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "nature-plant-detectives",
+      "lessonId": "day-276",
+      "activityId": "d276-quick-review",
+      "questionIds": [
+        "d276-quick-q1",
+        "d276-quick-q2",
+        "d276-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "nature-penguin-proof",
+      "lessonId": "day-282",
+      "activityId": "d282-quick-review",
+      "questionIds": [
+        "d282-quick-q1",
+        "d282-quick-q2",
+        "d282-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "nature-water-paper-journey",
+      "lessonId": "day-288",
+      "activityId": "d288-quick-review",
+      "questionIds": [
+        "d288-quick-q1",
+        "d288-quick-q2",
+        "d288-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "nature-material-second-use",
+      "lessonId": "day-294",
+      "activityId": "d294-quick-review",
+      "questionIds": [
+        "d294-quick-q1",
+        "d294-quick-q2",
+        "d294-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "nature-care-plan-mission",
+      "lessonId": "day-300",
+      "activityId": "d300-quick-review",
+      "questionIds": [
+        "d300-quick-q1",
+        "d300-quick-q2",
+        "d300-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "shape-detective",
+      "lessonId": "day-306",
+      "activityId": "d306-quick-review",
+      "questionIds": [
+        "d306-quick-q1",
+        "d306-quick-q2",
+        "d306-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "paper-pattern-train",
+      "lessonId": "day-312",
+      "activityId": "d312-quick-review",
+      "questionIds": [
+        "d312-quick-q1",
+        "d312-quick-q2",
+        "d312-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "fictional-fruit-data",
+      "lessonId": "day-318",
+      "activityId": "d318-quick-review",
+      "questionIds": [
+        "d318-quick-q1",
+        "d318-quick-q2",
+        "d318-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "paper-length-lab",
+      "lessonId": "day-324",
+      "activityId": "d324-quick-review",
+      "questionIds": [
+        "d324-quick-q1",
+        "d324-quick-q2",
+        "d324-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "tiny-guide-team",
+      "lessonId": "day-330",
+      "activityId": "d330-quick-review",
+      "questionIds": [
+        "d330-quick-q1",
+        "d330-quick-q2",
+        "d330-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "paper-mini-museum",
+      "lessonId": "day-336",
+      "activityId": "d336-quick-review",
+      "questionIds": [
+        "d336-quick-q1",
+        "d336-quick-q2",
+        "d336-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "lost-mitten-storybook",
+      "lessonId": "day-342",
+      "activityId": "d342-quick-review",
+      "questionIds": [
+        "d342-quick-q1",
+        "d342-quick-q2",
+        "d342-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "puppet-turn-rehearsal",
+      "lessonId": "day-348",
+      "activityId": "d348-quick-review",
+      "questionIds": [
+        "d348-quick-q1",
+        "d348-quick-q2",
+        "d348-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "project-paper-game-debug",
+      "lessonId": "day-354",
+      "activityId": "d354-quick-review",
+      "questionIds": [
+        "d354-quick-q1",
+        "d354-quick-q2",
+        "d354-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "project-private-portfolio",
+      "lessonId": "day-360",
+      "activityId": "d360-quick-review",
+      "questionIds": [
+        "d360-quick-q1",
+        "d360-quick-q2",
+        "d360-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    },
+    {
+      "unitId": "small-steps-celebration",
+      "lessonId": "day-365",
+      "activityId": "d365-quick-review",
+      "questionIds": [
+        "d365-quick-q1",
+        "d365-quick-q2",
+        "d365-quick-q3"
+      ],
+      "reviewCompleted": true,
+      "unaidedCorrect": 2,
+      "supportedCorrect": 1,
+      "snapshotRoundTrips": 3,
+      "fabricatedCardEvents": 0,
+      "audio": null,
+      "timed": false
+    }
+  ]
+}
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

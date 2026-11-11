@@ -1,6 +1,7 @@
+// Source-linked speaking cues release: 20261109-speaking11. Preserve the existing media cache.
 // Chạy offline: trang + mã = mạng trước (có thì lấy bản mới), hình + tiếng = bộ nhớ trước.
 const KHO = "be-hoc-v1";
-const LOI = ["./", "index.html", "manifest.webmanifest", "tu-vung.js", "chu-cai.js", "giao-tiep.js", "tinh-huong.js", "mau-cau.js", "truyen.js", "thoi-gian.js", "them.js", "phu-huynh.js", "icon/icon-192.png"];
+const LOI = ["./", "index.html", "manifest.webmanifest", "tu-vung.js", "chu-cai.js", "giao-tiep.js", "tinh-huong.js", "mau-cau.js", "truyen.js", "thoi-gian.js", "them.js", "phu-huynh.js", "mo-rong.js", "ngu-phap.js", "daily-launch-core.js", "daily-launch.js", "daily-launch.css", "english-kids-core.bundle.js", "curriculum-365-data.js", "english365-assets.js", "curriculum-365-player.js", "curriculum-365-home.js", "curriculum-365-player.css", "curriculum-365-home.css", "icon/icon-192.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(KHO).then(c => Promise.all(LOI.map(u => c.add(new Request(u, { cache: "reload" })).catch(() => {})))).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(self.clients.claim()); });
 

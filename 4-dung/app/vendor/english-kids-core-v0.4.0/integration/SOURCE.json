@@ -1,0 +1,10 @@
+{
+  "source_description": "Finalized bilingual learning curriculum v5, provided by curriculum worker",
+  "source_schema_version": "1.4.0",
+  "source_content_version": "2026-11-08-v5-330",
+  "copy_is_byte_identical": true,
+  "bytes": 3339191,
+  "sha256": "c1b6786118eef09878159078aa6b5e6a0690e5edf4717d3c899c0df29cf08a0a",
+  "integration_status": "standalone adapter tests only; original application untouched",
+  "contains_real_child_progress": false
+}

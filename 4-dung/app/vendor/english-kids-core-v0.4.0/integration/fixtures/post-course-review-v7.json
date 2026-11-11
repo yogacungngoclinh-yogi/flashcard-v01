@@ -1,0 +1,57 @@
+{
+  "status": "optional_review_cards_not_additional_numbered_lessons",
+  "timing_basis": "relative completed session index, not dates or automated reminders",
+  "instructions_vi": "Sau bộ 365 buổi, có thể dùng một thẻ ôn ngắn vào lượt tiếp theo phù hợp. Lặp, nghỉ hoặc bỏ qua được; không phải bài mới hay bài thi.",
+  "cards": [
+    {
+      "language_target_id": "project-paper-game-debug-repair-and-retest",
+      "due_day": 366,
+      "status": "optional_follow_on_review_not_numbered_lesson",
+      "cue_vi": "Sửa luật. Thử lại luật đó.",
+      "sample_en": "Change the rule. Test it again.",
+      "accept_equivalent_answer": true,
+      "scoring": "adult_observation",
+      "requires_microphone": false
+    },
+    {
+      "language_target_id": "project-private-portfolio-choose-with-reason",
+      "due_day": 369,
+      "status": "optional_follow_on_review_not_numbered_lesson",
+      "cue_vi": "Mình chọn trang này vì nó cho thấy một thay đổi.",
+      "sample_en": "I chose this page because it shows a change.",
+      "accept_equivalent_answer": true,
+      "scoring": "adult_observation",
+      "requires_microphone": false
+    },
+    {
+      "language_target_id": "project-private-portfolio-name-one-revision",
+      "due_day": 370,
+      "status": "optional_follow_on_review_not_numbered_lesson",
+      "cue_vi": "Mình đã đổi “are” thành “is”.",
+      "sample_en": "I changed \"are\" to \"is\".",
+      "accept_equivalent_answer": true,
+      "scoring": "adult_observation",
+      "requires_microphone": false
+    },
+    {
+      "language_target_id": "project-private-portfolio-reflection-and-evidence",
+      "due_day": 371,
+      "status": "optional_follow_on_review_not_numbered_lesson",
+      "cue_vi": "Các trang cho thấy chỗ mình sửa. Ghi chú này là suy nghĩ riêng của mình.",
+      "sample_en": "The pages show my change. This note is my reflection.",
+      "accept_equivalent_answer": true,
+      "scoring": "adult_observation",
+      "requires_microphone": false
+    },
+    {
+      "language_target_id": "project-private-portfolio-choose-private-sharing",
+      "due_day": 372,
+      "status": "optional_follow_on_review_not_numbered_lesson",
+      "cue_vi": "Mình có thể giữ phần này riêng tư.",
+      "sample_en": "I can keep this private.",
+      "accept_equivalent_answer": true,
+      "scoring": "adult_observation",
+      "requires_microphone": false
+    }
+  ]
+}

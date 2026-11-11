@@ -1,0 +1,7 @@
+export const simpleChapter = { id: 'chapter.animals', title: 'Động vật quanh em', lessonIds: ['lesson.animals'] };
+// Authored synthetic examples for functionality tests, not a finished curriculum.
+export const richChapter = { ...simpleChapter, reviewItems: [
+  { id: 'context.cat', type: 'context', cardId: 'animal.cat', language: 'en', prompt: 'The cat says meow. Which animal says meow?', instructionVi: 'Đọc câu ngắn rồi chọn con vật.', hint: 'Trong câu có từ “cat”.', explanationVi: 'Câu nói con mèo kêu meow. Cat nghĩa là con mèo.', options: [{id:'cat',label:'cat'},{id:'dog',label:'dog'},{id:'bird',label:'bird'}], correctOptionId: 'cat' },
+  { id: 'order.dog', type: 'order', cardId: 'animal.dog', language: 'en', prompt: 'Em nhìn thấy một con chó.', instructionVi: 'Sắp xếp các từ thành câu tiếng Anh.', hint: 'Câu bắt đầu bằng “I see”.', explanationVi: 'I see nghĩa là tôi nhìn thấy. A dog nghĩa là một con chó.', tokens: [{id:'i',text:'I'},{id:'see',text:'see'},{id:'a',text:'a'},{id:'dog',text:'dog.'}], expectedTokenIds: ['i','see','a','dog'] },
+  { id: 'apply.bird', type: 'application', assessment: 'exact', cardId: 'animal.bird', language: 'en', prompt: 'Em muốn nói “Tôi nhìn thấy một con chim”. Điền từ còn thiếu: I see a ____.', instructionVi: 'Dùng từ đã học để hoàn thành câu.', acceptedAnswers: ['bird'], hint: 'Từ bắt đầu bằng chữ b.', explanationVi: 'Bird nghĩa là con chim. Ta điền bird để nói I see a bird.' }
+] };

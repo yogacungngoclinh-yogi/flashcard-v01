@@ -1,0 +1,26 @@
+{
+  "source_schema_version": "1.4.2",
+  "source_content_version": "2026-11-08-v7-365-complete-chapter-reviews",
+  "status": "finalized curriculum worker input; independent core compatibility tests",
+  "contains_real_child_progress": false,
+  "files": [
+    {
+      "file": "curriculum-v7-365.json",
+      "size": 4141696,
+      "sha256": "70e12ffe9749d31f4e2ef012a9937edadc14c6ebb5386aafd2263c7ec706eba3",
+      "byte_identical_to_source": true
+    },
+    {
+      "file": "curriculum-schema-1.4.2.json",
+      "size": 17656,
+      "sha256": "1a39ffa9b919138100707a10e664dc23730d493b046d2167c0c170cc9c0a5299",
+      "byte_identical_to_source": true
+    },
+    {
+      "file": "post-course-review-v7.json",
+      "size": 2499,
+      "sha256": "2d3ed15fd3ca26c5a737b4890f6f44e085acdcfe093d0486cdc6f9401ca8835d",
+      "byte_identical_to_source": true
+    }
+  ]
+}

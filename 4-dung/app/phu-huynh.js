@@ -131,7 +131,7 @@
     else if (l === "tep") g("pp-tep").click();
     else if (l === "off") taiOffline();
     else if (l === "cai") caiApp();
-    else if (l === "reset") { if (confirm("Xoá TOÀN BỘ tiến độ của bé " + hsNay().ten + "? Không khôi phục được.")) { ["sao", "lo-trinh", "tu-nho", "nhat-ky"].forEach(k => localStorage.removeItem(khoaHs(k))); vePp(); } }
+    else if (l === "reset") { if (confirm("Xoá TOÀN BỘ tiến độ của bé " + hsNay().ten + "? Không khôi phục được.")) { ["sao", "lo-trinh", "tu-nho", "nhat-ky"].forEach(k => localStorage.removeItem(khoaHs(k))); window.clearDailyReview && clearDailyReview(); vePp(); } }
   });
   function vePp() {
     const h = hsNay(), o = nk(), hn = ngayStr(0);
@@ -169,6 +169,7 @@
   function xoaHs() {
     const h = hsNay(); if (dsHs().length < 2 || !confirm("Xoá hồ sơ của bé " + h.ten + " và toàn bộ tiến độ?")) return;
     ["sao", "lo-trinh", "tu-nho", "nhat-ky", "tuoi", "khu-5", "khu-10", "an-viet", "muc-tieu"].forEach(k => localStorage.removeItem(khoaHs(k)));
+    window.clearDailyReview && clearDailyReview();
     luu("ho-so-ds", dsHs().filter(x => x.id !== h.id)); doiHs(dsHs()[0].id);
   }
   // ---- sao lưu ----

@@ -1,0 +1,101 @@
+/* Additive visual layer. Original learning screens and classic home stay available. */
+:root{--ux-ink:#173f3a;--ux-green:#1e6556;--ux-mint:#e7f3df;--ux-paper:#fffdf6;--ux-muted:#516862}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:4px solid #1767bd;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+#trang-chu.ux-home{padding:22px max(24px,calc((100vw - 1180px)/2));overflow-y:auto;background:radial-gradient(ellipse at 90% 15%,#eaf4e0,transparent 45%),#fffaf0;gap:15px}
+#trang-chu.ux-home>.dau{flex-wrap:wrap;gap:10px;min-height:auto}
+#trang-chu.ux-home>.dau h1{font-size:26px;letter-spacing:-.7px;color:var(--ux-ink)}
+#trang-chu.ux-home .hs-chip,#trang-chu.ux-home .cham-bt{box-shadow:none;border:1px solid #dce4d6;color:var(--ux-ink)}
+#trang-chu.ux-home .tab{width:min(520px,100%);margin:0;background:#edece1;border-radius:18px;padding:5px}
+#trang-chu.ux-home .tab button{font-size:17px;min-height:58px;box-shadow:none;border-radius:14px}
+#trang-chu.ux-home .tab button.chon{background:#fff;color:var(--ux-green);box-shadow:0 2px 5px #173f3a13}
+#trang-chu.ux-home #khu,#trang-chu.ux-home #luoi,#trang-chu.ux-home>#mt,#trang-chu.ux-home>.thuong-hieu{display:none}
+#ux-home-toggle{font-size:14px;min-height:44px;border-radius:14px;padding:7px 14px;border:1px solid #dce4d6;background:white;color:var(--ux-ink)}
+#ux-home-panel{color:var(--ux-ink);flex:none}
+.ux-eyebrow{display:flex;align-items:center;gap:7px;text-transform:uppercase;font:800 12px/1.5 system-ui,sans-serif;letter-spacing:1.7px;margin:0 0 12px}
+.ux-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(200px,.8fr);position:relative;overflow:hidden;gap:24px;padding:34px 40px;background:var(--ux-green);border-radius:32px;color:#fffdf4;box-shadow:0 7px 0 #134b40}
+.ux-hero:before{content:"";position:absolute;right:-45px;top:-120px;width:420px;height:420px;border:65px solid #327461;border-radius:50%;pointer-events:none}
+.ux-hero h2{font-size:clamp(30px,3.4vw,49px);font-weight:800;line-height:1.1;letter-spacing:-1px;margin:0 0 12px;position:relative;max-width:560px}
+.ux-hero p{font:500 16px/1.65 system-ui,sans-serif;max-width:460px;color:#e0f1e5;margin:0 0 18px}
+.ux-hero-copy{z-index:1}
+.ux-plan{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}
+.ux-plan span{padding:5px 11px;border:1px solid #78a18d;border-radius:10px;font-size:14px;color:#edf7e9}
+#trang-chu.ux-home #hom-nay{max-width:360px;margin:0;animation:none;background:#ffe28b;color:#173f3a;border-radius:17px;padding:13px 22px;box-shadow:0 4px 0 #d1b25d;font-size:23px;text-align:left;line-height:1.2}
+#trang-chu.ux-home #hom-nay small{font-size:14px;font-weight:600;margin-top:5px;color:#36534b}
+.ux-hero-art{display:flex;justify-content:center;align-items:center;position:relative;z-index:1;min-width:0}
+.ux-word-card{transform:rotate(7deg);width:min(220px,100%);background:#fffdf6;color:var(--ux-ink);padding:16px;border-radius:23px;border:3px solid #fff;box-shadow:0 18px 25px #103c3336;text-align:center}
+.ux-word-card img{width:100%;aspect-ratio:1;object-fit:contain;border-radius:16px;display:block}
+.ux-word-card .em{font-size:100px;display:block}
+.ux-word-card strong{font-size:31px;display:block;line-height:1.1;margin-top:8px}
+.ux-word-card small{font:600 13px/1.4 system-ui,sans-serif}
+.ux-art-badge{position:absolute;bottom:16px;left:3px;transform:rotate(-8deg);border-radius:14px;background:#f6c9a2;color:#5b3725;box-shadow:0 5px 0 #173f3a2b;padding:10px 15px;font-size:16px;font-weight:800}
+.ux-summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:23px 2px 12px}
+.ux-summary strong{font-size:21px}.ux-summary small{display:block;color:var(--ux-muted);font:500 14px/1.5 system-ui,sans-serif}
+.ux-count{font-size:30px!important;white-space:nowrap;color:var(--ux-green)}
+.ux-track{height:7px;background:#e0e8d9;border-radius:8px;overflow:hidden;margin-bottom:24px}
+.ux-track i{height:100%;display:block;background:#579d74;border-radius:8px}
+.ux-actions{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;margin-bottom:28px}
+.ux-action{border:1px solid #d6dfce;background:#eef4e5;border-radius:24px;padding:22px;text-align:left;display:flex;align-items:center;gap:18px;min-width:0;transition:transform .18s}
+.ux-action:hover{transform:translateY(-3px)}.ux-action.secondary{background:#fff0df;border-color:#ecd8bf}
+.ux-action-icon{display:grid;place-items:center;border-radius:17px;background:#fffdf5;font-size:30px;width:64px;height:64px;flex:none}
+.ux-action strong{display:block;font-size:22px;line-height:1.2}.ux-action small{display:block;color:var(--ux-muted);font:500 14px/1.55 system-ui,sans-serif;margin-top:5px}
+.ux-action-arrow{margin-left:auto;font-size:24px}
+.ux-section-head{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:0 0 14px}
+.ux-section-head h2{font-size:26px;line-height:1.15;margin:0}
+.ux-text-btn{min-height:44px;border-radius:12px;padding:6px 10px;color:var(--ux-green);text-decoration:underline;font-size:16px;flex:none}
+.ux-chapters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ux-chapter{padding:21px;border-radius:24px;background:#fff;border:1px solid #e1e2d6;min-width:0;text-align:left}
+.ux-chapter.current{border:2px solid #337d62;background:#f5f9ef}
+.ux-chapter .ux-chapter-num{font:800 12px/1.5 system-ui,sans-serif;color:var(--ux-muted);text-transform:uppercase;letter-spacing:1px}
+.ux-chapter h3{font-size:23px;margin:9px 0 6px;line-height:1.15}
+.ux-chapter p{font:500 14px/1.5 system-ui,sans-serif;color:var(--ux-muted);margin:0 0 14px}
+.ux-chapter button{width:100%;min-height:46px;border-radius:12px;background:#e8f2e2;color:#205747;font-size:16px;font-weight:800}
+.ux-chapter button:disabled{background:#f1f0e9;color:#62695d;cursor:default}
+.ux-chapter-tag{font-size:13px;display:block;margin-bottom:10px;color:#28634d;min-height:21px}
+.ux-library{display:flex;gap:10px;flex-wrap:wrap;padding:22px 0}
+.ux-library button{background:white;border:1px solid #dce2d3;border-radius:14px;padding:10px 15px;min-height:46px;font-size:16px}
+.ux-note{color:var(--ux-muted);font:500 13px/1.6 system-ui,sans-serif;margin:3px 0 20px}
+#ux-review{background:#fffaf0;overflow-y:auto;padding:22px max(20px,calc((100vw - 850px)/2));gap:14px;color:var(--ux-ink)}
+#ux-review .dau h1{font-size:23px;line-height:1.2}
+#ux-review .dau .nut-tron{box-shadow:none;border:1px solid #dce2d3}
+#ux-review-count{font-size:16px;font-weight:800;white-space:nowrap}
+.ux-review-main{margin:auto 0;display:flex;flex-direction:column;align-items:center;padding:6px 0 22px;gap:16px;min-height:0}
+.ux-review-main h2{font-size:clamp(25px,4vw,35px);line-height:1.2;text-align:center;margin:0}
+.ux-review-prompt{font-size:17px;color:var(--ux-muted);text-align:center;margin:0}
+.ux-listen{background:#1e6556;color:#fff;min-height:58px;border-radius:19px;padding:12px 24px;font-size:21px;font-weight:800}
+.ux-review-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;width:100%;margin:4px 0}
+.ux-answer{border:3px solid #e2e7d8;border-radius:23px;background:#fff;padding:14px;aspect-ratio:1;min-width:0;display:flex;align-items:center;justify-content:center;position:relative}
+.ux-answer img{width:100%;height:100%;object-fit:contain;border-radius:12px}
+.ux-answer .em{font-size:clamp(40px,9vw,100px)}
+.ux-answer .ux-word-text{font-size:clamp(16px,3vw,26px);font-weight:800;overflow-wrap:anywhere}
+.ux-answer.correct{border-color:#31764d;background:#eaf8e6}
+.ux-answer.wrong{border-style:dashed;border-color:#c47243;opacity:.65}
+.ux-answer.correct:after{content:"✓";position:absolute;right:5px;top:5px;background:#23613f;color:#fff;border-radius:50%;width:30px;height:30px;display:grid;place-items:center}
+.ux-feedback{min-height:58px;text-align:center;font:600 17px/1.55 system-ui,sans-serif}
+.ux-feedback strong{font:800 27px/1.3 "Baloo 2",system-ui,sans-serif}
+.ux-next{background:#ffde8e;color:#173f3a;min-height:54px;border-radius:16px;padding:10px 28px;font-size:21px;font-weight:800;box-shadow:0 4px 0 #d8b868}
+.ux-next:disabled{opacity:.4;box-shadow:none;cursor:default}
+.ux-complete{font-size:65px;line-height:1.2}.ux-result-list{max-width:650px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.ux-result-list span{background:#eaf2e3;padding:7px 14px;border-radius:12px;font-size:17px}
+.ux-save-notice{color:#9b3e20;font:600 14px/1.5 system-ui,sans-serif;margin:8px 0}
+@media(min-width:1200px){#trang-chu.ux-home>.dau h1{font-size:29px}.ux-hero{min-height:325px}}
+@media(max-width:700px){
+ #trang-chu.ux-home{padding:15px;gap:12px}
+ #trang-chu.ux-home>.dau h1{flex-basis:100%;font-size:25px}
+ #trang-chu.ux-home .hs-chip{margin-left:0}#trang-chu.ux-home .viet{margin-left:0}
+ #trang-chu.ux-home .tab{width:100%}
+ .ux-hero{grid-template-columns:1fr 115px;gap:10px;padding:24px 21px;border-radius:25px}
+ .ux-hero h2{font-size:31px;letter-spacing:-.6px}.ux-hero p{font-size:14px}
+ .ux-hero-art{align-self:start;margin-top:35px}.ux-word-card{padding:7px;border-radius:15px}.ux-word-card strong{font-size:22px}
+ .ux-word-card small,.ux-art-badge{display:none}
+ .ux-plan{gap:6px;margin-bottom:15px}.ux-plan span{font-size:12px;padding:4px 8px}
+ #trang-chu.ux-home #hom-nay{font-size:20px;padding:13px 16px}
+ .ux-actions{grid-template-columns:1fr;gap:12px;margin-bottom:23px}
+ .ux-action{padding:17px;gap:12px}.ux-action-icon{width:50px;height:50px;font-size:26px}
+ .ux-action strong{font-size:21px}.ux-chapters{grid-template-columns:1fr 1fr;gap:11px}
+ .ux-chapter{padding:17px 14px;border-radius:19px}.ux-chapter h3{font-size:22px}
+ .ux-section-head h2{font-size:24px}.ux-section-head{align-items:flex-start}
+ #ux-review{padding:16px}.ux-review-choices{gap:10px}.ux-answer{padding:8px;border-radius:17px}
+}
+@media(max-width:420px){.ux-hero{grid-template-columns:1fr}.ux-hero-art{display:none}.ux-hero h2{font-size:34px;max-width:300px}.ux-chapters{grid-template-columns:1fr}.ux-review-choices{grid-template-columns:1fr 1fr}.ux-answer:last-child{grid-column:1/-1;width:48%;justify-self:center}.ux-summary strong{font-size:19px}.ux-count{font-size:25px!important}.ux-section-head{flex-wrap:wrap}}
+@media(max-height:600px){.ux-review-main{margin:0}.ux-answer{max-height:160px;aspect-ratio:auto}.ux-answer img{max-height:120px}}

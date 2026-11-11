@@ -1,0 +1,152 @@
+{
+  "plan": {
+    "day": "2026-11-08",
+    "reviewCardIds": [],
+    "newCardIds": [
+      "animal.bird",
+      "animal.cat",
+      "animal.dog",
+      "animal.fish"
+    ],
+    "cardOrder": [
+      "animal.bird",
+      "animal.cat",
+      "animal.dog",
+      "animal.fish"
+    ],
+    "remainingDue": 0,
+    "lessonIds": [
+      "lesson.animals"
+    ],
+    "suggestedBreakAfterMinutes": 10,
+    "emptyReason": null
+  },
+  "firstActivity": {
+    "type": "choice",
+    "cardId": "animal.bird",
+    "language": "en",
+    "prompt": "con chim",
+    "imageId": null,
+    "options": [
+      {
+        "id": "animal.bird",
+        "label": "bird"
+      },
+      {
+        "id": "animal.cat",
+        "label": "cat"
+      },
+      {
+        "id": "animal.dog",
+        "label": "dog"
+      },
+      {
+        "id": "animal.fish",
+        "label": "fish"
+      }
+    ],
+    "correctOptionId": "animal.bird"
+  },
+  "completed": "finished",
+  "progress": {
+    "schemaVersion": 1,
+    "profileId": "demo-profile",
+    "reviews": [
+      {
+        "cardId": "animal.bird",
+        "stage": 1,
+        "attempts": 1,
+        "lapses": 0,
+        "dueDay": "2026-11-09",
+        "lastDay": "2026-11-08"
+      },
+      {
+        "cardId": "animal.cat",
+        "stage": 1,
+        "attempts": 1,
+        "lapses": 0,
+        "dueDay": "2026-11-09",
+        "lastDay": "2026-11-08"
+      },
+      {
+        "cardId": "animal.dog",
+        "stage": 1,
+        "attempts": 1,
+        "lapses": 0,
+        "dueDay": "2026-11-09",
+        "lastDay": "2026-11-08"
+      },
+      {
+        "cardId": "animal.fish",
+        "stage": 1,
+        "attempts": 1,
+        "lapses": 0,
+        "dueDay": "2026-11-09",
+        "lastDay": "2026-11-08"
+      }
+    ],
+    "eventCount": 4
+  },
+  "report": {
+    "days": [
+      {
+        "day": "2026-11-02",
+        "uniqueCards": 0,
+        "attempts": 0,
+        "successfulAttempts": 0,
+        "durationMs": 0
+      },
+      {
+        "day": "2026-11-03",
+        "uniqueCards": 0,
+        "attempts": 0,
+        "successfulAttempts": 0,
+        "durationMs": 0
+      },
+      {
+        "day": "2026-11-04",
+        "uniqueCards": 0,
+        "attempts": 0,
+        "successfulAttempts": 0,
+        "durationMs": 0
+      },
+      {
+        "day": "2026-11-05",
+        "uniqueCards": 0,
+        "attempts": 0,
+        "successfulAttempts": 0,
+        "durationMs": 0
+      },
+      {
+        "day": "2026-11-06",
+        "uniqueCards": 0,
+        "attempts": 0,
+        "successfulAttempts": 0,
+        "durationMs": 0
+      },
+      {
+        "day": "2026-11-07",
+        "uniqueCards": 0,
+        "attempts": 0,
+        "successfulAttempts": 0,
+        "durationMs": 0
+      },
+      {
+        "day": "2026-11-08",
+        "uniqueCards": 4,
+        "attempts": 4,
+        "successfulAttempts": 4,
+        "durationMs": 20000
+      }
+    ],
+    "streakDays": 1,
+    "todayGoal": {
+      "target": 4,
+      "completed": 4,
+      "reached": true
+    },
+    "totalCardsPracticed": 4,
+    "dueCards": 0,
+    "practiceSuccessRate": 1
+  }
+}

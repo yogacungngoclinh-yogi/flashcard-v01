@@ -1,0 +1,20 @@
+{
+  "name": "english-kids-learning-core-prep",
+  "version": "0.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent, dependency-free preparation package. Not yet integrated into the existing application.",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check.mjs",
+    "demo": "node examples/daily-study.mjs",
+    "coverage": "node --test --experimental-test-coverage test/*.test.js",
+    "demo:chapter": "node examples/chapter-review.mjs",
+    "verify:curriculum": "node scripts/verify-curriculum.mjs",
+    "verify:curriculum:v7": "node scripts/verify-curriculum.mjs curriculum-v7-365.json"
+  }
+}

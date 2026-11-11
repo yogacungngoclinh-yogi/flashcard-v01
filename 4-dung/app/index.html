@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#FF8A65">
@@ -39,7 +39,8 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .the.nay{animation:nay .4s}
 @keyframes nay{40%{transform:scale(1.05)}}
 .hinh{flex:1;width:100%;display:grid;place-items:center;min-height:0}
-.hinh img{max-width:100%;max-height:100%;object-fit:contain;border-radius:20px}
+.hinh{position:relative;overflow:hidden}
+.hinh img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:20px}
 .hinh .em{font-size:min(38vw,190px,25vh);line-height:1}
 .chu-en{font-size:clamp(44px,12vw,72px);font-weight:800;line-height:1;color:var(--mau)}
 .chu-vi{font-size:clamp(26px,7.5vw,40px);font-weight:800;color:var(--vi);line-height:1.1;text-align:center}
@@ -101,6 +102,9 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .o.chu .bieu{font-weight:800;color:#fff;text-shadow:0 3px 0 rgba(0,0,0,.15)}
 .the-vd{font-size:clamp(20px,5.5vw,28px);font-weight:700;color:var(--chu);text-align:center;line-height:1.15}
 .the-vd:empty{display:none}
+.the-vdvi{font-size:clamp(16px,4.6vw,22px);font-weight:700;color:var(--vi);text-align:center;line-height:1.15}
+.the-vdvi:empty{display:none}
+.the.co-vd .the-vd{background:#F3FBFF;border-radius:14px;padding:4px 12px}
 .lua-chon .chu-to{font-size:clamp(40px,12vw,72px);font-weight:800;color:var(--chu);line-height:1}
 .xc-dong{min-height:110px;background:var(--the);border-radius:24px;padding:12px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;border:4px dashed #e5dccd;margin-top:8px}
 .xc-kho{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:16px 0;min-height:70px}
@@ -148,6 +152,9 @@ body.an-viet.t10 :is(.cau-chu .vi,.bong .vi,.dt-vi,.mc-vi,.doc-cau .vi,.tt-cau .
 body.an-viet.t10 :is(.cau-chu .vi,.bong .vi,.dt-vi,.mc-vi,.doc-cau .vi,.tt-cau .vi).mo{filter:none}
 body.an-viet.t10 :is(.dap-an small,.nhan-dung small){display:none}
 </style>
+<link rel="stylesheet" href="daily-launch.css?v=20261109a">
+<link rel="stylesheet" href="curriculum-365-player.css?v=20261109-speaking11">
+<link rel="stylesheet" href="curriculum-365-home.css?v=20261109-speaking11">
 </head>
 <body>
 
@@ -172,6 +179,7 @@ body.an-viet.t10 :is(.dap-an small,.nhan-dung small){display:none}
       <div class="chu-en" id="the-en"></div>
       <div class="chu-vi" id="the-vi"></div>
       <div class="the-vd" id="the-vd"></div>
+      <div class="the-vdvi" id="the-vdvi"></div>
       <div class="loa">🔊 chạm để nghe</div>
     </button>
   </div>
@@ -248,15 +256,15 @@ body.an-viet.t10 :is(.dap-an small,.nhan-dung small){display:none}
   </div>
 </section>
 
-<script src="tu-vung.js?v=20261107h"></script>
-<script src="giao-tiep.js?v=20261107h"></script>
-<script src="ngu-phap.js?v=20261107h"></script>
-<script src="chu-cai.js?v=20261107h"></script>
-<script src="tinh-huong.js?v=20261107h"></script>
-<script src="mau-cau.js?v=20261107h"></script>
-<script src="truyen.js?v=20261107h"></script>
-<script src="thoi-gian.js?v=20261107h"></script>
-<script src="them.js?v=20261107h"></script>
+<script src="tu-vung.js?v=20261111b"></script>
+<script src="giao-tiep.js?v=20261111b"></script>
+<script src="ngu-phap.js?v=20261111b"></script>
+<script src="chu-cai.js?v=20261111b"></script>
+<script src="tinh-huong.js?v=20261111b"></script>
+<script src="mau-cau.js?v=20261111b"></script>
+<script src="truyen.js?v=20261111b"></script>
+<script src="thoi-gian.js?v=20261111b"></script>
+<script src="them.js?v=20261111b"></script>
 <script>
 const $ = s => document.querySelector(s);
 const SO_CAU = 8;
@@ -426,16 +434,22 @@ function veThe() {
   $("#the-hinh").innerHTML = hinhTu(tu);
   $("#the-en").textContent = tu.en;
   $("#the-vi").textContent = tu.vi;
-  $("#the-vd").textContent = tu.vd || "";
+  $("#the-vd").textContent = tu.vd || ""; $("#the-vdvi").textContent = tu.vdvi || ""; the.classList.toggle("co-vd", !!tu.vdvi); if (tu.vdvi) napAm(["vd-" + tu.id]);
   $("#cham").innerHTML = chuDe.tu.map((_, i) => `<i class="${i <= viTri ? "da" : ""}"></i>`).join("");
   $("#truoc").style.visibility = viTri ? "visible" : "hidden";
   $("#sau").textContent = viTri === chuDe.tu.length - 1 ? "⭐" : "➡️";
   the.classList.remove("vao"); void the.offsetWidth; the.classList.add("vao");
-  setTimeout(() => { if ($("#hoc").classList.contains("hien") && chuDe.tu[viTri] === tu) phat(tu.id, tu.en); }, 300);
+  setTimeout(() => { if ($("#hoc").classList.contains("hien") && chuDe.tu[viTri] === tu) docTuVaVd(tu, () => $("#hoc").classList.contains("hien") && chuDe.tu[viTri] === tu); }, 300);
 }
-$("#the").onclick = () => {
+// đọc từ, rồi (nếu có) đọc câu ví dụ
+function docTuVaVd(tu, con) {
+  const a = phat(tu.id, tu.en);
+  if (tu.vdvi) a.onended = () => setTimeout(() => { if (con()) phat("vd-" + tu.id, tu.vd); }, 600);
+}
+$("#the").onclick = e => {
   const tu = chuDe.tu[viTri], the = $("#the");
   the.classList.remove("nay"); void the.offsetWidth; the.classList.add("nay");
+  if (tu.vdvi && e && e.target.closest(".the-vd,.the-vdvi")) return phat("vd-" + tu.id, tu.vd);   // chạm vào câu ví dụ → nghe câu
   phat(tu.id, tu.en);
 };
 const sau = () => { if (viTri < chuDe.tu.length - 1) { viTri++; veThe(); } else batDauKT(); };
@@ -453,10 +467,13 @@ $("#vao-kt").onclick = () => batDauKT();
 // ---- kiểm tra ----
 const tron = a => a.map(v => [Math.random(), v]).sort((x, y) => x[0] - y[0]).map(v => v[1]);
 const amHoi = t => chuDe.kieu === "chu" && t.docNgan ? t.id + "-w" : t.id;  // ABC/Sight: bài kiểm tra đọc chữ ngắn
+// Đọc câu hỏi (vd "What is it?") rồi mới đọc từ — bé nghe được cả câu hỏi lẫn đáp án cần tìm
+const idHoi = s => "qh-" + s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+function phatHoiTu(hoi, amTu) { phatLanLuot(hoi && !hoi.includes("___") ? [[idHoi(hoi), hoi], amTu] : [amTu], () => {}); }
 function batDauKT() {
   kieu = "tv";
   cau = tron(chuDe.tu).slice(0, SO_CAU); soCau = 0; dungLanDau = 0;
-  napAm(cau.flatMap(t => [t.id, amHoi(t)]));
+  napAm([idHoi(chuDe.hoi || "What is it?"), ...cau.flatMap(t => [t.id, amHoi(t)])]);
   $("#kt-hoi").textContent = chuDe.hoi || "What is it?"; $("#kt-hoivi").textContent = chuDe.hoivi || "Đây là gì?";
   sang("kiem-tra"); veCau();
 }
@@ -468,9 +485,9 @@ function veCau() {
   $("#tien-do").style.width = (soCau / cau.length * 100) + "%";
   $("#dap-an").innerHTML = lua.map(t => `<button class="lua-chon" data-id="${t.id}">${chuDe.kieu === "chu" ? `<span class="chu-to">${t.en}</span>` : hinhTu(t)}</button>`).join("");
   // hiện hình là đọc luôn
-  setTimeout(() => { if (cau[soCau] !== tu || khoa) return; const doc = () => { if (cau[soCau] === tu && !khoa) phat(amHoi(tu), tu.en); }; soCau === 0 ? huongDan("_hd-chon-hinh", doc) : doc(); }, 120);
+  setTimeout(() => { if (cau[soCau] !== tu || khoa) return; const doc = () => { if (cau[soCau] === tu && !khoa) phatHoiTu(chuDe.hoi || "What is it?", [amHoi(tu), tu.en]); }; soCau === 0 ? huongDan("_hd-chon-hinh", doc) : doc(); }, 120);
 }
-$("#nghe-lai").onclick = () => { const tu = cau[soCau]; phat(amHoi(tu), tu.en); };
+$("#nghe-lai").onclick = () => { const tu = cau[soCau]; phatHoiTu(chuDe.hoi || "What is it?", [amHoi(tu), tu.en]); };
 $("#dap-an").onclick = e => {
   const b = e.target.closest(".lua-chon"); if (!b || khoa || b.classList.contains("sai")) return;
   const tu = cau[soCau];
@@ -636,7 +653,14 @@ function ketThucXc() {
 veTrangChu();
 if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) navigator.serviceWorker.register("sw.js").catch(() => {});
 </script>
-<script src="phu-huynh.js?v=20261107h"></script>
-<script src="mo-rong.js?v=20261107h"></script>
+<script src="phu-huynh.js?v=20261109c"></script>
+<script src="mo-rong.js?v=20261111b"></script>
+<script src="daily-launch-core.js?v=20261109a"></script>
+<script src="daily-launch.js?v=20261109a"></script>
+<script src="english-kids-core.bundle.js?v=20261109c"></script>
+<script src="curriculum-365-data.js?v=20261109-choice14"></script>
+<script src="english365-assets.js?v=20261109c"></script>
+<script src="curriculum-365-player.js?v=20261109-speaking11"></script>
+<script src="curriculum-365-home.js?v=20261109-speaking11"></script>
 </body>
 </html>

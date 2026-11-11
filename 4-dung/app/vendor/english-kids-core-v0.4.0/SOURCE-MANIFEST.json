@@ -1,0 +1,308 @@
+{
+  "version": "0.4.0",
+  "status": "standalone-v7-curriculum-core-integration-not-original-app",
+  "original_app_backup_created": false,
+  "created_utc": "2026-11-08T19:09:33.280488+00:00",
+  "runtime": "Node.js 24.22.1",
+  "tests_passed": 169,
+  "tests_failed": 0,
+  "source_line_coverage_percent": 99.88,
+  "source_branch_coverage_percent": 95.13,
+  "curriculum": {
+    "supported_schemas": [
+      "1.4.0",
+      "1.4.1",
+      "1.4.2"
+    ],
+    "current_schema": "1.4.2",
+    "current_content": "2026-11-08-v7-365-complete-chapter-reviews",
+    "source_unchanged": true,
+    "units": 60,
+    "lessons": 365,
+    "targets": 320,
+    "quick_reviews_simulated": 60,
+    "questions_simulated": 180,
+    "snapshot_round_trips": 180,
+    "structured_challenges_verified": 16,
+    "optional_post_course_cards_not_lessons": 5,
+    "json_schema_errors": 0,
+    "v5_regression_retained": true
+  },
+  "files": [
+    {
+      "path": "README-VI.md",
+      "size": 8282,
+      "sha256": "f3a936e370bbecc770c49714981238d57f8d2645609329966eb9ad92065b2ece"
+    },
+    {
+      "path": "docs/API.md",
+      "size": 5083,
+      "sha256": "4f64e52d546eeff44cdff8081bf0b6c01162d7966c92d89a187d5ac8c57a596a"
+    },
+    {
+      "path": "docs/CHANGELOG.md",
+      "size": 2430,
+      "sha256": "fba52b56b70a954bd509252b53b7f4cdaf24721ebf92960f58813abb6ba27070"
+    },
+    {
+      "path": "docs/CHAPTER-REVIEW.md",
+      "size": 10972,
+      "sha256": "e89a9430f235c97f7b6317dd2ee069b44692197daf9a011c46022937edd3b2d4"
+    },
+    {
+      "path": "docs/CURRICULUM-ADAPTER.md",
+      "size": 10277,
+      "sha256": "90b53006b85b96e0d21c678314ffc61cb114166599eca773bcfc5e721b5fd00a"
+    },
+    {
+      "path": "docs/INTEGRATION-FIRST.md",
+      "size": 6735,
+      "sha256": "d74d56e669b951673ceb8dda13e0130c2860de853c4f20893642eca5ca7391c2"
+    },
+    {
+      "path": "examples/chapter-review.mjs",
+      "size": 1621,
+      "sha256": "cb93c87c0d327342d6712086c4b7bffe256dd723efef287f0bda061924147e8f"
+    },
+    {
+      "path": "examples/daily-study.mjs",
+      "size": 1149,
+      "sha256": "27baeb3d86e308c9e2d2085161c352681d0ff0aed3cdad2928b5b3d950e12520"
+    },
+    {
+      "path": "integration/SOURCE-v7.json",
+      "size": 860,
+      "sha256": "14d8d8bb093ecf75aa194ca57623320dafab76d3972f211b7332a8d4a92fc210"
+    },
+    {
+      "path": "integration/SOURCE.json",
+      "size": 453,
+      "sha256": "35e6e673f7b8155922332905740dc5dd5d2e8d15d07f08968bb477837cf76a95"
+    },
+    {
+      "path": "integration/fixtures/curriculum-schema-1.4.0.json",
+      "size": 15691,
+      "sha256": "f0a01b867d1ac9b9562887e979b4ff92bad424e38bfc1da4df5bc4caaaa9134d"
+    },
+    {
+      "path": "integration/fixtures/curriculum-schema-1.4.2.json",
+      "size": 17656,
+      "sha256": "1a39ffa9b919138100707a10e664dc23730d493b046d2167c0c170cc9c0a5299"
+    },
+    {
+      "path": "integration/fixtures/curriculum-v5-330.json",
+      "size": 3339191,
+      "sha256": "c1b6786118eef09878159078aa6b5e6a0690e5edf4717d3c899c0df29cf08a0a"
+    },
+    {
+      "path": "integration/fixtures/curriculum-v7-365.json",
+      "size": 4141696,
+      "sha256": "70e12ffe9749d31f4e2ef012a9937edadc14c6ebb5386aafd2263c7ec706eba3"
+    },
+    {
+      "path": "integration/fixtures/post-course-review-v7.json",
+      "size": 2499,
+      "sha256": "2d3ed15fd3ca26c5a737b4890f6f44e085acdcfe093d0486cdc6f9401ca8835d"
+    },
+    {
+      "path": "integration/requirements-validation.txt",
+      "size": 19,
+      "sha256": "756cc9e506ae4ee1a6f6c0507088b5cfc0dc8ba350fb2d2d46f1ffa72033adb6"
+    },
+    {
+      "path": "package-lock.json",
+      "size": 276,
+      "sha256": "da4253e6b558676d09b481ac83bf97c02838b96e653f91e78f3e21549ad677fe"
+    },
+    {
+      "path": "package.json",
+      "size": 727,
+      "sha256": "db3d2773b153a3a6c030935125b10de53e085bde55f1def0be98ec0ef98e2106"
+    },
+    {
+      "path": "scripts/check.mjs",
+      "size": 872,
+      "sha256": "bad222b0eb2bc4389fca3439c3b5374f83aba33cc710ee7396155628c36dc6e5"
+    },
+    {
+      "path": "scripts/verify-curriculum-schema.py",
+      "size": 1406,
+      "sha256": "54872969eda703cd7cb4cdadc92f2dedbcc04c89bbdeff29e1265039ce0a9ea3"
+    },
+    {
+      "path": "scripts/verify-curriculum.mjs",
+      "size": 3477,
+      "sha256": "128322a742d7494407484bcf669037db9f70cf551525290ce6821ec9ae484484"
+    },
+    {
+      "path": "src/activities.js",
+      "size": 2384,
+      "sha256": "4cd74ca1449a55a7de8a86419af20b340e1a7c102002f3e0330baba2b51ee17a"
+    },
+    {
+      "path": "src/answers.js",
+      "size": 1127,
+      "sha256": "20bfc0a59f20058f01a82ad33915577422c7d39e28823589e7790fcbd2131529"
+    },
+    {
+      "path": "src/assets.js",
+      "size": 2497,
+      "sha256": "7df798bbd56e01b0cc2d59f3b6fdc37d25b242fd9a34eefd830bca530fe1f9cb"
+    },
+    {
+      "path": "src/chapter-review.js",
+      "size": 26861,
+      "sha256": "85e059f6d59252888d091c2ad6aaeefef17ad8a7b73f5125907621c7fc79b0fa"
+    },
+    {
+      "path": "src/content.js",
+      "size": 2696,
+      "sha256": "97788a04454018e911735b93480e3ded93ea6174c45cafbc02679a7780c00482"
+    },
+    {
+      "path": "src/contracts.js",
+      "size": 1765,
+      "sha256": "8d1db1e289c7b79ff11196b2b0a0a409016a2638f9643a9bb7e753eb6a5f95d4"
+    },
+    {
+      "path": "src/curriculum-adapter.js",
+      "size": 20473,
+      "sha256": "0421d590e58f806447b481d8d01b5821af6d0cbc19812aa9c5e861b9e622d181"
+    },
+    {
+      "path": "src/dates.js",
+      "size": 1678,
+      "sha256": "51628ccae91990dee9c2cefb9558f0d80c2402c279ec50a692c7bb732b59d1a8"
+    },
+    {
+      "path": "src/index.js",
+      "size": 468,
+      "sha256": "66bae032d5996fde7c1818a39765ab255f093227b43088ec321fd3c2d89734d1"
+    },
+    {
+      "path": "src/layout.js",
+      "size": 931,
+      "sha256": "807cd9867d75f97e376c9101d65c77d487fc3bb2b0bed07dfdd113dee6a49c1f"
+    },
+    {
+      "path": "src/planner.js",
+      "size": 2077,
+      "sha256": "edc5b8713cb50364cf9292784d0e7d92033cec4eb7812f5d597a7b46a5820334"
+    },
+    {
+      "path": "src/progress.js",
+      "size": 3613,
+      "sha256": "b388500dcbcd66cd3680165a3f9c34edd1707b6793e8d0662142489ed29cdc37"
+    },
+    {
+      "path": "src/random.js",
+      "size": 911,
+      "sha256": "ad95efd994b4d7afec391f7bc6482dd191fe670a24692b9dccbbf0c97d40c3f4"
+    },
+    {
+      "path": "src/reports.js",
+      "size": 1803,
+      "sha256": "8e40b61ac1018e1c8c691545a681d31eff400443ac780d342808a39f6f9662a3"
+    },
+    {
+      "path": "src/review.js",
+      "size": 1766,
+      "sha256": "8d7584678eeb4c0d6e970d78d66fdaa3d3990a12ade9e09ad149facd6ff33772"
+    },
+    {
+      "path": "src/session.js",
+      "size": 2323,
+      "sha256": "ab0f31674c3df3eb18c95d7415b24c8d98774bea5006f7f6b5a1d4ecb7e5291d"
+    },
+    {
+      "path": "test/chapter-fixtures.js",
+      "size": 1567,
+      "sha256": "90af246903dda32d6dad457da1228b8a3bf6146dfad62af869fc262252faf919"
+    },
+    {
+      "path": "test/chapter-review.test.js",
+      "size": 19613,
+      "sha256": "cdb5185b326e59d79528707abee214604642c170e22486cf0f9a864afc49fbe4"
+    },
+    {
+      "path": "test/core.test.js",
+      "size": 17355,
+      "sha256": "f44c0f30def350714dff24fc677d88757c705b8a8892bfaa1e773299e58f809c"
+    },
+    {
+      "path": "test/curriculum-adapter.test.js",
+      "size": 13211,
+      "sha256": "b16c99cec66aec954d3663c562a408779502b6002349e611af8a3b88e9bd315a"
+    },
+    {
+      "path": "test/curriculum-v7.test.js",
+      "size": 6371,
+      "sha256": "66f5039b7b9ac3bde52d729595040337467c99473682faa3dcc83ef7f45f4353"
+    },
+    {
+      "path": "test/fixtures.js",
+      "size": 1442,
+      "sha256": "35581a47a6a262477fba08c7adc5d90496cf9d5a9cc33d9a8974e30acad07dc6"
+    },
+    {
+      "path": "verification/chapter-demo-output.json",
+      "size": 1845,
+      "sha256": "de0d1f64449cce7e70a709373468b0a767894e046c3e2cc6181ab180dab1c280"
+    },
+    {
+      "path": "verification/check-output.txt",
+      "size": 218,
+      "sha256": "614ffddbfb96fca42d5c8a2aba43c81fc72c663531aedc306fe67b187a959a9f"
+    },
+    {
+      "path": "verification/coverage-output.txt",
+      "size": 14774,
+      "sha256": "68c6cffcdaf9ab72a5a7171a72575b818fa5d05d583773628d201dc386be0b9b"
+    },
+    {
+      "path": "verification/curriculum-integration-v7.json",
+      "size": 25689,
+      "sha256": "1ee48335b3eb219f9ae02396b5bdde9c29037282312ef049d7c47797062faae0"
+    },
+    {
+      "path": "verification/curriculum-integration.json",
+      "size": 4841,
+      "sha256": "c4e6fec401f6d11d4e4720633ba7e7a13f1ae66d90335ce12e0b11197aa1c3bb"
+    },
+    {
+      "path": "verification/curriculum-schema-validation-v7.json",
+      "size": 153,
+      "sha256": "0643a0398cdae8c17966c0423a6f1981dc1561d787f5304c04bfe4f339a23279"
+    },
+    {
+      "path": "verification/curriculum-schema-validation.json",
+      "size": 153,
+      "sha256": "0643a0398cdae8c17966c0423a6f1981dc1561d787f5304c04bfe4f339a23279"
+    },
+    {
+      "path": "verification/demo-output.json",
+      "size": 3054,
+      "sha256": "111a554159f3db21776daf86e38666b6be7bea06cac5d7faaa57a05d6b5da60c"
+    },
+    {
+      "path": "verification/integration-output-v7.txt",
+      "size": 26119,
+      "sha256": "959f55e33f7ba4a58db8db335ff465ac4498598b0771899900f49b7796ce90e7"
+    },
+    {
+      "path": "verification/integration-output.txt",
+      "size": 5037,
+      "sha256": "71436d61762cb4c2af6f3fa6aaa6cfe555abe06e17d9d62fd62e6902068b870a"
+    },
+    {
+      "path": "verification/lockfile-output.txt",
+      "size": 120,
+      "sha256": "b98d211d66caceb5e672d0ff2f0d6732ced2218501697d729add4039a8db3f0a"
+    },
+    {
+      "path": "verification/test-output.txt",
+      "size": 13218,
+      "sha256": "96efc3a644ef4313966368185b11c585f4aadd4cac309c7f66e7d7110f631865"
+    }
+  ]
+}

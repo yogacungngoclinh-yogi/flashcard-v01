@@ -1,0 +1,80 @@
+{
+  "questionTypes": [
+    "choice",
+    "choice",
+    "context",
+    "order",
+    "application"
+  ],
+  "completeFiveStepPattern": true,
+  "firstDisplay": {
+    "phase": "question",
+    "status": "active",
+    "questionId": "q1",
+    "type": "choice",
+    "assessment": "exact",
+    "prompt": "con cá",
+    "instructionVi": "Chọn từ tiếng Anh đúng nhé.",
+    "language": "en",
+    "promptLanguage": "en",
+    "imageId": null,
+    "hideLearningLabel": true,
+    "options": [
+      {
+        "id": "animal.fish",
+        "label": "fish"
+      },
+      {
+        "id": "animal.bird",
+        "label": "bird"
+      },
+      {
+        "id": "animal.cat",
+        "label": "cat"
+      },
+      {
+        "id": "animal.dog",
+        "label": "dog"
+      }
+    ],
+    "hint": null,
+    "feedback": null,
+    "answered": 0,
+    "queued": 5,
+    "timed": false
+  },
+  "result": {
+    "chapterId": "chapter.animals",
+    "sessionId": "chapter-demo",
+    "reviewCompleted": true,
+    "mode": "chapter-end",
+    "firstPassAnswered": 5,
+    "firstPassTotal": 5,
+    "firstPassCorrect": 5,
+    "firstPassAccuracy": 1,
+    "unassistedFirstPass": {
+      "answered": 4,
+      "correct": 4
+    },
+    "assistedFirstPass": {
+      "answered": 1,
+      "correct": 1
+    },
+    "totalAttempts": 5,
+    "roundsCompleted": 5,
+    "skippedRounds": 0,
+    "deferredCardIds": [],
+    "observations": [],
+    "assistedAttempts": 1,
+    "unassistedAttempts": 4,
+    "recoveredCardIds": [],
+    "practiceAgainCardIds": [],
+    "deferredQuestionIds": [],
+    "recoveredQuestionIds": [],
+    "durationMs": 15000,
+    "practiceAgainQuestionIds": [],
+    "completionKey": "chapter-demo:chapter-review",
+    "messageVi": "Em đã ôn xong chương này. Nghỉ một chút nhé!"
+  },
+  "note": "Synthetic core demo only. No rendered UI, animation, speech or audio."
+}

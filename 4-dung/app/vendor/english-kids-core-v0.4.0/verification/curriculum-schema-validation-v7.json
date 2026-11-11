@@ -1,0 +1,8 @@
+{
+  "schema_valid": true,
+  "curriculum_valid": true,
+  "error_count": 0,
+  "validator": "jsonschema",
+  "validator_version": "4.26.0",
+  "errors": []
+}

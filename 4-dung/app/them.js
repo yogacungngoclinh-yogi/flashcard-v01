@@ -342,7 +342,7 @@
   const nhanHtml = s => { const [a, ...b] = String(s).split(" · "); return esc(a) + (b.length ? `<small>${esc(b.join(" · "))}</small>` : ""); };
   function ktHinh(cfg) {
     k2 = { ...cfg, ds: tron(cfg.ds), so: 0, dung: 0, sai: false, khoa: false };
-    napAm(k2.ds.map(x => cfg.am(x)[0]));
+    napAm([idHoi(cfg.hoi || "Find the picture!"), ...k2.ds.map(x => cfg.am(x)[0])]);
     g("kt2-hoi").textContent = cfg.hoi; g("kt2-hoivi").textContent = cfg.hoivi;
     sang("kt2"); veK2();
   }
@@ -355,9 +355,9 @@
     g("kt2-da").classList.remove("xong");
     g("kt2-da").innerHTML = lua.map((y, i) => `<button class="lua-chon" data-dung="${y === x ? 1 : 0}" data-id="${y.id}">${k2.hinh(y)}</button>`).join("");
     if (k2.cauHoi) { const c = k2.cauHoi(x); g("kt2-hoi").textContent = c[0]; g("kt2-hoivi").textContent = c[1]; }
-    setTimeout(() => { if (!k2 || k2.ds[k2.so] !== x || k2.khoa) return; const doc = () => { if (k2 && k2.ds[k2.so] === x && !k2.khoa) phat(...k2.am(x)); }; k2.so === 0 ? huongDan("_hd-chon-hinh", doc) : doc(); }, 120);
+    setTimeout(() => { if (!k2 || k2.ds[k2.so] !== x || k2.khoa) return; const doc = () => { if (k2 && k2.ds[k2.so] === x && !k2.khoa) phatHoiTu(k2.cauHoi ? k2.cauHoi(x)[0] : k2.hoi, k2.am(x)); }; k2.so === 0 ? huongDan("_hd-chon-hinh", doc) : doc(); }, 120);
   }
-  g("kt2-nghe").onclick = () => { if (k2) phat(...k2.am(k2.ds[k2.so])); };
+  g("kt2-nghe").onclick = () => { if (k2) { const x = k2.ds[k2.so]; phatHoiTu(k2.cauHoi ? k2.cauHoi(x)[0] : k2.hoi, k2.am(x)); } };
   g("kt2-da").onclick = e => {
     const b = e.target.closest(".lua-chon"); if (!b || !k2 || k2.khoa || b.classList.contains("sai")) return;
     const x = k2.ds[k2.so];
@@ -553,9 +553,10 @@
       document.body.style.setProperty("--mau", b.mau);
       kh.innerHTML = `<div class="ngay-nhom">${b.nhom}</div>
         <button class="the vao" id="ngay-the" style="width:min(86vw,420px,52vh)"><div class="hinh">${hinhTu(t)}</div>
-        <div class="chu-en">${esc(t.en)}</div><div class="chu-vi">${esc(t.vi)}</div>${t.vd ? `<div class="the-vd">${esc(t.vd)}</div>` : ""}<div class="loa">🔊 chạm để nghe</div></button>`;
-      g("ngay-the").onclick = () => phat(t.id, t.en);
-      setTimeout(() => { if (dangMo("ngay") && ngKh[ngB] === b) phat(t.id, t.en); }, 300);
+        <div class="chu-en">${esc(t.en)}</div><div class="chu-vi">${esc(t.vi)}</div>${t.vd ? `<div class="the-vd">${esc(t.vd)}</div>` : ""}${t.vdvi ? `<div class="the-vdvi">${esc(t.vdvi)}</div>` : ""}<div class="loa">🔊 chạm để nghe</div></button>`;
+      g("ngay-the").onclick = e => { if (t.vdvi && e.target.closest(".the-vd,.the-vdvi")) return phat("vd-" + t.id, t.vd); phat(t.id, t.en); };
+      if (t.vdvi) napAm(["vd-" + t.id]);
+      setTimeout(() => { if (dangMo("ngay") && ngKh[ngB] === b) docTuVaVd(t, () => dangMo("ngay") && ngKh[ngB] === b); }, 300);
       nut.textContent = "Tiếp ➡️";
     } else if (b.k === "xong") {
       const lt = docLt(), moi = ngD > (lt.xong || 0);
