@@ -7,7 +7,7 @@ const home=$id("trang-chu"), cta=$id("hom-nay"), anchor=document.createComment("
 cta.before(anchor);
 const panel=document.createElement("div");panel.id="ux-home-panel";$id("khu").before(panel);
 const toggle=document.createElement("button");toggle.id="ux-home-toggle";home.querySelector(".dau").append(toggle);
-let mode="daily", allChapters=false, active=null, storageWarning=false, reviewOrigin=null;
+let mode="classic", allChapters=false, active=null, storageWarning=false, reviewOrigin=null;
 const volatileStore=new Map();
 function read(key,fallback){const scoped=khoaHs(key);if(volatileStore.has(scoped))return volatileStore.get(scoped);try{return JSON.parse(localStorage.getItem(scoped))??fallback;}catch{return fallback;}}
 function write(key,value){const scoped=khoaHs(key);try{localStorage.setItem(scoped,JSON.stringify(value));volatileStore.delete(scoped);return true;}catch{volatileStore.set(scoped,JSON.parse(JSON.stringify(value)));storageWarning=true;return false;}}
@@ -75,7 +75,7 @@ function startReview(chapter){
 function leaveReview(fromHistory=false){
  stopSound();save();active=null;
  if(!fromHistory&&location.hash==="#quick-review"&&history.state?.dailyReview)history.back();
- mode="daily";veTrangChu();
+ mode="classic";veTrangChu();
  (reviewOrigin&&document.contains(reviewOrigin)?reviewOrigin:toggle).focus({preventScroll:true});
 }
 $id("ux-review-exit").onclick=()=>leaveReview();

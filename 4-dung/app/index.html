@@ -142,6 +142,9 @@ button{font:inherit;color:inherit;border:0;cursor:pointer;background:none}
 .khu-to button.chon{background:var(--chu);color:#fff}
 #hom-nay{margin:2px auto 10px}
 #luoi.lt .lt-nut{display:none}
+.tg-nut{display:block;max-width:520px;margin:0 auto 12px;background:linear-gradient(135deg,#3D97E0,#22B07A);color:#fff;border-radius:28px;padding:12px 18px;font-size:24px;font-weight:800;text-align:center;text-decoration:none;box-shadow:var(--bong)}
+.tg-hang{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:520px;margin:0 auto 12px}.tg-hang .tg-nut{margin:0;font-size:19px;padding:10px 8px;border:0;font-family:inherit}.tg-hang small{font-size:13px}.tg-365{background:linear-gradient(135deg,#F59E0B,#EF6C3A)}
+.tg-nut small{display:block;font-size:15px;font-weight:700;opacity:.95}
 .viet{display:none;margin-left:auto;background:var(--the);border-radius:99px;box-shadow:0 4px 0 rgba(59,47,74,.12);padding:6px 14px;font-size:15px;font-weight:800;color:var(--phu)}
 body.t10 .viet{display:block}
 .cham-bt{background:var(--the);border-radius:99px;box-shadow:0 4px 0 rgba(59,47,74,.12);padding:6px 12px;font-size:15px;font-weight:800;color:var(--phu);margin-left:6px}
@@ -153,6 +156,7 @@ body.an-viet.t10 :is(.cau-chu .vi,.bong .vi,.dt-vi,.mc-vi,.doc-cau .vi,.tt-cau .
 body.an-viet.t10 :is(.dap-an small,.nhan-dung small){display:none}
 </style>
 <link rel="stylesheet" href="daily-launch.css?v=20261109a">
+<style>#ux-home-toggle,#ux-home-panel,#english365-selector{display:none!important}</style>
 <link rel="stylesheet" href="curriculum-365-player.css?v=20261109-speaking11">
 <link rel="stylesheet" href="curriculum-365-home.css?v=20261109-speaking11">
 </head>
@@ -162,6 +166,8 @@ body.an-viet.t10 :is(.dap-an small,.nhan-dung small){display:none}
   <div class="dau"><h1>Bé Học Tiếng Anh 🌈</h1><button class="cham-bt" id="bt-cham" aria-label="Nghe chậm"></button><button class="viet" id="bt-viet" aria-label="Ẩn hiện nghĩa tiếng Việt"></button></div>
   <div class="tab"><button id="tuoi-5">🧒 Bé 5 tuổi<small>Mầm non · Starters</small></button><button id="tuoi-10">👦 Bé 10 tuổi<small>Giao tiếp · Movers</small></button></div>
   <button class="lt-nut" id="hom-nay"></button>
+  <div class="tg-hang"><button class="tg-nut tg-365" id="nut-365">📅 365 buổi học<small>Mỗi ngày 1 buổi</small></button>
+  <a class="tg-nut" href="the-gioi.html">🗺️ Thị Trấn Hello<small>Game nhập vai</small></a></div>
   <div class="khu" id="khu"></div>
   <div class="luoi" id="luoi"></div>
   <div class="thuong-hieu">Chạm vào một chủ đề để học nhé! <button class="pp-link" id="vao-pp">🔒 Phụ huynh</button></div>
@@ -656,11 +662,12 @@ if ("serviceWorker" in navigator && (location.protocol === "https:" || location.
 <script src="phu-huynh.js?v=20261109c"></script>
 <script src="mo-rong.js?v=20261111b"></script>
 <script src="daily-launch-core.js?v=20261109a"></script>
-<script src="daily-launch.js?v=20261109a"></script>
+<script src="daily-launch.js?v=20261112a"></script>
 <script src="english-kids-core.bundle.js?v=20261109c"></script>
 <script src="curriculum-365-data.js?v=20261109-choice14"></script>
 <script src="english365-assets.js?v=20261109c"></script>
 <script src="curriculum-365-player.js?v=20261109-speaking11"></script>
 <script src="curriculum-365-home.js?v=20261109-speaking11"></script>
+<script>document.getElementById("nut-365").onclick=()=>window.English365Player&&English365Player.openHome();</script>
 </body>
 </html>
